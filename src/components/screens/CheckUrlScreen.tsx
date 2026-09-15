@@ -51,8 +51,8 @@ export const CheckUrlScreen: React.FC = () => {
     setUrl(newUrl);
     setUrlError(null);
     const lower = newUrl.toLowerCase();
-    if (lower.includes('amazon') || lower.includes('amzn.in') || lower.includes('amzn.to')) setPlatform('amazon');
-    else if (lower.includes('flipkart') || lower.includes('fkrt.it')) setPlatform('flipkart');
+    if (lower.includes('amazon')) setPlatform('amazon');
+    else if (lower.includes('flipkart')) setPlatform('flipkart');
     else if (lower.includes('blinkit')) setPlatform('blinkit');
     else if (lower.includes('zepto')) setPlatform('zepto');
     else setPlatform('other');

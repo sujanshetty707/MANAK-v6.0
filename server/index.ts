@@ -309,8 +309,6 @@ app.post('/api/evaluate', async (req, res) => {
   }
 
   const channel = body.channel || (mode === 'url_check' ? 'online_listing' : 'physical_label');
-  const evalResult = evaluateExtractionAgainstRules(extraction, channel);
-  const inspectionId = ensureUUID(body.id || `insp-${Date.now().toString().slice(-6)}`);
   const finalProduct = product || {
     id: crypto.randomUUID(),
     title: extraction.generic_name?.value ? `${extraction.generic_name.value} Pack` : 'Packaged Commodity',
@@ -319,6 +317,8 @@ app.post('/api/evaluate', async (req, res) => {
     source_type: mode === 'url_check' ? 'ecommerce' : 'store',
     image_url: image_base64 || ''
   };
+  const evalResult = evaluateExtractionAgainstRules(extraction, channel, finalProduct);
+  const inspectionId = ensureUUID(body.id || `insp-${Date.now().toString().slice(-6)}`);
 
   const record = {
     id: inspectionId,
@@ -450,7 +450,7 @@ app.post('/api/url-check', async (req, res) => {
       extraction = auditResult.extraction;
     }
 
-    const evalResult = evaluateExtractionAgainstRules(extraction, 'online_listing');
+    const evalResult = evaluateExtractionAgainstRules(extraction, 'online_listing', product);
     const inspectionId = crypto.randomUUID();
 
     const record = {

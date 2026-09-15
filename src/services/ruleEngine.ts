@@ -1,15 +1,31 @@
-import { ExtractionResult, RuleEvaluation, EvaluationChannel } from '../types';
+import { ExtractionResult, Product, RuleEvaluation, EvaluationChannel } from '../types';
 import { COMPLIANCE_RULES, RULE_32_PENALTY_RATE } from '../data/rules';
+import { evaluateEcommerceListing, EcommerceAuditReport } from './ecommerceRuleEngine';
 
 export function evaluateExtractionAgainstRules(
   extraction: ExtractionResult,
-  channel: EvaluationChannel = 'physical_label'
+  channel: EvaluationChannel = 'physical_label',
+  product?: Product | null
 ): {
   evaluations: RuleEvaluation[];
   is_compliant: boolean;
   total_violations: number;
   total_penalty: number;
+  ecommerceReport?: EcommerceAuditReport;
 } {
+  // If evaluating an e-commerce listing, run the comprehensive E-Commerce Legal Metrology Checklist
+  if (channel === 'online_listing' || product?.source_type === 'ecommerce') {
+    const ecomReport = evaluateEcommerceListing(extraction, product);
+    return {
+      evaluations: ecomReport.standardEvaluations,
+      is_compliant: ecomReport.total_violations === 0,
+      total_violations: ecomReport.total_violations,
+      total_penalty: ecomReport.total_penalty,
+      ecommerceReport: ecomReport
+    };
+  }
+
+  // PHYSICAL SCAN FLOW (Preserved completely untouched)
   const evaluations: RuleEvaluation[] = [];
 
   for (const rule of COMPLIANCE_RULES) {
@@ -18,7 +34,7 @@ export function evaluateExtractionAgainstRules(
     let expected_value = '';
     let explanation = '';
 
-    const isExemptOnline = rule.online_required === false && channel === 'online_listing';
+    const isExemptOnline = rule.online_required === false && (channel as string) === 'online_listing';
 
     switch (rule.rule_id) {
       case 'rule_6_1_a_mfg_details': {

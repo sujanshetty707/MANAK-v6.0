@@ -1,0 +1,1294 @@
+# MANAK — Legal Metrology E-Commerce Compliance Checklist
+
+**File:** `MANAK_Legal_Metrology_Checklist.md`  
+**Scope:** Amazon / Flipkart / other Indian e-commerce product listings  
+**Primary basis:** Legal Metrology (Packaged Commodities) Rules, 2011, relevant amendments, and Department of Consumer Affairs e-commerce guidance.  
+**Purpose:** Convert Legal Metrology requirements into an online-listing compliance rules engine.
+
+> **Important:** This checklist is an e-commerce screening tool, not a legal certification. A marketplace page cannot establish every physical-package requirement. MANAK should distinguish **PASS**, **FAIL**, **CANNOT_CHECK**, **NOT_APPLICABLE**, and **VERIFY**.
+
+---
+
+## 1. Status model
+
+| Status | Meaning |
+|---|---|
+| `PASS` | Required online information is present and passes the automated rule |
+| `FAIL` | Required online information is absent or clearly inconsistent |
+| `CANNOT_CHECK` | The rule requires physical inspection, measurement, sampling, or records not available from the page |
+| `NOT_APPLICABLE` | Rule does not apply to this product/category |
+| `VERIFY` | Listing provides an indicator, but a definitive legal conclusion needs external/physical evidence |
+
+### Evidence levels
+
+| Level | Meaning |
+|---|---|
+| `TEXT` | Can be checked from structured/listing text |
+| `IMAGE` | Can be screened from product/package images |
+| `CALCULATED` | Can be mathematically validated from listing data |
+| `EXTERNAL` | Requires government/registration/database verification |
+| `PHYSICAL` | Requires physical package/sample inspection |
+
+---
+
+# 2. E-commerce-specific master rule
+
+## ECOM-01 — Mandatory declarations on e-commerce website
+
+**Legal basis:** Rule 6(10) / Department of Consumer Affairs FAQ.
+
+An e-commerce entity must ensure that mandatory declarations specified under Rule 6(1), **except the month and year in which the commodity was manufactured or packed**, are displayed on the digital/electronic network used for e-commerce transactions.
+
+**MANAK check:** `PASS / FAIL / VERIFY`
+
+**Evidence:** `TEXT + IMAGE`
+
+**Important implementation rule:**
+
+```text
+Do NOT mark an Amazon/Flipkart listing FAIL merely because
+month/year of manufacture or packing is not displayed online.
+```
+
+---
+
+# 3. Rule 6 — Mandatory declarations
+
+## LM-06-01 — Manufacturer name
+
+**Requirement:** Manufacturer name where applicable.
+
+**Online check:** YES
+
+**Result:** `PASS / FAIL`
+
+**Evidence:** TEXT/IMAGE
+
+**Failure:** Manufacturer information not found.
+
+---
+
+## LM-06-02 — Manufacturer address
+
+**Requirement:** Manufacturer address.
+
+**Online check:** YES
+
+**Result:** `PASS / FAIL / VERIFY`
+
+**Evidence:** TEXT/IMAGE
+
+---
+
+## LM-06-03 — Packer name
+
+**Requirement:** Where manufacturer is not the packer, the packer name must be declared.
+
+**Online check:** CONDITIONAL
+
+**Result:** `PASS / FAIL / NOT_APPLICABLE / VERIFY`
+
+---
+
+## LM-06-04 — Packer address
+
+**Requirement:** Packer address where applicable.
+
+**Online check:** CONDITIONAL
+
+**Result:** `PASS / FAIL / NOT_APPLICABLE / VERIFY`
+
+---
+
+## LM-06-05 — Importer name
+
+**Requirement:** Imported package must identify importer.
+
+**Online check:** CONDITIONAL
+
+**Result:** `PASS / FAIL / NOT_APPLICABLE`
+
+---
+
+## LM-06-06 — Importer address
+
+**Requirement:** Imported package must provide importer address.
+
+**Online check:** CONDITIONAL
+
+**Result:** `PASS / FAIL / NOT_APPLICABLE`
+
+---
+
+## LM-06-07 — Country of origin/manufacture
+
+**Requirement:** Imported products require country-of-origin/manufacture information under the applicable provisions.
+
+**Online check:** YES for imported products
+
+**Result:** `PASS / FAIL / NOT_APPLICABLE / VERIFY`
+
+**Evidence:** TEXT/IMAGE
+
+---
+
+## LM-06-08 — Common/generic name
+
+**Requirement:** Common or generic name of the commodity.
+
+**Online check:** YES
+
+**Result:** `PASS / FAIL`
+
+**Evidence:** TEXT/IMAGE
+
+**Example:**
+
+```text
+Pure Cow Ghee
+Stainless Steel Water Bottle
+Cotton T-Shirt
+```
+
+A marketing/brand name alone should not automatically be treated as the generic commodity name.
+
+---
+
+## LM-06-09 — Multiple-product package contents
+
+**Requirement:** If a package contains more than one product, name and number/quantity of each product should be identifiable where required.
+
+**Online check:** CONDITIONAL
+
+**Result:** `PASS / FAIL / NOT_APPLICABLE / VERIFY`
+
+---
+
+## LM-06-10 — Net quantity
+
+**Requirement:** Net quantity in standard unit of weight/measure, or number where sold by number.
+
+**Online check:** YES
+
+**Result:** `PASS / FAIL`
+
+**Evidence:** TEXT/IMAGE
+
+**Examples:**
+
+```text
+500 g
+1 kg
+250 ml
+2 L
+10 pieces
+```
+
+---
+
+## LM-06-11 — Correct quantity unit
+
+**Legal basis:** Rule 12.
+
+**Check:**
+
+- solids/semi-solids/viscous → mass
+- linear commodities → length
+- area commodities → area
+- liquids/cubic measure → volume
+- items sold by number → number
+
+**Online check:** YES, subject to commodity-specific exceptions.
+
+**Result:** `PASS / FAIL / VERIFY`
+
+---
+
+## LM-06-12 — Quantity wording not misleading
+
+**Legal basis:** Rule 12(6).
+
+Detect potentially misleading expressions such as:
+
+```text
+minimum
+not less than
+average
+about
+approximately
+```
+
+**Online check:** YES
+
+**Result:** `PASS / FAIL / VERIFY`
+
+**Important:** NLP should flag potential wording; human/legal review may be needed for context.
+
+---
+
+## LM-06-13 — Dimensions where required
+
+**Legal basis:** Rule 12(4).
+
+If weight/measure/number alone does not give sufficient information about the dimensions or number of the commodity, required dimensions/number should be declared.
+
+**Online check:** CONDITIONAL
+
+**Result:** `PASS / FAIL / VERIFY / NOT_APPLICABLE`
+
+---
+
+# 4. MRP / Retail Sale Price
+
+## LM-06-14 — Maximum Retail Price
+
+**Requirement:** Applicable retail sale price/MRP information.
+
+**Online check:** YES
+
+**Result:** `PASS / FAIL / NOT_APPLICABLE / VERIFY`
+
+---
+
+## LM-06-15 — MRP in Indian currency
+
+**Requirement:** MRP declaration in Indian currency under current Rule 6 wording.
+
+**Online check:** YES
+
+**Result:** `PASS / FAIL`
+
+---
+
+## LM-06-16 — MRP inclusive of taxes
+
+**Requirement:** Retail sale price is the maximum price at which packaged commodity may be sold to consumer inclusive of all taxes.
+
+**Online check:** PARTLY
+
+**Result:** `PASS / FAIL / VERIFY`
+
+MANAK can detect explicit wording and numerical consistency, but a page alone cannot prove the physical package's legal declaration.
+
+---
+
+# 5. Unit Sale Price — Rule 6(11)
+
+## LM-06-17 — Unit sale price applicability
+
+**Rules:**
+
+- `< 1 kg` → Rs.__ per g
+- `>= 1 kg` → Rs.__ per kg
+- `< 1 m` → Rs.__ per cm
+- `>= 1 m` → Rs.__ per meter
+- sold by number → Rs.__ per number
+- `< 1 L` → Rs.__ per ml
+- `>= 1 L` → Rs.__ per litre
+
+**Online check:** YES where applicable.
+
+**Result:** `PASS / FAIL / NOT_APPLICABLE / VERIFY`
+
+---
+
+## LM-06-18 — Unit sale price displayed
+
+**Online check:** YES where applicable.
+
+**Result:** `PASS / FAIL / NOT_APPLICABLE`
+
+---
+
+## LM-06-19 — Correct unit sale-price unit
+
+**Online check:** YES
+
+**Result:** `PASS / FAIL`
+
+---
+
+## LM-06-20 — Unit sale-price mathematical calculation
+
+MANAK should calculate:
+
+```text
+unit_price = applicable_sale_price / net_quantity
+```
+
+Use the applicable unit conversion.
+
+**Example:**
+
+```text
+Net quantity = 500 g
+Price = ₹100
+
+₹100 / 500 g = ₹0.20/g
+```
+
+**Result:** `PASS / FAIL / VERIFY`
+
+---
+
+## LM-06-21 — Unit sale price rounding
+
+The DCA FAQ states that unit sale price is rounded to the nearest two decimal places. A whole-number unit sale price may be shown without decimal places.
+
+**Result:** `PASS / FAIL`
+
+---
+
+## LM-06-22 — Wholesale package unit sale price
+
+Unit sale price is not required for a wholesale package as defined by the Rules.
+
+**Result:** `NOT_APPLICABLE` where confirmed wholesale package.
+
+---
+
+# 6. Manufacturing / packing date
+
+## LM-06-23 — Manufacturing/packing month and year on physical package
+
+**Physical package:** applicable where required.
+
+**E-commerce listing:** The DCA e-commerce guidance expressly excludes the month and year of manufacture/packing from the mandatory online-display requirement.
+
+**MANAK online result:**
+
+```text
+NOT_REQUIRED_ONLINE
+```
+
+**Never automatically FAIL an Amazon/Flipkart listing because this information is absent online.**
+
+---
+
+# 7. Best Before / Use By / Expiry
+
+## LM-06-24 — Date information for products where applicable
+
+Some commodities are governed by sector-specific requirements in addition to Legal Metrology.
+
+**Online check:** CONDITIONAL
+
+**Result:** `PASS / FAIL / NOT_APPLICABLE / VERIFY`
+
+**Important:** Do not create a universal rule that every product must show an expiry date merely because it is sold online.
+
+For food, drugs, cosmetics and other regulated sectors, use the applicable sectoral rules as an additional compliance module.
+
+---
+
+# 8. Consumer-care information
+
+## LM-06-25 — Consumer-care name/office
+
+**Requirement:** Person/office that can be contacted for consumer complaints.
+
+**Online check:** YES
+
+**Result:** `PASS / FAIL / VERIFY`
+
+---
+
+## LM-06-26 — Consumer-care address
+
+**Online check:** YES
+
+**Result:** `PASS / FAIL / VERIFY`
+
+---
+
+## LM-06-27 — Consumer-care telephone number
+
+**Online check:** YES where required/available.
+
+**Result:** `PASS / FAIL / VERIFY`
+
+---
+
+## LM-06-28 — Consumer-care email
+
+**Online check:** YES where available/applicable.
+
+**Result:** `PASS / FAIL / VERIFY`
+
+---
+
+# 9. Rule 7 — Principal display panel size
+
+## LM-07-01 — Minimum numeral height
+
+The Rules prescribe minimum numeral heights based on net quantity and package/display conditions.
+
+**Online listing text:** `CANNOT_CHECK`
+
+**Ordinary product image:** `CANNOT_CHECK conclusively`
+
+**Calibrated package image:** `VERIFY`
+
+**Physical measurement:** `PASS / FAIL`
+
+---
+
+## LM-07-02 — Minimum letter height
+
+Rule 7 specifies minimum letter height and special requirements for blown, formed, molded, embossed or perforated declarations.
+
+**Online:** `CANNOT_CHECK`
+
+**MANAK:** Do not automatically fail from a normal marketplace image.
+
+---
+
+## LM-07-03 — Numeral/letter width requirement
+
+The Rules specify a width relationship for letters/numerals, with stated exceptions.
+
+**Online:** `CANNOT_CHECK`
+
+---
+
+# 10. Rule 8 — Where declarations must appear
+
+## LM-08-01 — Principal display panel
+
+Required declarations must appear on the principal display panel as applicable.
+
+**Amazon/Flipkart text:** `CANNOT_CHECK`
+
+**Package image:** `VERIFY`
+
+**Physical package:** `PASS / FAIL`
+
+---
+
+## LM-08-02 — Quantity declaration clear space
+
+The Rules specify clear space around the quantity declaration.
+
+**Online:** `CANNOT_CHECK`
+
+**Physical inspection:** `PASS / FAIL`
+
+---
+
+# 11. Rule 9 — Manner of declaration
+
+## LM-09-01 — Legibility
+
+**Online image:** `VERIFY`
+
+**Physical:** `PASS / FAIL`
+
+---
+
+## LM-09-02 — Prominence
+
+**Online image:** `VERIFY`
+
+**Physical:** `PASS / FAIL`
+
+---
+
+## LM-09-03 — Contrast/background
+
+**Online image:** `VERIFY`
+
+**Physical:** `PASS / FAIL`
+
+Computer vision may flag a potential issue but should not automatically make a definitive legal finding.
+
+---
+
+## LM-09-04 — Language requirements
+
+Where the applicable rule requires declarations in Hindi/Devanagari or English, MANAK can OCR the package/listing image and screen for required language.
+
+**Result:** `PASS / FAIL / VERIFY / NOT_APPLICABLE`
+
+---
+
+# 12. Rule 10 — Name and address
+
+## LM-10-01 — Actual manufacturer/packer/importer identity
+
+The declared name should correspond to the applicable legal identity.
+
+**Online:** `PASS / FAIL / VERIFY`
+
+A marketplace page alone may not prove the legal corporate identity.
+
+---
+
+## LM-10-02 — Complete address
+
+**Online:** `PASS / FAIL / VERIFY`
+
+Use address parsing to identify:
+
+- business name
+- premises/location
+- city/town
+- state
+- PIN/other relevant address information
+
+Do not reject a valid registered shorter address without external verification.
+
+---
+
+# 13. Rule 11 — Quantity declaration accuracy
+
+## LM-11-01 — Actual quantity equals declared quantity
+
+**Online:** `CANNOT_CHECK`
+
+Requires physical weighing/measuring/counting.
+
+---
+
+## LM-11-02 — Quantity received by consumer
+
+**Online:** `CANNOT_CHECK`
+
+---
+
+## LM-11-03 — Environmental variation / "when packed"
+
+**Online:** `CANNOT_CHECK`
+
+Requires product-specific physical/legal assessment.
+
+---
+
+# 14. Rule 12 — Manner of quantity declaration
+
+## LM-12-01 — Correct unit
+
+`PASS / FAIL / VERIFY`
+
+---
+
+## LM-12-02 — Quantity wording
+
+`PASS / FAIL / VERIFY`
+
+---
+
+## LM-12-03 — Dimensions where necessary
+
+`PASS / FAIL / VERIFY / NOT_APPLICABLE`
+
+---
+
+## LM-12-04 — No exaggerated quantity representation
+
+`PASS / FAIL / VERIFY`
+
+Use NLP/image analysis as a screening mechanism.
+
+---
+
+# 15. Rule 13 — Items sold by number
+
+## LM-13-01 — Number/unit/piece/pair/set
+
+For items sold by number, the applicable number/unit/piece/pair/set or other representation of quantity should be declared as required.
+
+**Online:** `PASS / FAIL / NOT_APPLICABLE`
+
+---
+
+# 16. Rule 18 — Sale above retail sale price
+
+## LM-18-01 — Selling price greater than MRP
+
+**Online:** YES
+
+```text
+if selling_price > MRP:
+    FAIL
+else:
+    PASS
+```
+
+**Caveats:**
+
+MANAK should separately record:
+
+- coupon discounts
+- checkout-only discounts
+- subscriptions
+- delivery charges
+- promotional offers
+- seller-specific pricing
+
+Do not confuse a discounted price below MRP with a violation.
+
+---
+
+# 17. Rule 23 — Deceptive package
+
+## LM-23-01 — Excessive/misleading package size
+
+The Rules address packages deliberately designed to give an exaggerated or misleading impression of quantity.
+
+**Online:** `VERIFY`
+
+MANAK may detect:
+
+- unusually large packaging relative to declared quantity
+- excessive empty space visible in transparent packaging
+- potentially misleading package photographs
+
+But:
+
+```text
+DO NOT automatically output:
+"RULE 23 VIOLATION"
+```
+
+Instead output:
+
+```text
+POTENTIAL DECEPTIVE PACKAGING — PHYSICAL VERIFICATION REQUIRED
+```
+
+---
+
+# 18. Rule 24 — Wholesale packages
+
+## LM-24-01 — Manufacturer/importer/packer identity
+
+**Applicable:** wholesale packages.
+
+**Online:** `PASS / FAIL / NOT_APPLICABLE / VERIFY`
+
+---
+
+## LM-24-02 — Commodity identity
+
+`PASS / FAIL / NOT_APPLICABLE`
+
+---
+
+## LM-24-03 — Number of retail packages / net quantity
+
+`PASS / FAIL / NOT_APPLICABLE`
+
+---
+
+## LM-24-04 — Unit sale price
+
+Not required for a wholesale package according to DCA FAQ.
+
+`NOT_APPLICABLE`
+
+---
+
+# 19. Rule 25 — Export packages
+
+## LM-25-01 — Export package sold in India
+
+If the listing indicates an export package:
+
+```text
+VERIFY
+```
+
+The marketplace page alone cannot conclusively determine whether required repacking/relabeling has occurred.
+
+---
+
+# 20. Rule 26 — Exemptions
+
+## LM-26-01 — Determine whether product is exempt
+
+This must run BEFORE applying all other checks.
+
+Examples in the Rules include specified small quantities and certain categories.
+
+**Result:**
+
+```text
+EXEMPT
+NOT_EXEMPT
+VERIFY
+```
+
+---
+
+## LM-26-02 — Small quantity exemption
+
+Check applicable quantity threshold before requiring normal declarations.
+
+**Result:** `NOT_APPLICABLE / VERIFY`
+
+Do not hard-code exemptions without checking the current consolidated Rules/amendments.
+
+---
+
+## LM-26-03 — Fast-food restaurant/hotel packages
+
+Where the Rule 26 exemption applies:
+
+`NOT_APPLICABLE`
+
+---
+
+## LM-26-04 — Drug formulations
+
+Sector-specific provisions may apply.
+
+`VERIFY_SECTORAL_RULE`
+
+---
+
+## LM-26-05 — Agricultural produce
+
+Check the applicable package/quantity exemption.
+
+`VERIFY`
+
+---
+
+# 21. Garment / hosiery special module
+
+## LM-GAR-01 — Manufacturer/marketer/brand-owner/importer
+
+For the Rule 26(f) garment/hosiery exemption, applicable information includes manufacturer/marketer/brand owner/importer.
+
+**Online:** YES
+
+`PASS / FAIL / VERIFY`
+
+---
+
+## LM-GAR-02 — Country of origin for imported garment
+
+**Online:** YES
+
+`PASS / FAIL / NOT_APPLICABLE`
+
+---
+
+## LM-GAR-03 — Consumer-care email
+
+`PASS / FAIL`
+
+---
+
+## LM-GAR-04 — Consumer-care phone
+
+`PASS / FAIL`
+
+---
+
+## LM-GAR-05 — Internationally recognizable size
+
+Examples:
+
+```text
+S
+M
+L
+XL
+XXL
+XXXL
+```
+
+**Online:** `PASS / FAIL`
+
+---
+
+## LM-GAR-06 — Metric size information
+
+Size information in cm/m where applicable.
+
+**Online:** `PASS / FAIL / VERIFY`
+
+---
+
+## LM-GAR-07 — MRP inclusive of taxes
+
+**Online:** `PASS / FAIL`
+
+---
+
+## LM-GAR-08 — E-commerce display of garment exemption information
+
+If the garment/hosiery product is sold through e-commerce, the applicable information must be displayed on the e-commerce website.
+
+**Online:** `PASS / FAIL`
+
+---
+
+# 22. Rule 27 — Registration
+
+## LM-27-01 — Manufacturer/packer/importer registration
+
+**Amazon/Flipkart page alone:** `CANNOT_CHECK`
+
+**External government record:** `PASS / FAIL / VERIFY`
+
+MANAK should have an optional external-verification module.
+
+---
+
+# 23. Rule 28 — Shorter registered address
+
+## LM-28-01 — Shorter address validity
+
+**Marketplace page alone:** `CANNOT_CHECK`
+
+If a shorter address is displayed, MANAK should not automatically mark it wrong.
+
+Output:
+
+```text
+SHORTER ADDRESS DETECTED
+REGISTRATION STATUS REQUIRES EXTERNAL VERIFICATION
+```
+
+---
+
+# 24. Rule 29/30 — Registration records
+
+## LM-29-01 — Registration record exists
+
+**Marketplace page:** `CANNOT_CHECK`
+
+**External database:** `PASS / FAIL / VERIFY`
+
+---
+
+# 25. Rule 31 — Advertisements
+
+## LM-31-01 — Advertisement mentions MRP
+
+If an advertisement mentions retail sale price:
+
+`APPLICABLE`
+
+---
+
+## LM-31-02 — Net quantity in advertisement
+
+Where an advertisement mentions retail sale price, it must contain declaration of net quantity/number.
+
+**Online advertisement:** `PASS / FAIL`
+
+---
+
+## LM-31-03 — Net quantity font size equals MRP font size
+
+**Ordinary webpage:** `CANNOT_CHECK`
+
+**Controlled advertisement image:** `VERIFY`
+
+**Physical/design file:** `PASS / FAIL`
+
+---
+
+# 26. Physical-package-only checks
+
+These must NOT be converted into online listing failures.
+
+| Check | MANAK online status |
+|---|---|
+| Actual package net quantity | `CANNOT_CHECK` |
+| Weighing/measuring sample | `CANNOT_CHECK` |
+| Maximum permissible error | `CANNOT_CHECK` |
+| Actual printed MRP | `CANNOT_CHECK` |
+| Actual manufacturing month/year | `CANNOT_CHECK` |
+| Actual batch/lot | `CANNOT_CHECK` |
+| Physical font height | `CANNOT_CHECK` |
+| Physical letter height | `CANNOT_CHECK` |
+| Principal display panel measurement | `CANNOT_CHECK` |
+| Required clear space | `CANNOT_CHECK` |
+| Physical legibility | `CANNOT_CHECK` |
+| Physical contrast | `CANNOT_CHECK` |
+| Actual package construction | `CANNOT_CHECK` |
+| Physical deceptive-package assessment | `CANNOT_CHECK` |
+| Sampling/lot statistical compliance | `CANNOT_CHECK` |
+| Physical sticker/label compliance | `CANNOT_CHECK` |
+
+---
+
+# 27. MANAK online result categories
+
+Never return only "Compliant" or "Non-Compliant."
+
+Use:
+
+```text
+ONLINE_COMPLIANT
+ONLINE_NON_COMPLIANT
+PARTIALLY_VERIFIED
+PHYSICAL_VERIFICATION_REQUIRED
+EXTERNAL_VERIFICATION_REQUIRED
+NOT_APPLICABLE
+```
+
+### Example
+
+```text
+MANAK RESULT
+Product: XYZ Ghee 500 g
+
+ONLINE LISTING
+----------------------------
+Manufacturer          PASS
+Manufacturer address  PASS
+Generic name          PASS
+Net quantity          PASS
+MRP                    PASS
+Unit sale price        PASS
+Consumer care          PASS
+Country of origin      PASS
+Manufacturing date     NOT REQUIRED ONLINE
+
+PHYSICAL VERIFICATION
+----------------------------
+Actual quantity        CANNOT CHECK
+MPE                    CANNOT CHECK
+Physical font size     CANNOT CHECK
+Package legibility     CANNOT CHECK
+
+FINAL STATUS
+----------------------------
+ONLINE LISTING: PASS
+PHYSICAL PACKAGE: VERIFICATION REQUIRED
+```
+
+---
+
+# 28. Recommended MANAK database schema
+
+Each rule should be stored as a rule object.
+
+```json
+{
+  "rule_id": "LM-06-10",
+  "rule_number": "6(1)(c)",
+  "category": "net_quantity",
+  "requirement": "Net quantity must be declared",
+  "ecommerce_check": true,
+  "evidence_type": ["TEXT", "IMAGE"],
+  "status_values": [
+    "PASS",
+    "FAIL",
+    "NOT_APPLICABLE",
+    "VERIFY"
+  ],
+  "physical_verification_required": false,
+  "external_verification_required": false,
+  "severity": "HIGH",
+  "failure_message": "Net quantity declaration not found in the online listing."
+}
+```
+
+---
+
+# 29. Recommended MANAK validation pipeline
+
+```text
+STEP 1
+Identify product
+        ↓
+STEP 2
+Identify commodity category
+        ↓
+STEP 3
+Identify whether imported
+        ↓
+STEP 4
+Identify package/wholesale/garment/exemption status
+        ↓
+STEP 5
+Extract listing text
+        ↓
+STEP 6
+OCR product/package images
+        ↓
+STEP 7
+Normalize quantities, prices and units
+        ↓
+STEP 8
+Run Rule 6 checks
+        ↓
+STEP 9
+Run Rule 6(11) unit-price calculation
+        ↓
+STEP 10
+Run MRP/selling-price check
+        ↓
+STEP 11
+Run consumer-care checks
+        ↓
+STEP 12
+Run category-specific rules
+        ↓
+STEP 13
+Separate online-checkable vs physical-only rules
+        ↓
+STEP 14
+Generate evidence for every result
+        ↓
+STEP 15
+Generate MANAK report
+```
+
+---
+
+# 30. Evidence hierarchy
+
+MANAK should record exactly where every conclusion came from.
+
+```text
+SOURCE = LISTING_TEXT
+SOURCE = PRODUCT_IMAGE
+SOURCE = SELLER_INFORMATION
+SOURCE = MARKETPLACE_STRUCTURED_DATA
+SOURCE = GOVERNMENT_DATABASE
+SOURCE = USER_UPLOADED_PACKAGE_PHOTO
+SOURCE = PHYSICAL_INSPECTION
+```
+
+Example:
+
+```json
+{
+  "rule_id": "LM-06-10",
+  "status": "PASS",
+  "value": "500 g",
+  "source": "LISTING_TEXT",
+  "evidence": "Net Quantity: 500 g"
+}
+```
+
+---
+
+# 31. Important legal safeguards for MANAK
+
+## SAFEGUARD-01
+
+Do not call a product legally "compliant" solely because its Amazon/Flipkart listing passes.
+
+Use:
+
+> **Online Listing Appears Compliant**
+
+instead.
+
+---
+
+## SAFEGUARD-02
+
+Do not call a product legally "non-compliant" solely because physical-package information is unavailable online when the e-commerce rule does not require that information online.
+
+---
+
+## SAFEGUARD-03
+
+Manufacturing/packing month/year:
+
+```text
+Physical package → applicable where required
+E-commerce listing → NOT required under the DCA e-commerce FAQ exception
+```
+
+---
+
+## SAFEGUARD-04
+
+Do not automatically treat an image's missing information as a legal violation if the information may appear elsewhere on the marketplace page.
+
+Search:
+
+```text
+Title
+Bullet points
+Description
+Specifications
+Seller information
+Legal metrology section
+Product images
+Manufacturer information
+Additional information
+```
+
+---
+
+## SAFEGUARD-05
+
+Do not infer actual physical quantity from an image.
+
+```text
+Listing says 1 kg
+≠
+MANAK verified actual 1 kg
+```
+
+The latter requires physical measurement.
+
+---
+
+## SAFEGUARD-06
+
+Do not infer registration solely from manufacturer name.
+
+Registration requires external verification.
+
+---
+
+# 32. Suggested severity levels
+
+| Severity | Example |
+|---|---|
+| CRITICAL | Selling price above MRP |
+| HIGH | Missing manufacturer/importer information |
+| HIGH | Missing net quantity |
+| HIGH | Missing applicable MRP |
+| HIGH | Missing applicable country of origin |
+| MEDIUM | Missing consumer-care information |
+| MEDIUM | Incorrect unit sale price |
+| MEDIUM | Potential misleading quantity wording |
+| LOW | Potential image/legibility issue |
+| INFO | Physical verification required |
+
+---
+
+# 33. Minimum viable MANAK rules
+
+If building the first version, implement these first:
+
+```text
+1. Manufacturer
+2. Manufacturer address
+3. Packer
+4. Importer
+5. Country of origin
+6. Generic product name
+7. Net quantity
+8. Quantity unit
+9. MRP
+10. Selling price <= MRP
+11. Unit sale price
+12. Unit sale price calculation
+13. Consumer-care phone
+14. Consumer-care email
+15. Consumer-care address
+16. Dimensions where applicable
+17. Garment-specific checks
+18. Exemption detection
+19. Manufacturing date → NOT REQUIRED ONLINE
+20. Physical verification flags
+```
+
+---
+
+# 34. MANAK final report template
+
+```text
+MANAK LEGAL METROLOGY SCREENING REPORT
+
+Product:
+Brand:
+Seller:
+Marketplace:
+URL:
+Barcode/GTIN:
+Category:
+Imported:
+Package type:
+
+ONLINE DECLARATION SCORE
+-------------------------
+Mandatory declarations: XX/XX
+Unit sale price: PASS/FAIL
+MRP: PASS/FAIL
+Consumer care: PASS/FAIL
+Category rules: PASS/FAIL
+
+ONLINE RESULT
+-------------------------
+PASS / FAIL / PARTIAL / VERIFY
+
+PHYSICAL VERIFICATION REQUIRED
+-------------------------
+Actual quantity
+MPE
+Physical label
+Font size
+Principal display panel
+Legibility
+Package construction
+
+EXTERNAL VERIFICATION REQUIRED
+-------------------------
+Manufacturer registration
+Packer registration
+Importer registration
+Short-address registration
+
+WARNINGS
+-------------------------
+[List]
+
+EVIDENCE
+-------------------------
+[List of URL sections, text and image references]
+```
+
+---
+
+## 35. Source notes
+
+The uploaded **Legal Metrology (Packaged Commodities) Rules, 2011** document provides the core Rule 6 declarations, quantity rules, display-panel requirements, exemptions, registration provisions and advertisement provisions.
+
+Current/official amendment material should be used alongside the older uploaded PDF. In particular:
+
+- 2017 amendment introduced the e-commerce definitions and amended the packaged-commodity framework. 
+- 2021 amendment introduced Rule 6(11) unit-sale-price declarations. 
+- DCA FAQ explains the e-commerce unit-sale-price requirement and rounding. 
+- 2022 garment amendment created the Rule 26(f) garment/hosiery provisions and expressly required the relevant information to be displayed on an e-commerce website. 
+- 2023 amendment changed the commencement date of a 2022 amendment to 1 October 2023. 
+
+**Official sources:**
+
+- Department of Consumer Affairs — Legal Metrology notifications
+- Legal Metrology (Packaged Commodities) Rules, 2011
+- Department of Consumer Affairs — Legal Metrology FAQ
+
+---
+
+## 36. Implementation principle
+
+> **MANAK is an online compliance screening engine, not a replacement for physical Legal Metrology inspection.**
+
+The strongest architecture is:
+
+```text
+                 MANAK
+                   |
+       +-----------+-----------+
+       |           |           |
+   ONLINE       IMAGE       EXTERNAL
+   CHECK       SCREENING    VERIFICATION
+       |           |           |
+ Amazon/Flipkart  OCR/CV    Govt records
+       |           |           |
+       +-----------+-----------+
+                   |
+             RULE ENGINE
+                   |
+        +----------+----------+
+        |                     |
+ ONLINE RESULT        VERIFICATION RESULT
+        |                     |
+ PASS/FAIL/PARTIAL     PHYSICAL/EXTERNAL
+```
+

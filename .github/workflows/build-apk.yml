@@ -2,9 +2,9 @@ name: Build Android APK
 
 on:
   push:
-    branches: [ main, master, Sujan-Manak, version-3, 'version-*' ]
+    branches: [ main, master, Sujan-Manak ]
   pull_request:
-    branches: [ main, master, Sujan-Manak, version-3, 'version-*' ]
+    branches: [ main, master, Sujan-Manak ]
   workflow_dispatch:
 
 permissions:
@@ -64,7 +64,7 @@ jobs:
           retention-days: 14
 
       - name: Create or Update GitHub Release
-        if: github.event_name == 'push' && (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/Sujan-Manak' || github.ref == 'refs/heads/version-3')
+        if: github.event_name == 'push' && (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/Sujan-Manak')
 
         uses: softprops/action-gh-release@v2
         with:

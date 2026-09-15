@@ -6,6 +6,7 @@ export const SplashScreen: React.FC = () => {
   const { navigateTo } = useApp();
   const [progress, setProgress] = useState(0);
 
+  // Auto-progress from 0 to 100%
   useEffect(() => {
     const timer = setInterval(() => {
       setProgress(p => {
@@ -15,13 +16,26 @@ export const SplashScreen: React.FC = () => {
         }
         return p + 25;
       });
-    }, 400);
+    }, 280);
 
     return () => clearInterval(timer);
   }, []);
 
+  // Auto-transition to role_select once booting completes at 100%
+  useEffect(() => {
+    if (progress >= 100) {
+      const autoNav = setTimeout(() => {
+        navigateTo('role_select');
+      }, 350);
+      return () => clearTimeout(autoNav);
+    }
+  }, [progress, navigateTo]);
+
   return (
-    <div className="relative w-full h-full bg-security-pattern text-slate-100 flex flex-col justify-between overflow-hidden">
+    <div
+      onClick={() => navigateTo('role_select')}
+      className="relative w-full h-full bg-security-pattern text-slate-100 flex flex-col justify-between overflow-hidden cursor-pointer"
+    >
       {/* Top Security Status Bar */}
       <header className="w-full pt-[max(20px,env(safe-area-inset-top))] px-6 flex justify-between items-center opacity-80 z-10">
         <div className="flex items-center space-x-1.5">

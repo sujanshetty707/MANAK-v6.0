@@ -96,9 +96,6 @@ export async function evaluateComplianceApi(payload: {
     }
     return data;
   } catch {
-    console.log('[MANAK] Backend evaluate unreachable — running client-side rule evaluation.');
-    const evalResult = evaluateExtractionAgainstRules(payload.extraction, channel);
-    const inspectionId = crypto.randomUUID();
     const finalProduct: Product = payload.product || {
       id: crypto.randomUUID(),
       title: payload.extraction.generic_name?.value ? `${payload.extraction.generic_name.value} Pack` : 'Packaged Commodity',
@@ -107,6 +104,8 @@ export async function evaluateComplianceApi(payload: {
       source_type: payload.mode === 'url_check' ? 'ecommerce' : 'store',
       image_url: payload.image_base64 || undefined
     };
+    const evalResult = evaluateExtractionAgainstRules(payload.extraction, channel, finalProduct);
+    const inspectionId = crypto.randomUUID();
 
     const record: InspectionRecord = {
       id: inspectionId,
@@ -187,7 +186,7 @@ export async function checkUrlApi(payload: {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(payload),
-      signal: AbortSignal.timeout(60000)
+      signal: AbortSignal.timeout(30000)
     });
     if (!res.ok) {
       const errJson = await res.json().catch(() => ({}));
