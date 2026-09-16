@@ -1,6 +1,6 @@
 {
   "0": "Officer Flow",
-  "1": "AppContext.tsx",
+  "1": "App.tsx",
   "2": "devDependencies",
   "3": "package.json",
   "4": "README.md",
@@ -30,7 +30,7 @@
   "28": "postcss.config.js",
   "29": "manifest.json",
   "30": "ExampleInstrumentedTest.java",
-  "31": "api.ts",
+  "31": "AppContext.tsx",
   "32": "gradlew",
   "33": "MainActivity.java",
   "34": "app/build.gradle",
@@ -46,7 +46,7 @@
   "44": "Product Requirements Document (PRD)",
   "45": "scripts",
   "46": "MANAK: AI-Powered Legal Metrology Compliance Checker",
-  "47": "types/index.ts",
+  "47": "cryptoService.ts",
   "48": "Addendum: Channel-Gate the Online-Required / Package-Only Split",
   "53": "smsService.ts"
 }
