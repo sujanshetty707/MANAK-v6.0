@@ -26,8 +26,8 @@ export const ConsumerLoginScreen: React.FC = () => {
   };
 
   return (
-    <div className="w-full h-full bg-[#F5F6F8] flex flex-col justify-between overflow-y-auto hide-scrollbar">
-      <Header title="Citizen Portal Login" showBack showLogo />
+    <div className="w-full h-full bg-[#F5F6F8] font-poppins flex flex-col justify-between overflow-y-auto hide-scrollbar">
+      <Header title="Citizen Portal Login" showBack hideHome />
 
       <main className="p-4 space-y-4 my-auto">
         <div className="text-center space-y-1">

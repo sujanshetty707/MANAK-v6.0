@@ -1,0 +1,161 @@
+{
+  "communities": {
+    "0": [
+      "Consumer_Flow",
+      "Ecommerce_DOM_Adapter",
+      "Officer_Flow",
+      "Offline_Sync_Engine",
+      "Stitch_Design_System"
+    ],
+    "1": [
+      "Deterministic_Rule_Engine",
+      "Extraction_Service",
+      "RAG_Explanation_Service"
+    ],
+    "2": [
+      "Inspection_Repository",
+      "Report_Generator"
+    ],
+    "3": [
+      "Legal_Metrology_Rules_2011",
+      "MANAK_App"
+    ]
+  },
+  "cohesion": {
+    "0": 0.5,
+    "1": 0.6666666666666666,
+    "2": 1.0,
+    "3": 1.0
+  },
+  "gods": [
+    {
+      "id": "Officer_Flow",
+      "label": "Officer Flow",
+      "degree": 6
+    },
+    {
+      "id": "Consumer_Flow",
+      "label": "Consumer Flow",
+      "degree": 4
+    },
+    {
+      "id": "Deterministic_Rule_Engine",
+      "label": "Deterministic Rule Engine",
+      "degree": 4
+    },
+    {
+      "id": "MANAK_App",
+      "label": "MANAK Compliance System",
+      "degree": 3
+    },
+    {
+      "id": "Extraction_Service",
+      "label": "OCR & Extraction Pipeline",
+      "degree": 3
+    },
+    {
+      "id": "Legal_Metrology_Rules_2011",
+      "label": "Packaged Commodities Rules 2011",
+      "degree": 2
+    },
+    {
+      "id": "Report_Generator",
+      "label": "Report & Digital Signature",
+      "degree": 2
+    },
+    {
+      "id": "Ecommerce_DOM_Adapter",
+      "label": "E-Commerce DOM Adapters",
+      "degree": 2
+    },
+    {
+      "id": "Stitch_Design_System",
+      "label": "MANAK Stitch UI Design",
+      "degree": 2
+    },
+    {
+      "id": "Inspection_Repository",
+      "label": "Inspection & Violation Repository",
+      "degree": 2
+    }
+  ],
+  "surprises": [
+    {
+      "source": "Officer Flow",
+      "target": "Report & Digital Signature",
+      "source_files": [
+        "manak-app-flow.md",
+        "MANAK-Technical-Architecture.md"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "",
+      "why": "connects across different repos/directories; bridges separate communities; peripheral node `Report & Digital Signature` unexpectedly reaches hub `Officer Flow`"
+    },
+    {
+      "source": "MANAK Compliance System",
+      "target": "Consumer Flow",
+      "source_files": [
+        "MANAK-PRD (1).md",
+        "manak-app-flow.md"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "",
+      "why": "connects across different repos/directories; bridges separate communities"
+    },
+    {
+      "source": "MANAK Compliance System",
+      "target": "Officer Flow",
+      "source_files": [
+        "MANAK-PRD (1).md",
+        "manak-app-flow.md"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "",
+      "why": "connects across different repos/directories; bridges separate communities"
+    },
+    {
+      "source": "Deterministic Rule Engine",
+      "target": "Packaged Commodities Rules 2011",
+      "source_files": [
+        "MANAK-Technical-Architecture.md",
+        "MANAK-PRD (1).md"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "",
+      "why": "connects across different repos/directories; bridges separate communities"
+    },
+    {
+      "source": "Officer Flow",
+      "target": "E-Commerce DOM Adapters",
+      "source_files": [
+        "manak-app-flow.md",
+        "MANAK-Technical-Architecture.md"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "",
+      "why": "connects across different repos/directories; peripheral node `E-Commerce DOM Adapters` unexpectedly reaches hub `Officer Flow`"
+    }
+  ],
+  "questions": [
+    {
+      "type": "bridge_node",
+      "question": "Why does `Officer Flow` connect `Enforcement & Regulatory Core` to `User Experience & Flows`, `Extraction & Architecture Pipeline`, `Community 3`?",
+      "why": "High betweenness centrality (0.436) - this node is a cross-community bridge."
+    },
+    {
+      "type": "bridge_node",
+      "question": "Why does `Deterministic Rule Engine` connect `User Experience & Flows` to `Extraction & Architecture Pipeline`, `Community 3`?",
+      "why": "High betweenness centrality (0.273) - this node is a cross-community bridge."
+    },
+    {
+      "type": "bridge_node",
+      "question": "Why does `OCR & Extraction Pipeline` connect `User Experience & Flows` to `Enforcement & Regulatory Core`?",
+      "why": "High betweenness centrality (0.214) - this node is a cross-community bridge."
+    },
+    {
+      "type": "isolated_nodes",
+      "question": "What connects `RAG Explanation Service`, `IndexedDB Offline Sync` to the rest of the system?",
+      "why": "2 weakly-connected nodes found - possible documentation gaps or missing edges."
+    }
+  ]
+}

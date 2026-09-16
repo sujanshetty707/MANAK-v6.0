@@ -2,7 +2,7 @@ import React from 'react';
 import { useApp } from '../../context/AppContext';
 import { Header } from '../common/Header';
 import { BottomNav } from '../common/BottomNav';
-import { Camera, Link2, AlertTriangle, CheckCircle2, ChevronRight, TrendingUp, FileText, Inbox } from 'lucide-react';
+import { Camera, Link2, AlertTriangle, CheckCircle2, ChevronRight, TrendingUp, FileText, Inbox, Bot } from 'lucide-react';
 
 export const OfficerDashboardScreen: React.FC = () => {
   const { navigateTo, inspections, setAnalysisData, consumerReports } = useApp();
@@ -13,7 +13,7 @@ export const OfficerDashboardScreen: React.FC = () => {
   const pendingReports = inspections.filter(i => !i.is_signed).length;
 
   return (
-    <div className="w-full h-full bg-[#F5F6F8] flex flex-col justify-between overflow-hidden">
+    <div className="w-full h-full bg-[#F5F6F8] font-poppins flex flex-col justify-between overflow-hidden">
       <Header showOfficerBadge showLogo />
 
       {/* Main Scrollable Content */}
@@ -75,88 +75,117 @@ export const OfficerDashboardScreen: React.FC = () => {
           </div>
         </section>
 
-        {/* Section: Two Core Action Buttons */}
+        {/* Section: Four Main Features */}
         <section className="space-y-2.5">
+          {/* Feature 1: Scan Products */}
           <div
             onClick={() => navigateTo('scan_camera')}
-            className="bg-gradient-to-br from-manak-navy via-slate-900 to-[#142C52] text-white rounded-2xl p-4 shadow-elevated border border-blue-400/20 cursor-pointer active:scale-[0.99] transition-all group relative overflow-hidden"
+            className="bg-white rounded-2xl p-4 border border-slate-200/90 shadow-sm hover:border-slate-300 cursor-pointer active:scale-[0.99] transition-all group flex items-center justify-between"
           >
-            <div className="absolute top-0 right-0 w-28 h-28 bg-white/5 rounded-full -mr-8 -mt-8 pointer-events-none"></div>
-            <div className="flex items-center justify-between">
-              <div className="flex items-center space-x-3">
-                <div className="w-11 h-11 rounded-xl bg-manak-orange text-white flex items-center justify-center shadow-md">
-                  <Camera className="w-6 h-6" />
-                </div>
-                <div>
-                  <div className="flex items-center space-x-1.5">
-                    <span className="text-sm font-bold text-white tracking-wide">Scan Product Label</span>
-                    <span className="text-[9px] bg-manak-orange/30 text-orange-200 px-1.5 py-0.2 rounded font-mono font-bold">
-                      CAMERA OCR
-                    </span>
-                  </div>
-                  <p className="text-[11px] text-blue-100/80 mt-0.5">
-                    Live camera capture + Rule 7 numeral height check
-                  </p>
-                </div>
+            <div className="flex items-center space-x-3.5 min-w-0 flex-1">
+              <div className="w-11 h-11 rounded-xl bg-manak-navy text-white flex items-center justify-center flex-shrink-0 shadow-sm">
+                <Camera className="w-5 h-5 text-manak-orange" />
               </div>
-              <ChevronRight className="w-5 h-5 text-slate-300 group-hover:translate-x-1 transition-transform" />
+              <div className="min-w-0 flex-1">
+                <div className="flex items-center space-x-2">
+                  <h3 className="text-sm font-semibold text-slate-900 leading-tight">
+                    Scan Products
+                  </h3>
+                  <span className="text-[10px] font-medium bg-blue-50 text-blue-700 px-2 py-0.5 rounded-full border border-blue-100 flex-shrink-0">
+                    Camera
+                  </span>
+                </div>
+                <p className="text-xs text-slate-500 mt-0.5 leading-snug">
+                  Scan product packaging using camera
+                </p>
+              </div>
             </div>
+            <ChevronRight className="w-4 h-4 text-slate-400 group-hover:text-slate-700 group-hover:translate-x-0.5 transition-transform flex-shrink-0 ml-2" />
           </div>
 
+          {/* Feature 2: Check E-Commerce */}
           <div
             onClick={() => navigateTo('check_url')}
-            className="bg-white text-slate-900 rounded-2xl p-3.5 border border-slate-200/90 shadow-subtle hover:border-slate-300 cursor-pointer active:scale-[0.99] transition-all group"
+            className="bg-white rounded-2xl p-4 border border-slate-200/90 shadow-sm hover:border-slate-300 cursor-pointer active:scale-[0.99] transition-all group flex items-center justify-between"
           >
-            <div className="flex items-center justify-between">
-              <div className="flex items-center space-x-3">
-                <div className="w-10 h-10 rounded-xl bg-blue-50 text-manak-navy flex items-center justify-center border border-blue-100">
-                  <Link2 className="w-5 h-5" />
-                </div>
-                <div>
-                  <div className="flex items-center space-x-1.5">
-                    <span className="text-xs font-bold text-slate-900">Check E-Commerce URL</span>
-                    <span className="text-[9px] bg-slate-100 text-slate-600 px-1.5 py-0.2 rounded font-mono">
-                      DOM PARSER
-                    </span>
-                  </div>
-                  <p className="text-[10.5px] text-slate-500 mt-0.5">
-                    Audit Amazon, Flipkart, Blinkit marketplace listings
-                  </p>
-                </div>
+            <div className="flex items-center space-x-3.5 min-w-0 flex-1">
+              <div className="w-11 h-11 rounded-xl bg-blue-50 text-manak-navy flex items-center justify-center flex-shrink-0 border border-blue-100">
+                <Link2 className="w-5 h-5" />
               </div>
-              <ChevronRight className="w-4 h-4 text-slate-400 group-hover:translate-x-1 transition-transform" />
-            </div>
-          </div>
-        </section>
-
-
-        {/* Citizen Grievance Queue */}
-        <section
-          onClick={() => navigateTo('officer_consumer_reports')}
-          className="bg-white rounded-2xl p-3.5 border border-slate-200/90 shadow-subtle hover:border-manak-navy cursor-pointer transition-all group flex items-center justify-between"
-        >
-          <div className="flex items-center space-x-3">
-            <div className={`w-10 h-10 rounded-xl flex items-center justify-center border ${pendingGrievances > 0
-                ? 'bg-blue-50 text-blue-700 border-blue-200'
-                : 'bg-slate-50 text-slate-500 border-slate-200'
-              }`}>
-              <Inbox className="w-5 h-5" />
-            </div>
-            <div>
-              <div className="flex items-center space-x-2">
-                <h3 className="text-xs font-bold text-slate-900">Citizen Grievance Queue</h3>
-                {pendingGrievances > 0 && (
-                  <span className="text-[9.5px] bg-blue-600 text-white font-bold px-1.5 py-0.2 rounded-full uppercase mono">
-                    {pendingGrievances} Active
+              <div className="min-w-0 flex-1">
+                <div className="flex items-center space-x-2">
+                  <h3 className="text-sm font-semibold text-slate-900 leading-tight">
+                    Check the Product via URL
+                  </h3>
+                  <span className="text-[10px] font-medium bg-slate-100 text-slate-600 px-2 py-0.5 rounded-full border border-slate-200 flex-shrink-0">
+                    Online
                   </span>
-                )}
+                </div>
+                <p className="text-xs text-slate-500 mt-0.5 leading-snug">
+                  Check online listings from Amazon, Flipkart &amp; more
+                </p>
               </div>
-              <p className="text-[10.5px] text-slate-500 mt-0.5">
-                Consumer reported non-compliances routed for official review
-              </p>
             </div>
+            <ChevronRight className="w-4 h-4 text-slate-400 group-hover:text-slate-700 group-hover:translate-x-0.5 transition-transform flex-shrink-0 ml-2" />
           </div>
-          <ChevronRight className="w-4 h-4 text-slate-400 group-hover:translate-x-1 transition-transform" />
+
+          {/* Feature 3: Citizen Grievance */}
+          <div
+            onClick={() => navigateTo('officer_consumer_reports')}
+            className="bg-white rounded-2xl p-4 border border-slate-200/90 shadow-sm hover:border-slate-300 cursor-pointer active:scale-[0.99] transition-all group flex items-center justify-between"
+          >
+            <div className="flex items-center space-x-3.5 min-w-0 flex-1">
+              <div className={`w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0 border ${
+                pendingGrievances > 0
+                  ? 'bg-amber-50 text-amber-700 border-amber-200'
+                  : 'bg-slate-50 text-slate-600 border-slate-200'
+              }`}>
+                <Inbox className="w-5 h-5" />
+              </div>
+              <div className="min-w-0 flex-1">
+                <div className="flex items-center space-x-2">
+                  <h3 className="text-sm font-semibold text-slate-900 leading-tight">
+                    Citizen Grievance
+                  </h3>
+                  {pendingGrievances > 0 && (
+                    <span className="text-[10px] font-semibold bg-amber-100 text-amber-800 px-2 py-0.5 rounded-full border border-amber-200 flex-shrink-0">
+                      {pendingGrievances} Active
+                    </span>
+                  )}
+                </div>
+                <p className="text-xs text-slate-500 mt-0.5 leading-snug">
+                  Review complaints reported by consumers
+                </p>
+              </div>
+            </div>
+            <ChevronRight className="w-4 h-4 text-slate-400 group-hover:text-slate-700 group-hover:translate-x-0.5 transition-transform flex-shrink-0 ml-2" />
+          </div>
+
+          {/* Feature 4: MANAK Assistant (Chatbot) */}
+          <div
+            onClick={() => navigateTo('compliance_chat')}
+            className="bg-white rounded-2xl p-4 border border-slate-200/90 shadow-sm hover:border-slate-300 cursor-pointer active:scale-[0.99] transition-all group flex items-center justify-between"
+          >
+            <div className="flex items-center space-x-3.5 min-w-0 flex-1">
+              <div className="w-11 h-11 rounded-xl bg-purple-50 text-purple-700 flex items-center justify-center flex-shrink-0 border border-purple-100">
+                <Bot className="w-5 h-5" />
+              </div>
+              <div className="min-w-0 flex-1">
+                <div className="flex items-center space-x-2">
+                  <h3 className="text-sm font-semibold text-slate-900 leading-tight">
+                    MANAK Assistant
+                  </h3>
+                  <span className="text-[10px] font-semibold bg-purple-100 text-purple-800 px-2 py-0.5 rounded-full border border-purple-200 flex-shrink-0">
+                    AI Chatbot
+                  </span>
+                </div>
+                <p className="text-xs text-slate-500 mt-0.5 leading-snug">
+                  Ask any question about rules, standards &amp; penalties
+                </p>
+              </div>
+            </div>
+            <ChevronRight className="w-4 h-4 text-slate-400 group-hover:text-slate-700 group-hover:translate-x-0.5 transition-transform flex-shrink-0 ml-2" />
+          </div>
         </section>
 
         {/* Section: Recent Field Inspections */}

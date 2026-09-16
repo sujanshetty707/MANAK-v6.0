@@ -57,10 +57,10 @@ export const AnalysisResultsScreen: React.FC = () => {
     return evaluateEcommerceListing(currentExtraction, currentProduct);
   }, [isEcommerce, currentExtraction, currentProduct]);
 
-  const handleGenerateReport = () => {
+  const handleGenerateReport = async () => {
     const record = finalizeInspection(true);
     try {
-      generateInspectionPDF(record);
+      await generateInspectionPDF(record);
     } catch (e) {
       console.error('Failed to auto-download PDF:', e);
     }

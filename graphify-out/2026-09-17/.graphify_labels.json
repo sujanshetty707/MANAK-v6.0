@@ -45,7 +45,10 @@
   "43": "labelParser.ts",
   "44": "Product Requirements Document (PRD)",
   "45": "scripts",
-  "46": "MANAK: AI-Powered Legal Metrology Compliance Checker",
+  "46": "vite.config.ts",
+  "47": "capacitor.config.ts",
   "48": "Addendum: Channel-Gate the Online-Required / Package-Only Split",
-  "50": "AppProvider"
+  "49": "pdfReportGenerator.ts",
+  "50": "AppProvider",
+  "51": "@supabase/supabase-js"
 }

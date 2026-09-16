@@ -1,7 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useApp } from '../../context/AppContext';
-import { ChevronLeft, Home, Shield, Bell, WifiOff, Settings } from 'lucide-react';
-import { ServerSettingsModal } from './ServerSettingsModal';
+import { ChevronLeft, Home, WifiOff } from 'lucide-react';
 
 export const Header: React.FC<{
   title?: string;
@@ -9,9 +8,34 @@ export const Header: React.FC<{
   showOfficerBadge?: boolean;
   showConsumerBadge?: boolean;
   showLogo?: boolean;
-}> = ({ title, showBack = false, showOfficerBadge = false, showConsumerBadge = false, showLogo = true }) => {
+  onConsumerProfileClick?: () => void;
+  hideHome?: boolean;
+}> = ({
+  title,
+  showBack = false,
+  showOfficerBadge = false,
+  showConsumerBadge = false,
+  showLogo = true,
+  onConsumerProfileClick,
+  hideHome = false,
+}) => {
   const { goBack, officerProfile, consumerProfile, isOffline, userRole, navigateTo } = useApp();
-  const [showSettings, setShowSettings] = useState(false);
+
+  const formatPhone = (phone?: string) => {
+    if (!phone || phone.trim() === '') return '+91 98765 43210';
+    const clean = phone.trim();
+    if (clean.startsWith('+91')) {
+      const digits = clean.replace('+91', '').trim();
+      if (digits.length === 10) {
+        return `+91 ${digits.slice(0, 5)} ${digits.slice(5)}`;
+      }
+      return clean;
+    }
+    if (clean.length === 10) {
+      return `+91 ${clean.slice(0, 5)} ${clean.slice(5)}`;
+    }
+    return clean;
+  };
 
   const goHome = () => {
     if (userRole === 'officer') navigateTo('officer_dashboard');
@@ -20,8 +44,7 @@ export const Header: React.FC<{
   };
 
   return (
-    <>
-      <header className="bg-[#1B3A6B] text-white pt-[calc(max(14px,env(safe-area-inset-top,0px))+6px)] pb-3 px-3.5 sm:px-4 shadow-md flex-shrink-0 relative z-20 transition-all">
+    <header className="bg-[#1B3A6B] text-white pt-[calc(max(14px,env(safe-area-inset-top,0px))+6px)] pb-3 px-3.5 sm:px-4 shadow-md flex-shrink-0 relative z-20 transition-all font-poppins">
         <div className="flex items-center justify-between">
           {/* Left Side: Back & Home Buttons or Profile Avatar */}
           <div className="flex items-center space-x-2.5">
@@ -34,61 +57,58 @@ export const Header: React.FC<{
                 >
                   <ChevronLeft className="w-5 h-5" />
                 </button>
-                <button
-                  onClick={goHome}
-                  className="p-1.5 rounded-lg bg-white/10 hover:bg-white/20 active:bg-white/30 text-white transition-colors"
-                  title="Dashboard Home"
-                >
-                  <Home className="w-4 h-4 text-amber-300" />
-                </button>
+                {!hideHome && userRole && (
+                  <button
+                    onClick={goHome}
+                    className="p-1.5 rounded-lg bg-white/10 hover:bg-white/20 active:bg-white/30 text-white transition-colors"
+                    title="Dashboard Home"
+                  >
+                    <Home className="w-4 h-4 text-amber-300" />
+                  </button>
+                )}
               </div>
             )}
 
             {showOfficerBadge && (
-              <div className="flex items-center space-x-2.5">
-                <div className="relative">
-                  <div className="w-10 h-10 rounded-full bg-gradient-to-br from-blue-400 to-indigo-700 border-2 border-white/80 flex items-center justify-center font-bold text-white shadow-sm text-sm">
-                    {officerProfile.avatar}
-                  </div>
-                  <span className="absolute bottom-0 right-0 w-2.5 h-2.5 bg-[#2A9D5C] border-2 border-[#1B3A6B] rounded-full"></span>
+              <div className="flex items-center space-x-3">
+                <div className="w-11 h-11 rounded-full bg-gradient-to-br from-blue-400 to-indigo-700 border-2 border-white/80 flex items-center justify-center font-bold text-white shadow-sm text-sm shrink-0">
+                  {officerProfile.avatar}
                 </div>
                 <div>
-                  <div className="flex items-center space-x-1.5">
-                    <span className="text-[11px] uppercase tracking-wider text-blue-200 font-semibold mono">
-                      {officerProfile.name}
-                    </span>
-                    <span className="bg-[#2A9D5C]/25 border border-[#2A9D5C]/60 text-[#2A9D5C] text-[8.5px] px-1 py-0.2 rounded font-bold uppercase tracking-tight">
-                      Active
-                    </span>
-                  </div>
-                  <h1 className="text-xs font-bold text-white tracking-tight">
+                  <h1 className="text-base sm:text-lg font-bold text-white tracking-tight font-poppins">
                     Legal Metrology Officer
                   </h1>
-                  <p className="text-[9.5px] text-blue-200/80 mono">{officerProfile.zone}</p>
                 </div>
               </div>
             )}
 
             {showConsumerBadge && (
-              <div className="flex items-center space-x-2">
-                <div className="w-9 h-9 rounded-full bg-emerald-600/90 border border-white/50 flex items-center justify-center font-bold text-white text-xs shadow-sm">
-                {(consumerProfile.name?.charAt(0) || 'C').toUpperCase()}{(consumerProfile.name?.split(' ')[1]?.charAt(0) || 'U').toUpperCase()}
+              <button
+                onClick={onConsumerProfileClick}
+                className="flex items-center space-x-2 text-left p-1 -m-1 rounded-xl hover:bg-white/10 active:bg-white/20 transition-all focus:outline-none"
+                title="View Citizen Profile & Account"
+              >
+                <div className="w-9 h-9 rounded-full bg-gradient-to-br from-emerald-600 to-teal-800 border border-emerald-300/60 flex items-center justify-center font-bold text-white text-xs shadow-sm">
+                  {(consumerProfile.name?.charAt(0) || 'C').toUpperCase()}
+                  {(consumerProfile.name?.split(' ')[1]?.charAt(0) || 'U').toUpperCase()}
                 </div>
                 <div>
-                  <span className="text-[10px] uppercase text-emerald-200 font-semibold tracking-wider block">
+                  <span className="text-[10px] uppercase text-emerald-200 font-medium tracking-wider block font-poppins">
                     Citizen Portal
                   </span>
-                  <span className="text-xs font-bold text-white">{consumerProfile.name || 'Citizen User'}</span>
+                  <span className="text-xs sm:text-sm font-bold text-white tracking-normal font-poppins">
+                    {formatPhone(consumerProfile.phone)}
+                  </span>
                 </div>
-              </div>
+              </button>
             )}
 
             {!showOfficerBadge && !showConsumerBadge && title && (
-              <h1 className="text-sm font-bold text-white tracking-wide truncate max-w-[210px]">{title}</h1>
+              <h1 className="text-sm font-bold text-white tracking-wide truncate max-w-[300px] sm:max-w-none font-poppins">{title}</h1>
             )}
           </div>
 
-          {/* Right Side: Network Badge, Logo Emblem, Settings, Notification Icon */}
+          {/* Right Side: Network Badge if offline (Top-right Settings, Shield, and Bell icons removed) */}
           <div className="flex items-center space-x-2">
             {isOffline && (
               <span className="flex items-center space-x-1 px-1.5 py-0.5 rounded bg-amber-500/20 border border-amber-400/50 text-amber-300 text-[10px] mono font-medium">
@@ -96,41 +116,8 @@ export const Header: React.FC<{
                 <span>Offline</span>
               </span>
             )}
-
-            <button
-              onClick={() => setShowSettings(true)}
-              className="p-1.5 rounded-lg bg-white/10 hover:bg-white/20 active:bg-white/25 border border-white/15 text-white transition-colors"
-              title="Connection & AI Settings"
-            >
-              <Settings className="w-4 h-4 text-amber-300" />
-            </button>
-
-            {showLogo && (
-              <div
-                onClick={() => navigateTo('splash')}
-                className="w-8 h-8 rounded-lg bg-white/10 hover:bg-white/20 cursor-pointer p-1 flex items-center justify-center border border-white/15 transition-colors"
-                title="MANAK Emblem"
-              >
-                <Shield className="w-5 h-5 text-manak-orange" />
-              </div>
-            )}
-
-            <button
-              onClick={() => {
-                if (userRole === 'officer') navigateTo('inspection_history');
-                else navigateTo('consumer_my_reports');
-              }}
-              className="relative p-1.5 rounded-lg bg-white/10 hover:bg-white/20 active:bg-white/25 border border-white/15 text-white transition-colors"
-              title="Notifications & History"
-            >
-              <Bell className="w-4 h-4" />
-              <span className="absolute top-1 right-1 w-2 h-2 bg-[#E8622C] border-2 border-[#1B3A6B] rounded-full"></span>
-            </button>
           </div>
         </div>
       </header>
-
-      <ServerSettingsModal isOpen={showSettings} onClose={() => setShowSettings(false)} />
-    </>
   );
 };

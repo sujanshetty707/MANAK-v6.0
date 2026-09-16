@@ -1,4 +1,7 @@
 import { jsPDF } from 'jspdf';
+import { Capacitor } from '@capacitor/core';
+import { Filesystem, Directory } from '@capacitor/filesystem';
+import { Share } from '@capacitor/share';
 import { InspectionRecord } from '../types';
 
 const sanitizeText = (val: any, fallback = 'Not Specified'): string => {
@@ -61,7 +64,7 @@ const getMrpStr = (extraction?: any): string => {
   return 'Not Declared';
 };
 
-export function generateInspectionPDF(record: InspectionRecord): void {
+export async function generateInspectionPDF(record: InspectionRecord): Promise<void> {
   try {
     const doc = new jsPDF({
       orientation: 'portrait',
@@ -218,7 +221,45 @@ export function generateInspectionPDF(record: InspectionRecord): void {
     doc.text('This digital inspection report is issued under the authority of the Legal Metrology Act, 2009 and Packaged Commodities Rules, 2011.', pageWidth / 2, 285, { align: 'center' });
 
     // Save the PDF
-    const filename = `${sanitizeText(record?.report_id, 'MANAK-Inspection-Report')}.pdf`;
+    const reportId = (record as any)?.report_id || record?.id || 'MANAK-Inspection-Report';
+    const filename = `${sanitizeText(reportId, 'MANAK-Inspection-Report')}.pdf`;
+
+    if (Capacitor.isNativePlatform()) {
+      try {
+        const dataUri = doc.output('datauristring');
+        const base64Data = dataUri.split(',')[1] || dataUri;
+
+        const savedResult = await Filesystem.writeFile({
+          path: filename,
+          data: base64Data,
+          directory: Directory.Cache
+        });
+
+        await Share.share({
+          title: 'MANAK Official Inspection Report',
+          text: `Inspection Report for ${sanitizeText(record?.product?.title, 'Product')} (${sanitizeText(reportId, 'ID')})`,
+          url: savedResult.uri,
+          dialogTitle: 'Save or Open Inspection PDF'
+        });
+        return;
+      } catch (nativeErr) {
+        console.warn('[pdfReportGenerator] Native share/write encountered an issue, trying fallback:', nativeErr);
+        try {
+          const dataUri = doc.output('datauristring');
+          const base64Data = dataUri.split(',')[1] || dataUri;
+          await Filesystem.writeFile({
+            path: filename,
+            data: base64Data,
+            directory: Directory.Documents
+          });
+          return;
+        } catch (fbErr) {
+          console.error('[pdfReportGenerator] Native fallback write failed:', fbErr);
+        }
+      }
+    }
+
+    // Standard web browser fallback for laptop / desktop
     doc.save(filename);
   } catch (err) {
     console.error('[pdfReportGenerator] Error generating PDF report:', err);

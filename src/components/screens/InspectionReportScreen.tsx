@@ -11,11 +11,15 @@ export const InspectionReportScreen: React.FC = () => {
   // Find the active or latest inspection record
   const currentRecord = inspections.find(i => i.id === currentInspectionId) || inspections[0];
 
-  const handleDownloadPDF = () => {
+  const handleDownloadPDF = async () => {
     if (currentRecord) {
-      generateInspectionPDF(currentRecord);
-      setDownloaded(true);
-      setTimeout(() => setDownloaded(false), 3000);
+      try {
+        await generateInspectionPDF(currentRecord);
+        setDownloaded(true);
+        setTimeout(() => setDownloaded(false), 3000);
+      } catch (err) {
+        console.error('Failed to generate or share PDF:', err);
+      }
     }
   };
 

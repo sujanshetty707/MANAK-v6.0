@@ -1,14 +1,12 @@
 import React, { useState } from 'react';
 import { useApp } from '../../context/AppContext';
-import { Camera, Zap, Upload, Sparkles, Aperture, ChevronLeft, Loader2, AlertCircle, Plus, X, Layers, ArrowRight } from 'lucide-react';
+import { Camera, Upload, Sparkles, ChevronLeft, Loader2, AlertCircle, Plus, X, Layers, ArrowRight } from 'lucide-react';
 import { Camera as CapCamera, CameraResultType, CameraSource } from '@capacitor/camera';
 import { Capacitor } from '@capacitor/core';
 import { compressImage } from '../../utils/imageUtils';
 
 export const CameraScanScreen: React.FC = () => {
   const { startScanExtraction, goBack } = useApp();
-  const [torch, setTorch] = useState(false);
-  const [scaleCalibrated, setScaleCalibrated] = useState<boolean>(true);
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [rawText, setRawText] = useState<string>('');
   const [selectedImages, setSelectedImages] = useState<string[]>([]);
@@ -134,78 +132,55 @@ export const CameraScanScreen: React.FC = () => {
               <span>{selectedImages.length} {selectedImages.length === 1 ? 'Panel' : 'Panels'}</span>
             </div>
           )}
-          <button
-            onClick={() => setTorch(!torch)}
-            className={`p-2 rounded-xl backdrop-blur-md border transition-all active:scale-95 ${
-              torch
-                ? 'bg-amber-400 text-slate-950 border-amber-300 shadow-[0_0_15px_rgba(251,191,36,0.6)]'
-                : 'bg-black/40 text-white border-white/20 hover:bg-black/60'
-            }`}
-            title="Torch Light"
-          >
-            <Zap className="w-4 h-4" />
-          </button>
         </div>
       </div>
 
       {/* Main Viewfinder Frame */}
-      <div className="flex-1 relative flex items-center justify-center overflow-hidden bg-slate-900">
-        {currentViewImage ? (
-          <img
-            src={currentViewImage}
-            alt={`Captured Package Panel ${activeImageIdx + 1}`}
-            className="w-full h-full object-cover filter brightness-[0.98]"
-          />
-        ) : (
-          <div className="text-center p-6 space-y-3 z-10">
-            <div className="w-16 h-16 rounded-full bg-slate-800/90 border border-slate-700 mx-auto flex items-center justify-center text-amber-400 shadow-lg">
-              <Camera className="w-8 h-8" />
+      <div className="flex-1 relative flex items-center justify-center overflow-hidden bg-slate-950 font-poppins">
+        {/* Background Vignette */}
+        <div className="absolute inset-0 bg-radial-vignette pointer-events-none" />
+
+        {/* Viewfinder Frame (Precisely Centered) */}
+        <div className="relative w-[84%] max-w-[340px] aspect-[3/4] max-h-[58vh] rounded-3xl border-2 border-dashed border-white/60 flex items-center justify-center overflow-hidden shadow-[0_0_0_9999px_rgba(3,7,18,0.55)] pointer-events-none z-10">
+          {/* Corner Brackets */}
+          <div className="absolute top-0 left-0 w-7 h-7 border-t-4 border-l-4 border-manak-orange rounded-tl-2xl pointer-events-none" />
+          <div className="absolute top-0 right-0 w-7 h-7 border-t-4 border-r-4 border-manak-orange rounded-tr-2xl pointer-events-none" />
+          <div className="absolute bottom-0 left-0 w-7 h-7 border-b-4 border-l-4 border-manak-orange rounded-bl-2xl pointer-events-none" />
+          <div className="absolute bottom-0 right-0 w-7 h-7 border-b-4 border-r-4 border-manak-orange rounded-br-2xl pointer-events-none" />
+
+          {/* Laser Moving Within The Frame */}
+          <div className="absolute inset-x-0 h-[2.5px] bg-gradient-to-r from-transparent via-[#FF6B00] to-transparent animate-scan-line shadow-[0_0_16px_#FF6B00] pointer-events-none z-20">
+            <div className="w-full h-8 bg-gradient-to-b from-[#FF6B00]/20 to-transparent -translate-y-full pointer-events-none" />
+          </div>
+
+          {/* Preview Image or Neatly Arranged Prompt Inside Frame */}
+          {currentViewImage ? (
+            <img
+              src={currentViewImage}
+              alt={`Captured Package Panel ${activeImageIdx + 1}`}
+              className="w-full h-full object-cover filter brightness-[0.98] pointer-events-auto"
+            />
+          ) : (
+            <div className="text-center px-4 py-6 space-y-3 pointer-events-auto z-10 select-none max-w-[280px]">
+              <div className="w-14 h-14 rounded-2xl bg-slate-800/80 border border-slate-700 mx-auto flex items-center justify-center text-amber-400 shadow-md">
+                <Camera className="w-7 h-7" />
+              </div>
+              <div className="space-y-1">
+                <p className="text-xs sm:text-sm text-white font-bold leading-snug tracking-tight">
+                  Upload Front, Back &amp; Side Product Photos
+                </p>
+                <p className="text-[11px] text-slate-300/80 leading-normal font-normal">
+                  Crisp photos detect MRP, Net Qty, Dates &amp; Addresses across panels on the 1st try
+                </p>
+              </div>
             </div>
-            <p className="text-xs text-slate-200 max-w-xs font-semibold">
-              Upload Front, Back &amp; Side product photos for complete Legal Metrology verification
-            </p>
-            <p className="text-[11px] text-slate-400 max-w-xs">
-              Crisp high-resolution photos detect MRP, Net Qty, Dates &amp; Addresses across panels on the 1st try
-            </p>
-          </div>
-        )}
-
-        <div className="absolute inset-0 bg-radial-vignette pointer-events-none"></div>
-
-        {/* Viewfinder Frame */}
-        <div className="absolute w-[82%] h-[60%] border-2 border-dashed border-white/60 rounded-2xl flex flex-col justify-between p-3 pointer-events-none shadow-[0_0_0_9999px_rgba(0,0,0,0.45)]">
-          <div className="flex justify-between">
-            <div className="w-6 h-6 border-t-4 border-l-4 border-manak-orange -mt-3.5 -ml-3.5 rounded-tl-lg"></div>
-            <div className="w-6 h-6 border-t-4 border-r-4 border-manak-orange -mt-3.5 -mr-3.5 rounded-tr-lg"></div>
-          </div>
-
-          <div className="w-full h-1 bg-gradient-to-r from-transparent via-manak-orange to-transparent relative animate-scan-line shadow-[0_0_12px_#E8622C]"></div>
-
-          <div className="flex justify-between">
-            <div className="w-6 h-6 border-b-4 border-l-4 border-manak-orange -mb-3.5 -ml-3.5 rounded-bl-lg"></div>
-            <div className="w-6 h-6 border-b-4 border-r-4 border-manak-orange -mb-3.5 -mr-3.5 rounded-br-lg"></div>
-          </div>
-        </div>
-
-        {/* Scale Calibrated Badge */}
-        <div className="absolute top-20 left-1/2 -translate-x-1/2 z-20">
-          <div
-            onClick={() => setScaleCalibrated(!scaleCalibrated)}
-            className={`cursor-pointer px-3 py-1 rounded-full text-[10px] font-mono font-semibold flex items-center space-x-1.5 backdrop-blur-md border shadow-lg transition-all ${
-              scaleCalibrated
-                ? 'bg-emerald-950/80 border-emerald-500 text-emerald-300'
-                : 'bg-amber-950/80 border-amber-500 text-amber-300'
-            }`}
-          >
-            <Sparkles className="w-3 h-3" />
-            <span>{scaleCalibrated ? 'Rule 7 Scale: 1mm Ref Calibrated' : 'Tap to Calibrate Scale'}</span>
-          </div>
+          )}
         </div>
 
         {/* Active Panel Pill (if multiple images) */}
         {selectedImages.length > 1 && (
           <div className="absolute bottom-4 left-1/2 -translate-x-1/2 z-20">
-            <div className="px-3 py-1 rounded-full bg-black/75 backdrop-blur-md border border-white/20 text-[10px] font-mono text-white flex items-center gap-1.5 shadow-lg">
+            <div className="px-3 py-1 rounded-full bg-black/80 backdrop-blur-md border border-white/20 text-[10px] font-mono text-white flex items-center gap-1.5 shadow-lg">
               <span>Viewing Panel {activeImageIdx + 1} of {selectedImages.length}</span>
             </div>
           </div>
@@ -323,7 +298,7 @@ export const CameraScanScreen: React.FC = () => {
               className="p-3.5 rounded-2xl bg-slate-800 hover:bg-slate-700 active:scale-95 border border-slate-700 text-amber-400 transition-colors flex items-center justify-center"
               title="Snap panel with camera"
             >
-              <Aperture className="w-5 h-5" />
+              <Camera className="w-5 h-5" />
             </button>
           )}
 

@@ -1,11 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useApp } from '../../context/AppContext';
 import { Header } from '../common/Header';
 import { BottomNav } from '../common/BottomNav';
 import {
   Bot, LogOut, ShieldCheck, Wifi, WifiOff, RefreshCw,
-  ChevronRight, BadgeCheck, MapPin, Inbox, CloudOff, Cloud
+  ChevronRight, BadgeCheck, MapPin, Inbox, CloudOff, Cloud, Settings
 } from 'lucide-react';
+import { ServerSettingsModal } from '../common/ServerSettingsModal';
 
 export const OfficerProfileScreen: React.FC = () => {
   const {
@@ -13,6 +14,7 @@ export const OfficerProfileScreen: React.FC = () => {
     isOffline, toggleOffline, offlineQueueCount, syncOfflineQueue,
     inspections, consumerReports
   } = useApp();
+  const [showSettings, setShowSettings] = useState(false);
 
   const pendingGrievances = consumerReports.filter(
     r => r.status !== 'action_taken' && r.status !== 'dismissed'
@@ -160,6 +162,22 @@ export const OfficerProfileScreen: React.FC = () => {
             </div>
             <ChevronRight className="w-4 h-4 text-slate-400 group-hover:translate-x-1 transition-transform" />
           </button>
+
+          <button
+            onClick={() => setShowSettings(true)}
+            className="w-full p-3.5 flex items-center justify-between hover:bg-amber-50/50 transition-colors group"
+          >
+            <div className="flex items-center space-x-3">
+              <div className="w-9 h-9 rounded-xl bg-amber-50 text-amber-700 flex items-center justify-center">
+                <Settings className="w-5 h-5" />
+              </div>
+              <div className="text-left">
+                <span className="text-xs font-bold text-slate-900 block">Connection & AI Settings</span>
+                <span className="text-[10.5px] text-slate-500">Configure backend server URL & Gemini API Key</span>
+              </div>
+            </div>
+            <ChevronRight className="w-4 h-4 text-slate-400 group-hover:translate-x-1 transition-transform" />
+          </button>
         </div>
 
         {/* Logout */}
@@ -176,6 +194,7 @@ export const OfficerProfileScreen: React.FC = () => {
         </p>
       </main>
 
+      <ServerSettingsModal isOpen={showSettings} onClose={() => setShowSettings(false)} />
       <BottomNav />
     </div>
   );

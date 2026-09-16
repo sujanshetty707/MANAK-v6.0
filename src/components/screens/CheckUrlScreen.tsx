@@ -96,20 +96,19 @@ export const CheckUrlScreen: React.FC = () => {
   };
 
   return (
-    <div className="w-full h-full bg-[#F5F6F8] flex flex-col justify-between overflow-hidden">
-      <Header title="E-Commerce Compliance Check" showBack showLogo />
+    <div className="w-full h-full bg-[#F5F6F8] font-poppins flex flex-col justify-between overflow-hidden">
+      <Header title="Check the Product via URL" showBack hideHome />
 
       <main className="flex-1 overflow-y-auto px-4 py-3 space-y-4 hide-scrollbar">
-        <div className="space-y-1">
+        <div className="space-y-1.5 pt-1">
           <div className="flex items-center space-x-2">
             <span className="text-[10px] font-bold uppercase tracking-wider text-manak-navy mono bg-blue-50 border border-blue-200 px-2 py-0.5 rounded-md">
               Rule 6(10) E-Commerce Extractor
             </span>
           </div>
-          <h2 className="text-base font-bold text-slate-900">Audit Marketplace Listing</h2>
-          <p className="text-xs text-slate-500">
-            Audit mandatory statutory declarations on Indian e-commerce listings under Legal Metrology Rules & E-Commerce Guidelines.
-          </p>
+          <h2 className="text-xl sm:text-2xl font-black text-slate-900 tracking-tight font-poppins">
+            Audit Marketplace Listing
+          </h2>
         </div>
 
         {/* URL Input Box */}

@@ -21,6 +21,7 @@ export default {
         }
       },
       fontFamily: {
+        poppins: ['"Poppins"', 'sans-serif'],
         sans: ['"Public Sans"', 'Inter', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
         mono: ['"JetBrains Mono"', 'monospace']
       },
