@@ -186,19 +186,34 @@ export async function checkUrlApi(payload: {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(payload),
-      signal: AbortSignal.timeout(30000)
+      signal: AbortSignal.timeout(12000)
     });
     if (!res.ok) {
       const errJson = await res.json().catch(() => ({}));
       throw new Error(errJson.error || `HTTP ${res.status}`);
     }
     const data = await res.json();
+    
+    // Check if backend returned a bot-blocked or empty stub (e.g. Amazon.in captcha)
+    const title = (data?.record?.product?.title || '').toLowerCase();
+    const hasExtraction = Boolean(
+      data?.record?.extraction?.generic_name?.value ||
+      data?.record?.extraction?.manufacturer?.value ||
+      data?.record?.extraction?.mrp?.value
+    );
+    const hasImage = Boolean(data?.record?.product?.image_url);
+
+    if (title === 'amazon.in' || title.includes('robot check') || !hasExtraction || !hasImage) {
+      console.warn('[MANAK] Backend returned bot-blocked/empty e-commerce stub. Switching to smart client-side URL analysis.');
+      throw new Error('Backend returned incomplete listing');
+    }
+
     if (data?.record) {
       saveInspectionDirectToSupabase(data.record);
     }
     return data;
   } catch (err) {
-    console.warn('[MANAK] Backend checkUrl unreachable — running direct client-side URL check:', (err as Error).message);
+    console.warn('[MANAK] Using direct client-side URL check:', (err as Error).message);
     const result = await checkUrlClientSide(payload);
     if (result?.record) {
       saveInspectionDirectToSupabase(result.record);
