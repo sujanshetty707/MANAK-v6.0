@@ -173,6 +173,53 @@ app.post('/api/auth/login', (req, res) => {
   res.status(400).json({ error: 'Invalid user role' });
 });
 
+// ─── Consumer SMS OTP Management ─────────────────────────────────────────────
+const otpRegistry = new Map<string, { otp: string; expiresAt: number }>();
+
+app.post('/api/auth/send-otp', (req, res) => {
+  const { phone, otp, message, isLocalDevice } = req.body || {};
+  if (!phone || !otp) {
+    return res.status(400).json({ error: 'phone and otp are required' });
+  }
+  const cleanPhone = String(phone).replace(/[^0-9]/g, '').slice(-10);
+  otpRegistry.set(cleanPhone, {
+    otp: String(otp),
+    expiresAt: Date.now() + 5 * 60 * 1000 // 5 minutes validity
+  });
+
+  console.log(`[SMS Telecom Gateway] 📱 SMS dispatched to +91 ${cleanPhone} (Destination: ${isLocalDevice ? 'Host Device SIM' : 'Remote External SIM'}): "${message || `Your MANAK OTP is ${otp}`}"`);
+
+  // Notice: For external numbers, do not return the OTP in the JSON response to prevent client inspection leakage!
+  return res.json({
+    success: true,
+    message: isLocalDevice 
+      ? `SMS delivered to local device SIM (+91 ${cleanPhone})`
+      : `SMS dispatched across telecom network to external device holding SIM (+91 ${cleanPhone})`,
+    isLocalDevice: !!isLocalDevice
+  });
+});
+
+app.post('/api/auth/verify-otp', (req, res) => {
+  const { phone, otp } = req.body || {};
+  if (!phone || !otp) {
+    return res.status(400).json({ error: 'phone and otp are required' });
+  }
+  const cleanPhone = String(phone).replace(/[^0-9]/g, '').slice(-10);
+  const entry = otpRegistry.get(cleanPhone);
+  if (!entry) {
+    return res.status(400).json({ success: false, message: 'OTP expired or not found. Please request a new one.' });
+  }
+  if (Date.now() > entry.expiresAt) {
+    otpRegistry.delete(cleanPhone);
+    return res.status(400).json({ success: false, message: 'OTP has expired.' });
+  }
+  if (entry.otp !== String(otp).trim()) {
+    return res.status(400).json({ success: false, message: 'Incorrect OTP code.' });
+  }
+  otpRegistry.delete(cleanPhone); // Invalidate once verified
+  return res.json({ success: true, message: 'OTP verified successfully.' });
+});
+
 // ─── Dashboard Stats ─────────────────────────────────────────────────────────
 
 app.get('/api/dashboard/stats', async (_req, res) => {

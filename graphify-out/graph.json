@@ -30,19 +30,6 @@
       "source_location": "L4"
     },
     {
-      "id": "src_services_smsservice_otpentry",
-      "label": "OtpEntry",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "App.tsx",
-      "file_type": "code",
-      "norm_label": "otpentry",
-      "source_file": "src/services/smsService.ts",
-      "source_location": "L8"
-    },
-    {
       "id": "android_app_src_androidtest_java_com_getcapacitor_myapp_exampleinstrumentedtest_exampleinstrumentedtest",
       "label": "ExampleInstrumentedTest",
       "_callable": true,
@@ -368,6 +355,32 @@
       "source_location": "L45"
     },
     {
+      "id": "src_services_smsservice_otpentry",
+      "label": "OtpEntry",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 53,
+      "community_name": "ConsumerLoginScreen.tsx",
+      "file_type": "code",
+      "norm_label": "otpentry",
+      "source_file": "src/services/smsService.ts",
+      "source_location": "L11"
+    },
+    {
+      "id": "src_services_smsservice_sendotpresult",
+      "label": "SendOtpResult",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 53,
+      "community_name": "ConsumerLoginScreen.tsx",
+      "file_type": "code",
+      "norm_label": "sendotpresult",
+      "source_file": "src/services/smsService.ts",
+      "source_location": "L54"
+    },
+    {
       "id": "src_app_app",
       "label": "App()",
       "_callable": true,
@@ -486,18 +499,6 @@
       "norm_label": "consumerdashboardscreen()",
       "source_file": "src/components/screens/ConsumerDashboardScreen.tsx",
       "source_location": "L23"
-    },
-    {
-      "id": "src_components_screens_consumerloginscreen_consumerloginscreen",
-      "label": "ConsumerLoginScreen()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "App.tsx",
-      "file_type": "code",
-      "norm_label": "consumerloginscreen()",
-      "source_file": "src/components/screens/ConsumerLoginScreen.tsx",
-      "source_location": "L7"
     },
     {
       "id": "src_components_screens_consumermyreportsscreen_consumermyreportsscreen",
@@ -714,30 +715,6 @@
       "norm_label": "getcurrentgeolocation()",
       "source_file": "src/services/locationService.ts",
       "source_location": "L63"
-    },
-    {
-      "id": "src_services_smsservice_sendconsumerotpsms",
-      "label": "sendConsumerOtpSms()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "App.tsx",
-      "file_type": "code",
-      "norm_label": "sendconsumerotpsms()",
-      "source_file": "src/services/smsService.ts",
-      "source_location": "L19"
-    },
-    {
-      "id": "src_services_smsservice_verifyconsumerotp",
-      "label": "verifyConsumerOtp()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "App.tsx",
-      "file_type": "code",
-      "norm_label": "verifyconsumerotp()",
-      "source_file": "src/services/smsService.ts",
-      "source_location": "L67"
     },
     {
       "id": "src_utils_imageutils_compressimage",
@@ -1006,18 +983,6 @@
       "norm_label": "getrelevantproductimage()",
       "source_file": "src/services/clientUrlCheck.ts",
       "source_location": "L6"
-    },
-    {
-      "id": "src_services_cryptoservice_encryptdata",
-      "label": "encryptData()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 31,
-      "community_name": "AppContext.tsx",
-      "file_type": "code",
-      "norm_label": "encryptdata()",
-      "source_file": "src/services/cryptoService.ts",
-      "source_location": "L40"
     },
     {
       "id": "src_services_cryptoservice_sha256",
@@ -1732,6 +1697,18 @@
       "source_location": "L12"
     },
     {
+      "id": "src_services_cryptoservice_encryptdata",
+      "label": "encryptData()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 49,
+      "community_name": "cryptoService.ts",
+      "file_type": "code",
+      "norm_label": "encryptdata()",
+      "source_file": "src/services/cryptoService.ts",
+      "source_location": "L40"
+    },
+    {
       "id": "src_services_cryptoservice_maskphone",
       "label": "maskPhone()",
       "_callable": true,
@@ -1754,6 +1731,78 @@
       "norm_label": "transformindexhtml()",
       "source_file": "vite.config.ts",
       "source_location": "L9"
+    },
+    {
+      "id": "src_components_screens_consumerloginscreen_consumerloginscreen",
+      "label": "ConsumerLoginScreen()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 53,
+      "community_name": "ConsumerLoginScreen.tsx",
+      "file_type": "code",
+      "norm_label": "consumerloginscreen()",
+      "source_file": "src/components/screens/ConsumerLoginScreen.tsx",
+      "source_location": "L23"
+    },
+    {
+      "id": "src_services_smsservice_getdevicesimphone",
+      "label": "getDeviceSimPhone()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 53,
+      "community_name": "ConsumerLoginScreen.tsx",
+      "file_type": "code",
+      "norm_label": "getdevicesimphone()",
+      "source_file": "src/services/smsService.ts",
+      "source_location": "L22"
+    },
+    {
+      "id": "src_services_smsservice_isdevicesim",
+      "label": "isDeviceSim()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 53,
+      "community_name": "ConsumerLoginScreen.tsx",
+      "file_type": "code",
+      "norm_label": "isdevicesim()",
+      "source_file": "src/services/smsService.ts",
+      "source_location": "L47"
+    },
+    {
+      "id": "src_services_smsservice_sendconsumerotpsms",
+      "label": "sendConsumerOtpSms()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 53,
+      "community_name": "ConsumerLoginScreen.tsx",
+      "file_type": "code",
+      "norm_label": "sendconsumerotpsms()",
+      "source_file": "src/services/smsService.ts",
+      "source_location": "L67"
+    },
+    {
+      "id": "src_services_smsservice_setdevicesimphone",
+      "label": "setDeviceSimPhone()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 53,
+      "community_name": "ConsumerLoginScreen.tsx",
+      "file_type": "code",
+      "norm_label": "setdevicesimphone()",
+      "source_file": "src/services/smsService.ts",
+      "source_location": "L33"
+    },
+    {
+      "id": "src_services_smsservice_verifyconsumerotp",
+      "label": "verifyConsumerOtp()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 53,
+      "community_name": "ConsumerLoginScreen.tsx",
+      "file_type": "code",
+      "norm_label": "verifyconsumerotp()",
+      "source_file": "src/services/smsService.ts",
+      "source_location": "L130"
     },
     {
       "id": "src_app",
@@ -1885,17 +1934,6 @@
       "file_type": "code",
       "norm_label": "consumerdashboardscreen.tsx",
       "source_file": "src/components/screens/ConsumerDashboardScreen.tsx",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_components_screens_consumerloginscreen",
-      "label": "ConsumerLoginScreen.tsx",
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "App.tsx",
-      "file_type": "code",
-      "norm_label": "consumerloginscreen.tsx",
-      "source_file": "src/components/screens/ConsumerLoginScreen.tsx",
       "source_location": "L1"
     },
     {
@@ -2075,6 +2113,28 @@
       "source_location": "L1"
     },
     {
+      "id": "src_data_mockdata_mock_consumer_reports",
+      "label": "MOCK_CONSUMER_REPORTS",
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "App.tsx",
+      "file_type": "code",
+      "norm_label": "mock_consumer_reports",
+      "source_file": "src/data/mockData.ts",
+      "source_location": "L12"
+    },
+    {
+      "id": "src_data_mockdata_repeat_violator_heatmap",
+      "label": "REPEAT_VIOLATOR_HEATMAP",
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "App.tsx",
+      "file_type": "code",
+      "norm_label": "repeat_violator_heatmap",
+      "source_file": "src/data/mockData.ts",
+      "source_location": "L14"
+    },
+    {
       "id": "src_main",
       "label": "main.tsx",
       "_origin": "ast",
@@ -2106,28 +2166,6 @@
       "norm_label": "default_location",
       "source_file": "src/services/locationService.ts",
       "source_location": "L10"
-    },
-    {
-      "id": "src_services_smsservice",
-      "label": "smsService.ts",
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "App.tsx",
-      "file_type": "code",
-      "norm_label": "smsservice.ts",
-      "source_file": "src/services/smsService.ts",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_services_smsservice_activeotps",
-      "label": "activeOtps",
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "App.tsx",
-      "file_type": "code",
-      "norm_label": "activeotps",
-      "source_file": "src/services/smsService.ts",
-      "source_location": "L14"
     },
     {
       "id": "src_utils_imageutils",
@@ -3521,6 +3559,17 @@
       "source_location": "L48"
     },
     {
+      "id": "ref_tesseract_js",
+      "label": "tesseract.js",
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "package.json",
+      "file_type": "concept",
+      "norm_label": "tesseract.js",
+      "source_file": "package.json",
+      "source_location": "L39"
+    },
+    {
       "id": "ref_tsx",
       "label": "tsx",
       "_origin": "ast",
@@ -3686,17 +3735,6 @@
       "source_location": "L1"
     },
     {
-      "id": "src_data_mockdata_mock_consumer_reports",
-      "label": "MOCK_CONSUMER_REPORTS",
-      "_origin": "ast",
-      "community": 31,
-      "community_name": "AppContext.tsx",
-      "file_type": "code",
-      "norm_label": "mock_consumer_reports",
-      "source_file": "src/data/mockData.ts",
-      "source_location": "L12"
-    },
-    {
       "id": "src_data_mockdata_mock_history",
       "label": "MOCK_HISTORY",
       "_origin": "ast",
@@ -3706,17 +3744,6 @@
       "norm_label": "mock_history",
       "source_file": "src/data/mockData.ts",
       "source_location": "L10"
-    },
-    {
-      "id": "src_data_mockdata_repeat_violator_heatmap",
-      "label": "REPEAT_VIOLATOR_HEATMAP",
-      "_origin": "ast",
-      "community": 31,
-      "community_name": "AppContext.tsx",
-      "file_type": "code",
-      "norm_label": "repeat_violator_heatmap",
-      "source_file": "src/data/mockData.ts",
-      "source_location": "L14"
     },
     {
       "id": "src_data_mockdata_sample_products",
@@ -5218,6 +5245,17 @@
       "source_location": "L13"
     },
     {
+      "id": "server_index_otpregistry",
+      "label": "otpRegistry",
+      "_origin": "ast",
+      "community": 43,
+      "community_name": "labelParser.ts",
+      "file_type": "code",
+      "norm_label": "otpregistry",
+      "source_file": "server/index.ts",
+      "source_location": "L177"
+    },
+    {
       "id": "server_index_ts_server_index",
       "label": "server/index.ts",
       "_origin": "ast",
@@ -5359,17 +5397,6 @@
       "norm_label": "express",
       "source_file": "package.json",
       "source_location": "L32"
-    },
-    {
-      "id": "ref_tesseract_js",
-      "label": "tesseract.js",
-      "_origin": "ast",
-      "community": 43,
-      "community_name": "labelParser.ts",
-      "file_type": "concept",
-      "norm_label": "tesseract.js",
-      "source_file": "package.json",
-      "source_location": "L39"
     },
     {
       "id": "prd",
@@ -6453,6 +6480,39 @@
       "norm_label": "@supabase/supabase-js",
       "source_file": "package.json",
       "source_location": "L26"
+    },
+    {
+      "id": "src_components_screens_consumerloginscreen",
+      "label": "ConsumerLoginScreen.tsx",
+      "_origin": "ast",
+      "community": 53,
+      "community_name": "ConsumerLoginScreen.tsx",
+      "file_type": "code",
+      "norm_label": "consumerloginscreen.tsx",
+      "source_file": "src/components/screens/ConsumerLoginScreen.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_services_smsservice",
+      "label": "smsService.ts",
+      "_origin": "ast",
+      "community": 53,
+      "community_name": "ConsumerLoginScreen.tsx",
+      "file_type": "code",
+      "norm_label": "smsservice.ts",
+      "source_file": "src/services/smsService.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_services_smsservice_activeotps",
+      "label": "activeOtps",
+      "_origin": "ast",
+      "community": 53,
+      "community_name": "ConsumerLoginScreen.tsx",
+      "file_type": "code",
+      "norm_label": "activeotps",
+      "source_file": "src/services/smsService.ts",
+      "source_location": "L17"
     },
     {
       "id": "tsconfig",
@@ -7579,26 +7639,14 @@
     },
     {
       "source": "src_components_screens_consumerloginscreen_consumerloginscreen",
-      "target": "src_services_smsservice_sendconsumerotpsms",
+      "target": "src_services_smsservice_setdevicesimphone",
       "relation": "calls",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/components/screens/ConsumerLoginScreen.tsx",
-      "source_location": "L28",
-      "weight": 1.0
-    },
-    {
-      "source": "src_components_screens_consumerloginscreen_consumerloginscreen",
-      "target": "src_services_smsservice_verifyconsumerotp",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "src/components/screens/ConsumerLoginScreen.tsx",
-      "source_location": "L44",
+      "source_location": "L102",
       "weight": 1.0
     },
     {
@@ -7610,7 +7658,43 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/components/screens/ConsumerLoginScreen.tsx",
-      "source_location": "L8",
+      "source_location": "L24",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_screens_consumerloginscreen_consumerloginscreen",
+      "target": "src_services_smsservice_getdevicesimphone",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/components/screens/ConsumerLoginScreen.tsx",
+      "source_location": "L36",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_screens_consumerloginscreen_consumerloginscreen",
+      "target": "src_services_smsservice_sendconsumerotpsms",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/components/screens/ConsumerLoginScreen.tsx",
+      "source_location": "L66",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_screens_consumerloginscreen_consumerloginscreen",
+      "target": "src_services_smsservice_verifyconsumerotp",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/components/screens/ConsumerLoginScreen.tsx",
+      "source_location": "L93",
       "weight": 1.0
     },
     {
@@ -8826,6 +8910,30 @@
       "weight": 1.0
     },
     {
+      "source": "src_services_smsservice_isdevicesim",
+      "target": "src_services_smsservice_getdevicesimphone",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/services/smsService.ts",
+      "source_location": "L49",
+      "weight": 1.0
+    },
+    {
+      "source": "src_services_smsservice_sendconsumerotpsms",
+      "target": "src_services_smsservice_setdevicesimphone",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/services/smsService.ts",
+      "source_location": "L86",
+      "weight": 1.0
+    },
+    {
       "source": "src_services_smsservice_sendconsumerotpsms",
       "target": "src_services_api_getapibaseurl",
       "relation": "calls",
@@ -8834,7 +8942,19 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/services/smsService.ts",
-      "source_location": "L39",
+      "source_location": "L91",
+      "weight": 1.0
+    },
+    {
+      "source": "src_services_smsservice_verifyconsumerotp",
+      "target": "src_services_api_getapibaseurl",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/services/smsService.ts",
+      "source_location": "L136",
       "weight": 1.0
     },
     {
@@ -10256,6 +10376,66 @@
     },
     {
       "source": "src_components_screens_consumerloginscreen",
+      "target": "src_services_smsservice_getdevicesimphone",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/components/screens/ConsumerLoginScreen.tsx",
+      "source_location": "L15",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_screens_consumerloginscreen",
+      "target": "src_services_smsservice_isdevicesim",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/components/screens/ConsumerLoginScreen.tsx",
+      "source_location": "L15",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_screens_consumerloginscreen",
+      "target": "src_services_smsservice_sendconsumerotpsms",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/components/screens/ConsumerLoginScreen.tsx",
+      "source_location": "L15",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_screens_consumerloginscreen",
+      "target": "src_services_smsservice_setdevicesimphone",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/components/screens/ConsumerLoginScreen.tsx",
+      "source_location": "L15",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_screens_consumerloginscreen",
+      "target": "src_services_smsservice_verifyconsumerotp",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/components/screens/ConsumerLoginScreen.tsx",
+      "source_location": "L15",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_screens_consumerloginscreen",
       "target": "src_context_appcontext_useapp",
       "relation": "imports",
       "_origin": "ast",
@@ -10276,30 +10456,6 @@
       "context": "import",
       "source_file": "src/components/screens/ConsumerLoginScreen.tsx",
       "source_location": "L3",
-      "weight": 1.0
-    },
-    {
-      "source": "src_components_screens_consumerloginscreen",
-      "target": "src_services_smsservice_sendconsumerotpsms",
-      "relation": "imports",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "src/components/screens/ConsumerLoginScreen.tsx",
-      "source_location": "L5",
-      "weight": 1.0
-    },
-    {
-      "source": "src_components_screens_consumerloginscreen",
-      "target": "src_services_smsservice_verifyconsumerotp",
-      "relation": "imports",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "src/components/screens/ConsumerLoginScreen.tsx",
-      "source_location": "L5",
       "weight": 1.0
     },
     {
@@ -11751,7 +11907,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/services/smsService.ts",
-      "source_location": "L6",
+      "source_location": "L7",
       "weight": 1.0
     },
     {
@@ -13076,6 +13232,18 @@
     },
     {
       "source": "src_components_screens_consumerloginscreen",
+      "target": "src_services_smsservice",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/components/screens/ConsumerLoginScreen.tsx",
+      "source_location": "L15",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_screens_consumerloginscreen",
       "target": "src_context_appcontext",
       "relation": "imports_from",
       "_origin": "ast",
@@ -13108,18 +13276,6 @@
       "context": "import",
       "source_file": "src/components/screens/ConsumerLoginScreen.tsx",
       "source_location": "L4",
-      "weight": 1.0
-    },
-    {
-      "source": "src_components_screens_consumerloginscreen",
-      "target": "src_services_smsservice",
-      "relation": "imports_from",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "src/components/screens/ConsumerLoginScreen.tsx",
-      "source_location": "L5",
       "weight": 1.0
     },
     {
@@ -14451,7 +14607,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/services/smsService.ts",
-      "source_location": "L6",
+      "source_location": "L7",
       "weight": 1.0
     },
     {
@@ -17431,6 +17587,17 @@
     },
     {
       "source": "server_index_ts_server_index",
+      "target": "server_index_otpregistry",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "server/index.ts",
+      "source_location": "L177",
+      "weight": 1.0
+    },
+    {
+      "source": "server_index_ts_server_index",
       "target": "server_index_ts_server_index_db",
       "relation": "contains",
       "_origin": "ast",
@@ -17877,7 +18044,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/components/screens/ConsumerLoginScreen.tsx",
-      "source_location": "L7",
+      "source_location": "L23",
       "weight": 1.0
     },
     {
@@ -18927,24 +19094,13 @@
     },
     {
       "source": "src_services_smsservice",
-      "target": "src_services_smsservice_activeotps",
+      "target": "src_services_smsservice_otpentry",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/services/smsService.ts",
-      "source_location": "L14",
-      "weight": 1.0
-    },
-    {
-      "source": "src_services_smsservice",
-      "target": "src_services_smsservice_sendconsumerotpsms",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/services/smsService.ts",
-      "source_location": "L19",
+      "source_location": "L11",
       "weight": 1.0
     },
     {
@@ -18955,18 +19111,73 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/services/smsService.ts",
-      "source_location": "L67",
+      "source_location": "L130",
       "weight": 1.0
     },
     {
       "source": "src_services_smsservice",
-      "target": "src_services_smsservice_otpentry",
+      "target": "src_services_smsservice_activeotps",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/services/smsService.ts",
-      "source_location": "L8",
+      "source_location": "L17",
+      "weight": 1.0
+    },
+    {
+      "source": "src_services_smsservice",
+      "target": "src_services_smsservice_getdevicesimphone",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/services/smsService.ts",
+      "source_location": "L22",
+      "weight": 1.0
+    },
+    {
+      "source": "src_services_smsservice",
+      "target": "src_services_smsservice_setdevicesimphone",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/services/smsService.ts",
+      "source_location": "L33",
+      "weight": 1.0
+    },
+    {
+      "source": "src_services_smsservice",
+      "target": "src_services_smsservice_isdevicesim",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/services/smsService.ts",
+      "source_location": "L47",
+      "weight": 1.0
+    },
+    {
+      "source": "src_services_smsservice",
+      "target": "src_services_smsservice_sendotpresult",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/services/smsService.ts",
+      "source_location": "L54",
+      "weight": 1.0
+    },
+    {
+      "source": "src_services_smsservice",
+      "target": "src_services_smsservice_sendconsumerotpsms",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/services/smsService.ts",
+      "source_location": "L67",
       "weight": 1.0
     },
     {
@@ -19694,5 +19905,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "eef1e4ee22f65af19b9894d43e0fd4798b8bdc45"
+  "built_at_commit": "4cc41222d4737264f7c1b7ac8d3e8164f93f7ac0"
 }
