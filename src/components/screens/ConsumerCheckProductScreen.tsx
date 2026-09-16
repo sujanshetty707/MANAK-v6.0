@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { useApp } from '../../context/AppContext';
 import { Header } from '../common/Header';
 import { Camera, Link2, Upload, Sparkles, ArrowRight, Globe, Loader2, AlertCircle } from 'lucide-react';
+import { Camera as CapCamera, CameraResultType, CameraSource } from '@capacitor/camera';
+import { Capacitor } from '@capacitor/core';
 import { extractLabelApi, checkUrlApi } from '../../services/api';
 import { compressImage } from '../../utils/imageUtils';
 
@@ -15,11 +17,44 @@ export const ConsumerCheckProductScreen: React.FC = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [errorMsg, setErrorMsg] = useState<string | null>(null);
 
+  const isNative = Capacitor.isNativePlatform();
+
+  const handleCapturePhoto = async () => {
+    setErrorMsg(null);
+    if (isNative) {
+      try {
+        const photo = await CapCamera.getPhoto({
+          quality: 90,
+          allowEditing: false,
+          resultType: CameraResultType.DataUrl,
+          source: CameraSource.Camera,
+          correctOrientation: true
+        });
+
+        if (photo.dataUrl) {
+          const compressed = await compressImage(photo.dataUrl, 1600, 0.85).catch(() => photo.dataUrl!);
+          setSelectedImages(prev => {
+            const next = [...prev, compressed];
+            setActiveImageIdx(next.length - 1);
+            return next;
+          });
+        }
+      } catch (e) {
+        console.warn('Native camera cancelled or error:', e);
+      }
+    } else {
+      const camInput = document.getElementById('consumer-live-camera-input') as HTMLInputElement;
+      if (camInput) {
+        camInput.click();
+      }
+    }
+  };
+
   const handleStartCheck = async () => {
     setErrorMsg(null);
 
     if (activeMode === 'scan' && selectedImages.length === 0 && !customText.trim()) {
-      setErrorMsg('Please upload at least 1 product photo (Front and Back packaging photos recommended).');
+      handleCapturePhoto();
       return;
     }
     if (activeMode === 'url' && !urlInput.trim()) {
@@ -137,29 +172,103 @@ export const ConsumerCheckProductScreen: React.FC = () => {
         {activeMode === 'scan' ? (
           /* Camera Scan UI */
           <div className="space-y-3 my-auto">
-            <div className="relative w-full h-52 rounded-2xl overflow-hidden border-2 border-dashed border-emerald-500/40 bg-slate-900 flex items-center justify-center shadow-sm">
+            {/* Hidden native/browser fallback file inputs */}
+            <input
+              id="consumer-live-camera-input"
+              type="file"
+              accept="image/*"
+              capture="environment"
+              onChange={handleCustomUpload}
+              className="hidden"
+            />
+            <input
+              id="consumer-upload-input"
+              type="file"
+              accept="image/*"
+              multiple
+              onChange={handleCustomUpload}
+              className="hidden"
+            />
+
+            <div className="relative w-full h-56 rounded-2xl overflow-hidden border-2 border-emerald-500/50 bg-slate-900 flex items-center justify-center shadow-md">
               {currentViewImage ? (
                 <img
                   src={currentViewImage}
                   alt={`Product Scan Panel ${activeImageIdx + 1}`}
-                  className="w-full h-full object-cover filter brightness-[0.95]"
+                  className="w-full h-full object-cover filter brightness-[0.98]"
                 />
               ) : (
-                <div className="text-center p-4 space-y-2">
-                  <Camera className="w-8 h-8 text-emerald-400 mx-auto" />
-                  <p className="text-xs text-slate-300 font-medium">Upload photos of the product label</p>
-                  <p className="text-[11px] text-slate-400">Front and Back panels can be uploaded together</p>
+                <div
+                  onClick={handleCapturePhoto}
+                  className="text-center p-4 space-y-2.5 cursor-pointer select-none group w-full h-full flex flex-col items-center justify-center"
+                >
+                  <div className="w-14 h-14 rounded-2xl bg-emerald-950/80 border border-emerald-500/60 flex items-center justify-center text-emerald-400 group-hover:scale-105 transition-transform shadow-lg">
+                    <Camera className="w-7 h-7" />
+                  </div>
+                  <div>
+                    <p className="text-xs text-white font-bold tracking-wide">
+                      Tap to Open Live Camera
+                    </p>
+                    <p className="text-[11px] text-slate-300 mt-0.5">
+                      Snap Front &amp; Back label panels
+                    </p>
+                  </div>
+                  <div className="flex items-center justify-center gap-2 pt-1" onClick={(e) => e.stopPropagation()}>
+                    <button
+                      type="button"
+                      onClick={handleCapturePhoto}
+                      className="px-3 py-1.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 active:scale-95 text-white text-[11px] font-bold flex items-center space-x-1.5 shadow"
+                    >
+                      <Camera className="w-3.5 h-3.5" />
+                      <span>Take Photo</span>
+                    </button>
+                    <label
+                      htmlFor="consumer-upload-input"
+                      className="px-3 py-1.5 rounded-xl bg-slate-800 hover:bg-slate-700 active:scale-95 text-slate-200 text-[11px] font-medium flex items-center space-x-1.5 border border-slate-700 cursor-pointer shadow"
+                    >
+                      <Upload className="w-3.5 h-3.5 text-slate-400" />
+                      <span>Upload Gallery</span>
+                    </label>
+                  </div>
                 </div>
               )}
 
-              <label className="absolute bottom-3 right-3 px-3 py-1.5 rounded-xl bg-black/70 backdrop-blur-md border border-white/20 text-white text-[11px] font-semibold flex items-center space-x-1 cursor-pointer hover:bg-black">
-                <Upload className="w-3.5 h-3.5" />
-                <span>{selectedImages.length > 0 ? '+ Add Side' : 'Upload Photos'}</span>
-                <input type="file" accept="image/*" multiple onChange={handleCustomUpload} className="hidden" />
-              </label>
+              {/* Viewfinder corner markers */}
+              <div className="absolute inset-2 pointer-events-none flex flex-col justify-between">
+                <div className="flex justify-between">
+                  <div className="w-5 h-5 border-t-2 border-l-2 border-emerald-400 rounded-tl-md"></div>
+                  <div className="w-5 h-5 border-t-2 border-r-2 border-emerald-400 rounded-tr-md"></div>
+                </div>
+                <div className="flex justify-between">
+                  <div className="w-5 h-5 border-b-2 border-l-2 border-emerald-400 rounded-bl-md"></div>
+                  <div className="w-5 h-5 border-b-2 border-r-2 border-emerald-400 rounded-br-md"></div>
+                </div>
+              </div>
+
+              {/* Controls overlay when image is captured */}
+              {currentViewImage && (
+                <div className="absolute bottom-3 right-3 flex items-center gap-1.5 z-10">
+                  <button
+                    type="button"
+                    onClick={handleCapturePhoto}
+                    className="px-2.5 py-1.5 rounded-xl bg-emerald-700/90 hover:bg-emerald-800 active:scale-95 backdrop-blur-md border border-emerald-400/40 text-white text-[11px] font-semibold flex items-center space-x-1 shadow"
+                    title="Snap another panel with camera"
+                  >
+                    <Camera className="w-3.5 h-3.5" />
+                    <span>+ Camera</span>
+                  </button>
+                  <label
+                    htmlFor="consumer-upload-input"
+                    className="px-2.5 py-1.5 rounded-xl bg-black/70 hover:bg-black/90 active:scale-95 backdrop-blur-md border border-white/20 text-white text-[11px] font-semibold flex items-center space-x-1 cursor-pointer shadow"
+                  >
+                    <Upload className="w-3.5 h-3.5" />
+                    <span>+ Upload</span>
+                  </label>
+                </div>
+              )}
 
               {selectedImages.length > 1 && (
-                <div className="absolute top-3 left-3 px-2 py-0.5 rounded-md bg-black/70 text-white text-[10px] font-mono">
+                <div className="absolute top-3 left-3 px-2 py-0.5 rounded-md bg-black/70 text-white text-[10px] font-mono z-10">
                   Panel {activeImageIdx + 1} of {selectedImages.length}
                 </div>
               )}
@@ -189,9 +298,22 @@ export const ConsumerCheckProductScreen: React.FC = () => {
                     </button>
                   </div>
                 ))}
-                <label className="flex-shrink-0 w-14 h-14 rounded-xl border-2 border-dashed border-emerald-400 bg-emerald-50/50 hover:bg-emerald-50 flex flex-col items-center justify-center text-emerald-700 cursor-pointer text-[10px] font-bold">
-                  <span>+ Photo</span>
-                  <input type="file" accept="image/*" multiple onChange={handleCustomUpload} className="hidden" />
+                <button
+                  type="button"
+                  onClick={handleCapturePhoto}
+                  className="flex-shrink-0 w-14 h-14 rounded-xl border-2 border-dashed border-emerald-500 bg-emerald-50 hover:bg-emerald-100 flex flex-col items-center justify-center text-emerald-800 cursor-pointer text-[10px] font-bold transition-colors"
+                  title="Take photo with camera"
+                >
+                  <Camera className="w-4 h-4 text-emerald-700 mb-0.5" />
+                  <span>+ Camera</span>
+                </button>
+                <label
+                  htmlFor="consumer-upload-input"
+                  className="flex-shrink-0 w-14 h-14 rounded-xl border-2 border-dashed border-slate-300 bg-white hover:bg-slate-50 flex flex-col items-center justify-center text-slate-600 cursor-pointer text-[10px] font-bold transition-colors"
+                  title="Upload from gallery"
+                >
+                  <Upload className="w-4 h-4 text-slate-500 mb-0.5" />
+                  <span>+ Gallery</span>
                 </label>
               </div>
             )}
