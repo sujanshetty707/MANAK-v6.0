@@ -16,7 +16,7 @@ export const ExtractionProcessingScreen: React.FC = () => {
       } else {
         clearInterval(interval);
         setTimeout(() => {
-          if (userRole === 'consumer') {
+          if (userRole === 'consumer' && currentProduct?.source_type !== 'ecommerce') {
             navigateTo('consumer_report');
           } else {
             navigateTo('analysis_results');
@@ -26,7 +26,7 @@ export const ExtractionProcessingScreen: React.FC = () => {
     }, 600);
 
     return () => clearInterval(interval);
-  }, [navigateTo, userRole]);
+  }, [navigateTo, userRole, currentProduct]);
 
   const currentStage: PipelineStage = PIPELINE_STAGES[currentStageIdx] || PIPELINE_STAGES[0];
 
