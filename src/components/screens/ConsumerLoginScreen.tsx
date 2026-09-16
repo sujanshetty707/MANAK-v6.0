@@ -260,6 +260,30 @@ export const ConsumerLoginScreen: React.FC = () => {
               </label>
             </div>
 
+            {/* Supabase Test-OTP & 2Factor Demo Helper */}
+            <div className="bg-gradient-to-r from-emerald-50 to-teal-50 rounded-xl p-2.5 border border-emerald-200/80 flex items-center justify-between">
+              <div className="space-y-0.5">
+                <div className="flex items-center gap-1 text-[11px] font-bold text-emerald-950">
+                  <Sparkles className="w-3.5 h-3.5 text-emerald-600" />
+                  <span>Free Demo / Test-OTP Mode</span>
+                </div>
+                <p className="text-[10px] text-emerald-800 font-mono">
+                  +91 99999 99999 &bull; Code: 123456
+                </p>
+              </div>
+              <button
+                type="button"
+                onClick={() => {
+                  setPhone('9999999999');
+                  setIsLocalDeviceSim(true);
+                  setErrorMsg(null);
+                }}
+                className="py-1 px-2.5 bg-white border border-emerald-300 hover:bg-emerald-100/70 text-emerald-800 rounded-lg text-[10px] font-bold shadow-2xs transition-colors"
+              >
+                Use Test SIM
+              </button>
+            </div>
+
             <button
               type="submit"
               disabled={phone.replace(/[^0-9]/g, '').length < 10 || smsSending}

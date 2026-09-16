@@ -1,16 +1,16 @@
 # Graph Report - MANAK  (2026-09-17)
 
 ## Corpus Check
-- 104 files · ~93,107 words
+- 104 files · ~94,119 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 603 nodes · 1088 edges · 53 communities (36 shown, 9 thin omitted)
+- 608 nodes · 1101 edges · 54 communities (37 shown, 9 thin omitted)
 - Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `eef1e4ee`
+- Built from commit: `4cc41222`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -60,6 +60,7 @@
 - vite.config.ts
 - capacitor.config.ts
 - @supabase/supabase-js
+- ConsumerLoginScreen.tsx
 
 ## God Nodes (most connected - your core abstractions)
 1. `useApp()` - 50 edges
@@ -69,8 +70,8 @@
 5. `Header()` - 18 edges
 6. `ExtractionResult` - 18 edges
 7. `AppProvider()` - 17 edges
-8. `compilerOptions` - 16 edges
-9. `getApiBaseUrl()` - 15 edges
+8. `getApiBaseUrl()` - 16 edges
+9. `compilerOptions` - 16 edges
 10. `Product` - 13 edges
 
 ## Surprising Connections (you probably didn't know these)
@@ -88,7 +89,7 @@
 ## Import Cycles
 - None detected.
 
-## Communities (53 total, 9 thin omitted)
+## Communities (54 total, 9 thin omitted)
 
 ### Community 0 - "Officer Flow"
 Cohesion: 0.24
@@ -96,15 +97,15 @@ Nodes (12): Consumer Flow, Deterministic Rule Engine, E-Commerce DOM Adapters, O
 
 ### Community 1 - "App.tsx"
 Cohesion: 0.10
-Nodes (44): @capacitor/camera, @capacitor/core, lucide-react, react, App(), BottomNav(), DeviceFrame(), Header() (+36 more)
+Nodes (41): @capacitor/camera, @capacitor/core, lucide-react, react, App(), BottomNav(), DeviceFrame(), Header() (+33 more)
 
 ### Community 2 - "devDependencies"
 Cohesion: 0.18
 Nodes (11): devDependencies, autoprefixer, concurrently, postcss, tailwindcss, tsx, @types/react, @types/react-dom (+3 more)
 
 ### Community 3 - "package.json"
-Cohesion: 0.10
-Nodes (20): name, private, type, version, autoprefixer, @capacitor/android, clsx, concurrently (+12 more)
+Cohesion: 0.09
+Nodes (21): name, private, type, version, autoprefixer, @capacitor/android, clsx, concurrently (+13 more)
 
 ### Community 4 - "README.md"
 Cohesion: 0.05
@@ -183,8 +184,8 @@ Cohesion: 0.33
 Nodes (5): ExampleInstrumentedTest, ExampleUnitTest, androidx.test.ext.junit.runners.AndroidJUnit4, org.junit.runner.RunWith, org.junit.Test
 
 ### Community 31 - "AppContext.tsx"
-Cohesion: 0.07
-Nodes (66): Props, ServerSettingsModal(), AppContext, AppContextType, AppProvider(), MOCK_CONSUMER_REPORTS, MOCK_HISTORY, REPEAT_VIOLATOR_HEATMAP (+58 more)
+Cohesion: 0.08
+Nodes (63): Props, ServerSettingsModal(), AppContext, AppContextType, AppProvider(), MOCK_HISTORY, SAMPLE_PRODUCTS, COMPLIANCE_RULES (+55 more)
 
 ### Community 32 - "gradlew"
 Cohesion: 0.83
@@ -208,7 +209,7 @@ Nodes (8): 1. Summary of Required Credentials, 2. Step-by-Step Instructions to O
 
 ### Community 43 - "labelParser.ts"
 Cohesion: 0.08
-Nodes (39): cors, dotenv, express, tesseract.js, ensureUUID(), app, db, saveInspectionToSupabase() (+31 more)
+Nodes (39): cors, dotenv, express, ensureUUID(), app, db, otpRegistry, saveInspectionToSupabase() (+31 more)
 
 ### Community 44 - "Product Requirements Document (PRD)"
 Cohesion: 0.18
@@ -231,28 +232,32 @@ Cohesion: 0.29
 Nodes (6): 1. Add a `channel` parameter and thread it through, 2. Where `channel` gets set (MANAK backend entry points), 3. `analyze_seller_upload` note, 4. Test to add, 5. Non-goal, Addendum: Channel-Gate the Online-Required / Package-Only Split
 
 ### Community 49 - "cryptoService.ts"
-Cohesion: 0.60
-Nodes (3): ConsumerStatementText(), decryptData(), deriveKey()
+Cohesion: 0.53
+Nodes (4): ConsumerStatementText(), decryptData(), deriveKey(), encryptData()
+
+### Community 53 - "ConsumerLoginScreen.tsx"
+Cohesion: 0.38
+Nodes (9): ConsumerLoginScreen(), activeOtps, getDeviceSimPhone(), isDeviceSim(), OtpEntry, sendConsumerOtpSms(), SendOtpResult, setDeviceSimPhone() (+1 more)
 
 ## Knowledge Gaps
-- **284 isolated node(s):** `config`, `name`, `private`, `version`, `type` (+279 more)
-  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 320 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
+- **286 isolated node(s):** `config`, `name`, `private`, `version`, `type` (+281 more)
+  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 322 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
 - **9 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `react` connect `App.tsx` to `package.json`, `AppContext.tsx`?**
-  _High betweenness centrality (0.037) - this node is a cross-community bridge._
+- **Why does `react` connect `App.tsx` to `package.json`, `ConsumerLoginScreen.tsx`, `AppContext.tsx`?**
+  _High betweenness centrality (0.038) - this node is a cross-community bridge._
 - **Why does `dependencies` connect `dependencies` to `package.json`?**
   _High betweenness centrality (0.032) - this node is a cross-community bridge._
-- **Why does `lucide-react` connect `App.tsx` to `package.json`, `AppContext.tsx`?**
+- **Why does `lucide-react` connect `App.tsx` to `package.json`, `ConsumerLoginScreen.tsx`, `AppContext.tsx`?**
   _High betweenness centrality (0.025) - this node is a cross-community bridge._
 - **What connects `config`, `name`, `private` to the rest of the system?**
-  _284 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _286 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `App.tsx` be split into smaller, more focused modules?**
-  _Cohesion score 0.09552017771195853 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.10315430520034101 - nodes in this community are weakly interconnected._
 - **Should `package.json` be split into smaller, more focused modules?**
-  _Cohesion score 0.09523809523809523 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.09090909090909091 - nodes in this community are weakly interconnected._
 - **Should `README.md` be split into smaller, more focused modules?**
   _Cohesion score 0.05263157894736842 - nodes in this community are weakly interconnected._
