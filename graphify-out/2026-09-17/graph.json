@@ -82,6 +82,71 @@
       "source_location": "L18"
     },
     {
+      "id": "src_services_ecommerceruleengine_ecommerceauditreport",
+      "label": "EcommerceAuditReport",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 31,
+      "community_name": "api.ts",
+      "file_type": "code",
+      "norm_label": "ecommerceauditreport",
+      "source_file": "src/services/ecommerceRuleEngine.ts",
+      "source_location": "L23"
+    },
+    {
+      "id": "src_services_ecommerceruleengine_ecommerceruleresult",
+      "label": "EcommerceRuleResult",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 31,
+      "community_name": "api.ts",
+      "file_type": "code",
+      "norm_label": "ecommerceruleresult",
+      "source_file": "src/services/ecommerceRuleEngine.ts",
+      "source_location": "L7"
+    },
+    {
+      "id": "src_services_ecommerceruleengine_ecommercestatus",
+      "label": "EcommerceStatus",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 31,
+      "community_name": "api.ts",
+      "file_type": "code",
+      "norm_label": "ecommercestatus",
+      "source_file": "src/services/ecommerceRuleEngine.ts",
+      "source_location": "L3"
+    },
+    {
+      "id": "src_services_ecommerceruleengine_evidencelevel",
+      "label": "EvidenceLevel",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 31,
+      "community_name": "api.ts",
+      "file_type": "code",
+      "norm_label": "evidencelevel",
+      "source_file": "src/services/ecommerceRuleEngine.ts",
+      "source_location": "L4"
+    },
+    {
+      "id": "src_services_ecommerceruleengine_ruleseverity",
+      "label": "RuleSeverity",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 31,
+      "community_name": "api.ts",
+      "file_type": "code",
+      "norm_label": "ruleseverity",
+      "source_file": "src/services/ecommerceRuleEngine.ts",
+      "source_location": "L5"
+    },
+    {
       "id": "src_services_ocrsimulation_pipelinestage",
       "label": "PipelineStage",
       "_callable": true,
@@ -235,7 +300,7 @@
       "file_type": "code",
       "norm_label": "mainactivity",
       "source_file": "android/app/src/main/java/in/gov/manak/compliance/MainActivity.java",
-      "source_location": "L7"
+      "source_location": "L8"
     },
     {
       "id": "server_services_ecommerceauditservice_ecommerceauditinput",
@@ -335,7 +400,7 @@
       "file_type": "code",
       "norm_label": "header()",
       "source_file": "src/components/common/Header.tsx",
-      "source_location": "L6"
+      "source_location": "L5"
     },
     {
       "id": "src_components_screens_analysisresultsscreen_analysisresultsscreen",
@@ -347,7 +412,7 @@
       "file_type": "code",
       "norm_label": "analysisresultsscreen()",
       "source_file": "src/components/screens/AnalysisResultsScreen.tsx",
-      "source_location": "L25"
+      "source_location": "L32"
     },
     {
       "id": "src_components_screens_camerascanscreen_camerascanscreen",
@@ -395,7 +460,7 @@
       "file_type": "code",
       "norm_label": "consumercheckproductscreen()",
       "source_file": "src/components/screens/ConsumerCheckProductScreen.tsx",
-      "source_location": "L8"
+      "source_location": "L10"
     },
     {
       "id": "src_components_screens_consumerdashboardscreen_consumerdashboardscreen",
@@ -407,7 +472,7 @@
       "file_type": "code",
       "norm_label": "consumerdashboardscreen()",
       "source_file": "src/components/screens/ConsumerDashboardScreen.tsx",
-      "source_location": "L7"
+      "source_location": "L23"
     },
     {
       "id": "src_components_screens_consumerloginscreen_consumerloginscreen",
@@ -491,7 +556,7 @@
       "file_type": "code",
       "norm_label": "inspectionhistoryscreen()",
       "source_file": "src/components/screens/InspectionHistoryScreen.tsx",
-      "source_location": "L8"
+      "source_location": "L11"
     },
     {
       "id": "src_components_screens_inspectionreportscreen_inspectionreportscreen",
@@ -575,7 +640,7 @@
       "file_type": "code",
       "norm_label": "officerprofilescreen()",
       "source_file": "src/components/screens/OfficerProfileScreen.tsx",
-      "source_location": "L10"
+      "source_location": "L11"
     },
     {
       "id": "src_components_screens_roleselectionscreen_roleselectionscreen",
@@ -650,6 +715,78 @@
       "source_location": "L7"
     },
     {
+      "id": "src_services_pdfreportgenerator_generateinspectionpdf",
+      "label": "generateInspectionPDF()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "package.json",
+      "file_type": "code",
+      "norm_label": "generateinspectionpdf()",
+      "source_file": "src/services/pdfReportGenerator.ts",
+      "source_location": "L67"
+    },
+    {
+      "id": "src_services_pdfreportgenerator_getmrpstr",
+      "label": "getMrpStr()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "package.json",
+      "file_type": "code",
+      "norm_label": "getmrpstr()",
+      "source_file": "src/services/pdfReportGenerator.ts",
+      "source_location": "L55"
+    },
+    {
+      "id": "src_services_pdfreportgenerator_getnetqtystr",
+      "label": "getNetQtyStr()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "package.json",
+      "file_type": "code",
+      "norm_label": "getnetqtystr()",
+      "source_file": "src/services/pdfReportGenerator.ts",
+      "source_location": "L41"
+    },
+    {
+      "id": "src_services_pdfreportgenerator_safenum",
+      "label": "safeNum()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "package.json",
+      "file_type": "code",
+      "norm_label": "safenum()",
+      "source_file": "src/services/pdfReportGenerator.ts",
+      "source_location": "L36"
+    },
+    {
+      "id": "src_services_pdfreportgenerator_sanitizetext",
+      "label": "sanitizeText()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "package.json",
+      "file_type": "code",
+      "norm_label": "sanitizetext()",
+      "source_file": "src/services/pdfReportGenerator.ts",
+      "source_location": "L7"
+    },
+    {
+      "id": "vite_config_transformindexhtml",
+      "label": "transformIndexHtml()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "package.json",
+      "file_type": "code",
+      "norm_label": "transformindexhtml()",
+      "source_file": "vite.config.ts",
+      "source_location": "L9"
+    },
+    {
       "id": "android_app_src_androidtest_java_com_getcapacitor_myapp_exampleinstrumentedtest_exampleinstrumentedtest_useappcontext",
       "label": ".useAppContext()",
       "_callable": true,
@@ -711,7 +848,7 @@
       "file_type": "code",
       "norm_label": "askcompliancechatapi()",
       "source_file": "src/services/api.ts",
-      "source_location": "L301"
+      "source_location": "L315"
     },
     {
       "id": "src_services_api_buildlocalscanrecord",
@@ -723,7 +860,7 @@
       "file_type": "code",
       "norm_label": "buildlocalscanrecord()",
       "source_file": "src/services/api.ts",
-      "source_location": "L318"
+      "source_location": "L332"
     },
     {
       "id": "src_services_api_checkurlapi",
@@ -735,7 +872,7 @@
       "file_type": "code",
       "norm_label": "checkurlapi()",
       "source_file": "src/services/api.ts",
-      "source_location": "L179"
+      "source_location": "L178"
     },
     {
       "id": "src_services_api_evaluatecomplianceapi",
@@ -771,7 +908,7 @@
       "file_type": "code",
       "norm_label": "fetchconsumerreportsapi()",
       "source_file": "src/services/api.ts",
-      "source_location": "L229"
+      "source_location": "L243"
     },
     {
       "id": "src_services_api_fetchhistoryapi",
@@ -783,7 +920,7 @@
       "file_type": "code",
       "norm_label": "fetchhistoryapi()",
       "source_file": "src/services/api.ts",
-      "source_location": "L213"
+      "source_location": "L227"
     },
     {
       "id": "src_services_api_getapibaseurl",
@@ -807,7 +944,7 @@
       "file_type": "code",
       "norm_label": "getlocalchatanswer()",
       "source_file": "src/services/api.ts",
-      "source_location": "L371"
+      "source_location": "L385"
     },
     {
       "id": "src_services_api_loginapi",
@@ -831,7 +968,7 @@
       "file_type": "code",
       "norm_label": "scanproductapi()",
       "source_file": "src/services/api.ts",
-      "source_location": "L150"
+      "source_location": "L149"
     },
     {
       "id": "src_services_api_submitconsumerreportapi",
@@ -843,7 +980,7 @@
       "file_type": "code",
       "norm_label": "submitconsumerreportapi()",
       "source_file": "src/services/api.ts",
-      "source_location": "L243"
+      "source_location": "L257"
     },
     {
       "id": "src_services_api_syncqueueapi",
@@ -855,7 +992,7 @@
       "file_type": "code",
       "norm_label": "syncqueueapi()",
       "source_file": "src/services/api.ts",
-      "source_location": "L277"
+      "source_location": "L291"
     },
     {
       "id": "src_services_clientgeminivision_extractlabelclientside",
@@ -891,7 +1028,43 @@
       "file_type": "code",
       "norm_label": "checkurlclientside()",
       "source_file": "src/services/clientUrlCheck.ts",
+      "source_location": "L32"
+    },
+    {
+      "id": "src_services_clienturlcheck_getrelevantproductimage",
+      "label": "getRelevantProductImage()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 31,
+      "community_name": "api.ts",
+      "file_type": "code",
+      "norm_label": "getrelevantproductimage()",
+      "source_file": "src/services/clientUrlCheck.ts",
       "source_location": "L6"
+    },
+    {
+      "id": "src_services_ecommerceruleengine_evaluateecommercelisting",
+      "label": "evaluateEcommerceListing()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 31,
+      "community_name": "api.ts",
+      "file_type": "code",
+      "norm_label": "evaluateecommercelisting()",
+      "source_file": "src/services/ecommerceRuleEngine.ts",
+      "source_location": "L67"
+    },
+    {
+      "id": "src_services_ecommerceruleengine_normalizeunit",
+      "label": "normalizeUnit()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 31,
+      "community_name": "api.ts",
+      "file_type": "code",
+      "norm_label": "normalizeunit()",
+      "source_file": "src/services/ecommerceRuleEngine.ts",
+      "source_location": "L49"
     },
     {
       "id": "src_services_ocrsimulation_simulateextractionpipeline",
@@ -915,7 +1088,7 @@
       "file_type": "code",
       "norm_label": "evaluateextractionagainstrules()",
       "source_file": "src/services/ruleEngine.ts",
-      "source_location": "L4"
+      "source_location": "L5"
     },
     {
       "id": "src_services_supabaseservice_ensureuuid",
@@ -1000,16 +1173,22 @@
       "metadata": {
         "unresolved_calls": [
           {
+            "callee": "installSplashScreen",
+            "receiver_type": "SplashScreen",
+            "lang": "java",
+            "line": "L11"
+          },
+          {
             "callee": "setDecorFitsSystemWindows",
             "receiver_type": "WindowCompat",
             "lang": "java",
-            "line": "L11"
+            "line": "L13"
           }
         ]
       },
       "norm_label": ".oncreate()",
       "source_file": "android/app/src/main/java/in/gov/manak/compliance/MainActivity.java",
-      "source_location": "L8"
+      "source_location": "L9"
     },
     {
       "id": "server_index_ensureuuid",
@@ -1045,7 +1224,7 @@
       "file_type": "code",
       "norm_label": "auditecommerceurl()",
       "source_file": "server/services/ecommerceAuditService.ts",
-      "source_location": "L337"
+      "source_location": "L323"
     },
     {
       "id": "server_services_ecommerceauditservice_extractdeclarationswithgemini",
@@ -1057,7 +1236,7 @@
       "file_type": "code",
       "norm_label": "extractdeclarationswithgemini()",
       "source_file": "server/services/ecommerceAuditService.ts",
-      "source_location": "L176"
+      "source_location": "L159"
     },
     {
       "id": "server_services_ecommerceauditservice_fetchlistingcontent",
@@ -1069,7 +1248,7 @@
       "file_type": "code",
       "norm_label": "fetchlistingcontent()",
       "source_file": "server/services/ecommerceAuditService.ts",
-      "source_location": "L76"
+      "source_location": "L77"
     },
     {
       "id": "server_services_ecommerceauditservice_normalizeecommerceurl",
@@ -1081,7 +1260,7 @@
       "file_type": "code",
       "norm_label": "normalizeecommerceurl()",
       "source_file": "server/services/ecommerceAuditService.ts",
-      "source_location": "L28"
+      "source_location": "L27"
     },
     {
       "id": "server_services_ecommerceauditservice_resolveredirects",
@@ -1093,7 +1272,7 @@
       "file_type": "code",
       "norm_label": "resolveredirects()",
       "source_file": "server/services/ecommerceAuditService.ts",
-      "source_location": "L61"
+      "source_location": "L60"
     },
     {
       "id": "server_services_geminiextraction_extractlabelwithgemini",
@@ -1322,78 +1501,6 @@
       "norm_label": "parselabeltext()",
       "source_file": "src/services/labelParser.ts",
       "source_location": "L280"
-    },
-    {
-      "id": "vite_config_transformindexhtml",
-      "label": "transformIndexHtml()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 46,
-      "community_name": "vite.config.ts",
-      "file_type": "code",
-      "norm_label": "transformindexhtml()",
-      "source_file": "vite.config.ts",
-      "source_location": "L9"
-    },
-    {
-      "id": "src_services_pdfreportgenerator_generateinspectionpdf",
-      "label": "generateInspectionPDF()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 49,
-      "community_name": "pdfReportGenerator.ts",
-      "file_type": "code",
-      "norm_label": "generateinspectionpdf()",
-      "source_file": "src/services/pdfReportGenerator.ts",
-      "source_location": "L64"
-    },
-    {
-      "id": "src_services_pdfreportgenerator_getmrpstr",
-      "label": "getMrpStr()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 49,
-      "community_name": "pdfReportGenerator.ts",
-      "file_type": "code",
-      "norm_label": "getmrpstr()",
-      "source_file": "src/services/pdfReportGenerator.ts",
-      "source_location": "L52"
-    },
-    {
-      "id": "src_services_pdfreportgenerator_getnetqtystr",
-      "label": "getNetQtyStr()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 49,
-      "community_name": "pdfReportGenerator.ts",
-      "file_type": "code",
-      "norm_label": "getnetqtystr()",
-      "source_file": "src/services/pdfReportGenerator.ts",
-      "source_location": "L38"
-    },
-    {
-      "id": "src_services_pdfreportgenerator_safenum",
-      "label": "safeNum()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 49,
-      "community_name": "pdfReportGenerator.ts",
-      "file_type": "code",
-      "norm_label": "safenum()",
-      "source_file": "src/services/pdfReportGenerator.ts",
-      "source_location": "L33"
-    },
-    {
-      "id": "src_services_pdfreportgenerator_sanitizetext",
-      "label": "sanitizeText()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 49,
-      "community_name": "pdfReportGenerator.ts",
-      "file_type": "code",
-      "norm_label": "sanitizetext()",
-      "source_file": "src/services/pdfReportGenerator.ts",
-      "source_location": "L4"
     },
     {
       "id": "src_context_appcontext_appprovider",
@@ -1943,7 +2050,7 @@
       "file_type": "concept",
       "norm_label": "lucide-react",
       "source_file": "package.json",
-      "source_location": "L33"
+      "source_location": "L35"
     },
     {
       "id": "ref_react",
@@ -1954,7 +2061,7 @@
       "file_type": "concept",
       "norm_label": "react",
       "source_file": "package.json",
-      "source_location": "L34"
+      "source_location": "L36"
     },
     {
       "id": "agents_skills_ponytail_help_skill",
@@ -2633,7 +2740,7 @@
       "file_type": "code",
       "norm_label": "devdependencies",
       "source_file": "package.json",
-      "source_location": "L39"
+      "source_location": "L41"
     },
     {
       "id": "package_devdependencies_autoprefixer",
@@ -2644,7 +2751,7 @@
       "file_type": "code",
       "norm_label": "autoprefixer",
       "source_file": "package.json",
-      "source_location": "L43"
+      "source_location": "L45"
     },
     {
       "id": "package_devdependencies_concurrently",
@@ -2655,7 +2762,7 @@
       "file_type": "code",
       "norm_label": "concurrently",
       "source_file": "package.json",
-      "source_location": "L44"
+      "source_location": "L46"
     },
     {
       "id": "package_devdependencies_postcss",
@@ -2666,7 +2773,7 @@
       "file_type": "code",
       "norm_label": "postcss",
       "source_file": "package.json",
-      "source_location": "L45"
+      "source_location": "L47"
     },
     {
       "id": "package_devdependencies_tailwindcss",
@@ -2677,7 +2784,7 @@
       "file_type": "code",
       "norm_label": "tailwindcss",
       "source_file": "package.json",
-      "source_location": "L46"
+      "source_location": "L48"
     },
     {
       "id": "package_devdependencies_tsx",
@@ -2688,7 +2795,7 @@
       "file_type": "code",
       "norm_label": "tsx",
       "source_file": "package.json",
-      "source_location": "L47"
+      "source_location": "L49"
     },
     {
       "id": "package_devdependencies_types_react",
@@ -2699,7 +2806,7 @@
       "file_type": "code",
       "norm_label": "@types/react",
       "source_file": "package.json",
-      "source_location": "L40"
+      "source_location": "L42"
     },
     {
       "id": "package_devdependencies_types_react_dom",
@@ -2710,7 +2817,7 @@
       "file_type": "code",
       "norm_label": "@types/react-dom",
       "source_file": "package.json",
-      "source_location": "L41"
+      "source_location": "L43"
     },
     {
       "id": "package_devdependencies_typescript",
@@ -2721,7 +2828,7 @@
       "file_type": "code",
       "norm_label": "typescript",
       "source_file": "package.json",
-      "source_location": "L48"
+      "source_location": "L50"
     },
     {
       "id": "package_devdependencies_vite",
@@ -2732,7 +2839,7 @@
       "file_type": "code",
       "norm_label": "vite",
       "source_file": "package.json",
-      "source_location": "L49"
+      "source_location": "L51"
     },
     {
       "id": "package_devdependencies_vitejs_plugin_react",
@@ -2743,7 +2850,7 @@
       "file_type": "code",
       "norm_label": "@vitejs/plugin-react",
       "source_file": "package.json",
-      "source_location": "L42"
+      "source_location": "L44"
     },
     {
       "id": "agents_skills_ponytail_debt_skill",
@@ -3128,6 +3235,28 @@
       "source_location": "L9"
     },
     {
+      "id": "capacitor_config",
+      "label": "capacitor.config.ts",
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "package.json",
+      "file_type": "code",
+      "norm_label": "capacitor.config.ts",
+      "source_file": "capacitor.config.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "capacitor_config_config",
+      "label": "config",
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "package.json",
+      "file_type": "code",
+      "norm_label": "config",
+      "source_file": "capacitor.config.ts",
+      "source_location": "L3"
+    },
+    {
       "id": "package",
       "label": "package.json",
       "_origin": "ast",
@@ -3183,6 +3312,50 @@
       "source_location": "L4"
     },
     {
+      "id": "src_lib_supabase",
+      "label": "supabase.ts",
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "package.json",
+      "file_type": "code",
+      "norm_label": "supabase.ts",
+      "source_file": "src/lib/supabase.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_lib_supabase_supabase",
+      "label": "supabase",
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "package.json",
+      "file_type": "code",
+      "norm_label": "supabase",
+      "source_file": "src/lib/supabase.ts",
+      "source_location": "L6"
+    },
+    {
+      "id": "src_services_pdfreportgenerator",
+      "label": "pdfReportGenerator.ts",
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "package.json",
+      "file_type": "code",
+      "norm_label": "pdfreportgenerator.ts",
+      "source_file": "src/services/pdfReportGenerator.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "vite_config",
+      "label": "vite.config.ts",
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "package.json",
+      "file_type": "code",
+      "norm_label": "vite.config.ts",
+      "source_file": "vite.config.ts",
+      "source_location": "L1"
+    },
+    {
       "id": "ref_autoprefixer",
       "label": "autoprefixer",
       "_origin": "ast",
@@ -3191,7 +3364,7 @@
       "file_type": "concept",
       "norm_label": "autoprefixer",
       "source_file": "package.json",
-      "source_location": "L43"
+      "source_location": "L45"
     },
     {
       "id": "ref_capacitor_android",
@@ -3205,6 +3378,39 @@
       "source_location": "L19"
     },
     {
+      "id": "ref_capacitor_cli",
+      "label": "@capacitor/cli",
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "package.json",
+      "file_type": "concept",
+      "norm_label": "@capacitor/cli",
+      "source_file": "package.json",
+      "source_location": "L21"
+    },
+    {
+      "id": "ref_capacitor_filesystem",
+      "label": "@capacitor/filesystem",
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "package.json",
+      "file_type": "concept",
+      "norm_label": "@capacitor/filesystem",
+      "source_file": "package.json",
+      "source_location": "L23"
+    },
+    {
+      "id": "ref_capacitor_share",
+      "label": "@capacitor/share",
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "package.json",
+      "file_type": "concept",
+      "norm_label": "@capacitor/share",
+      "source_file": "package.json",
+      "source_location": "L24"
+    },
+    {
       "id": "ref_clsx",
       "label": "clsx",
       "_origin": "ast",
@@ -3213,7 +3419,7 @@
       "file_type": "concept",
       "norm_label": "clsx",
       "source_file": "package.json",
-      "source_location": "L27"
+      "source_location": "L29"
     },
     {
       "id": "ref_concurrently",
@@ -3224,7 +3430,7 @@
       "file_type": "concept",
       "norm_label": "concurrently",
       "source_file": "package.json",
-      "source_location": "L44"
+      "source_location": "L46"
     },
     {
       "id": "ref_google_genai",
@@ -3235,7 +3441,7 @@
       "file_type": "concept",
       "norm_label": "@google/genai",
       "source_file": "package.json",
-      "source_location": "L23"
+      "source_location": "L25"
     },
     {
       "id": "ref_html2canvas",
@@ -3246,7 +3452,18 @@
       "file_type": "concept",
       "norm_label": "html2canvas",
       "source_file": "package.json",
-      "source_location": "L31"
+      "source_location": "L33"
+    },
+    {
+      "id": "ref_jspdf",
+      "label": "jspdf",
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "package.json",
+      "file_type": "concept",
+      "norm_label": "jspdf",
+      "source_file": "package.json",
+      "source_location": "L34"
     },
     {
       "id": "ref_postcss",
@@ -3257,7 +3474,7 @@
       "file_type": "concept",
       "norm_label": "postcss",
       "source_file": "package.json",
-      "source_location": "L45"
+      "source_location": "L47"
     },
     {
       "id": "ref_react_dom",
@@ -3268,7 +3485,18 @@
       "file_type": "concept",
       "norm_label": "react-dom",
       "source_file": "package.json",
-      "source_location": "L35"
+      "source_location": "L37"
+    },
+    {
+      "id": "ref_supabase_supabase_js",
+      "label": "@supabase/supabase-js",
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "package.json",
+      "file_type": "concept",
+      "norm_label": "@supabase/supabase-js",
+      "source_file": "package.json",
+      "source_location": "L26"
     },
     {
       "id": "ref_tailwind_merge",
@@ -3279,7 +3507,7 @@
       "file_type": "concept",
       "norm_label": "tailwind-merge",
       "source_file": "package.json",
-      "source_location": "L36"
+      "source_location": "L38"
     },
     {
       "id": "ref_tailwindcss",
@@ -3290,7 +3518,7 @@
       "file_type": "concept",
       "norm_label": "tailwindcss",
       "source_file": "package.json",
-      "source_location": "L46"
+      "source_location": "L48"
     },
     {
       "id": "ref_tsx",
@@ -3301,7 +3529,7 @@
       "file_type": "concept",
       "norm_label": "tsx",
       "source_file": "package.json",
-      "source_location": "L47"
+      "source_location": "L49"
     },
     {
       "id": "ref_types_cors",
@@ -3312,7 +3540,7 @@
       "file_type": "concept",
       "norm_label": "@types/cors",
       "source_file": "package.json",
-      "source_location": "L25"
+      "source_location": "L27"
     },
     {
       "id": "ref_types_express",
@@ -3323,7 +3551,7 @@
       "file_type": "concept",
       "norm_label": "@types/express",
       "source_file": "package.json",
-      "source_location": "L26"
+      "source_location": "L28"
     },
     {
       "id": "ref_types_react",
@@ -3334,7 +3562,7 @@
       "file_type": "concept",
       "norm_label": "@types/react",
       "source_file": "package.json",
-      "source_location": "L40"
+      "source_location": "L42"
     },
     {
       "id": "ref_types_react_dom",
@@ -3345,7 +3573,7 @@
       "file_type": "concept",
       "norm_label": "@types/react-dom",
       "source_file": "package.json",
-      "source_location": "L41"
+      "source_location": "L43"
     },
     {
       "id": "ref_typescript",
@@ -3356,7 +3584,29 @@
       "file_type": "concept",
       "norm_label": "typescript",
       "source_file": "package.json",
-      "source_location": "L48"
+      "source_location": "L50"
+    },
+    {
+      "id": "ref_vite",
+      "label": "vite",
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "package.json",
+      "file_type": "concept",
+      "norm_label": "vite",
+      "source_file": "package.json",
+      "source_location": "L51"
+    },
+    {
+      "id": "ref_vitejs_plugin_react",
+      "label": "@vitejs/plugin-react",
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "package.json",
+      "file_type": "concept",
+      "norm_label": "@vitejs/plugin-react",
+      "source_file": "package.json",
+      "source_location": "L44"
     },
     {
       "id": "android_app_src_androidtest_java_com_getcapacitor_myapp_exampleinstrumentedtest",
@@ -3543,6 +3793,17 @@
       "file_type": "code",
       "norm_label": "clienturlcheck.ts",
       "source_file": "src/services/clientUrlCheck.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_services_ecommerceruleengine",
+      "label": "ecommerceRuleEngine.ts",
+      "_origin": "ast",
+      "community": 31,
+      "community_name": "api.ts",
+      "file_type": "code",
+      "norm_label": "ecommerceruleengine.ts",
+      "source_file": "src/services/ecommerceRuleEngine.ts",
       "source_location": "L1"
     },
     {
@@ -4282,6 +4543,28 @@
       "source_location": "L22"
     },
     {
+      "id": "package_dependencies_capacitor_filesystem",
+      "label": "@capacitor/filesystem",
+      "_origin": "ast",
+      "community": 40,
+      "community_name": "dependencies",
+      "file_type": "code",
+      "norm_label": "@capacitor/filesystem",
+      "source_file": "package.json",
+      "source_location": "L23"
+    },
+    {
+      "id": "package_dependencies_capacitor_share",
+      "label": "@capacitor/share",
+      "_origin": "ast",
+      "community": 40,
+      "community_name": "dependencies",
+      "file_type": "code",
+      "norm_label": "@capacitor/share",
+      "source_file": "package.json",
+      "source_location": "L24"
+    },
+    {
       "id": "package_dependencies_clsx",
       "label": "clsx",
       "_origin": "ast",
@@ -4290,7 +4573,7 @@
       "file_type": "code",
       "norm_label": "clsx",
       "source_file": "package.json",
-      "source_location": "L27"
+      "source_location": "L29"
     },
     {
       "id": "package_dependencies_cors",
@@ -4301,7 +4584,7 @@
       "file_type": "code",
       "norm_label": "cors",
       "source_file": "package.json",
-      "source_location": "L28"
+      "source_location": "L30"
     },
     {
       "id": "package_dependencies_dotenv",
@@ -4312,7 +4595,7 @@
       "file_type": "code",
       "norm_label": "dotenv",
       "source_file": "package.json",
-      "source_location": "L29"
+      "source_location": "L31"
     },
     {
       "id": "package_dependencies_express",
@@ -4323,7 +4606,7 @@
       "file_type": "code",
       "norm_label": "express",
       "source_file": "package.json",
-      "source_location": "L30"
+      "source_location": "L32"
     },
     {
       "id": "package_dependencies_google_genai",
@@ -4334,7 +4617,7 @@
       "file_type": "code",
       "norm_label": "@google/genai",
       "source_file": "package.json",
-      "source_location": "L23"
+      "source_location": "L25"
     },
     {
       "id": "package_dependencies_html2canvas",
@@ -4345,7 +4628,7 @@
       "file_type": "code",
       "norm_label": "html2canvas",
       "source_file": "package.json",
-      "source_location": "L31"
+      "source_location": "L33"
     },
     {
       "id": "package_dependencies_jspdf",
@@ -4356,7 +4639,7 @@
       "file_type": "code",
       "norm_label": "jspdf",
       "source_file": "package.json",
-      "source_location": "L32"
+      "source_location": "L34"
     },
     {
       "id": "package_dependencies_lucide_react",
@@ -4367,7 +4650,7 @@
       "file_type": "code",
       "norm_label": "lucide-react",
       "source_file": "package.json",
-      "source_location": "L33"
+      "source_location": "L35"
     },
     {
       "id": "package_dependencies_react",
@@ -4378,7 +4661,7 @@
       "file_type": "code",
       "norm_label": "react",
       "source_file": "package.json",
-      "source_location": "L34"
+      "source_location": "L36"
     },
     {
       "id": "package_dependencies_react_dom",
@@ -4389,7 +4672,7 @@
       "file_type": "code",
       "norm_label": "react-dom",
       "source_file": "package.json",
-      "source_location": "L35"
+      "source_location": "L37"
     },
     {
       "id": "package_dependencies_supabase_supabase_js",
@@ -4400,7 +4683,7 @@
       "file_type": "code",
       "norm_label": "@supabase/supabase-js",
       "source_file": "package.json",
-      "source_location": "L24"
+      "source_location": "L26"
     },
     {
       "id": "package_dependencies_tailwind_merge",
@@ -4411,7 +4694,7 @@
       "file_type": "code",
       "norm_label": "tailwind-merge",
       "source_file": "package.json",
-      "source_location": "L36"
+      "source_location": "L38"
     },
     {
       "id": "package_dependencies_tesseract_js",
@@ -4422,7 +4705,7 @@
       "file_type": "code",
       "norm_label": "tesseract.js",
       "source_file": "package.json",
-      "source_location": "L37"
+      "source_location": "L39"
     },
     {
       "id": "package_dependencies_types_cors",
@@ -4433,7 +4716,7 @@
       "file_type": "code",
       "norm_label": "@types/cors",
       "source_file": "package.json",
-      "source_location": "L25"
+      "source_location": "L27"
     },
     {
       "id": "package_dependencies_types_express",
@@ -4444,7 +4727,7 @@
       "file_type": "code",
       "norm_label": "@types/express",
       "source_file": "package.json",
-      "source_location": "L26"
+      "source_location": "L28"
     },
     {
       "id": "senior_engineer_overview",
@@ -5042,7 +5325,7 @@
       "file_type": "concept",
       "norm_label": "cors",
       "source_file": "package.json",
-      "source_location": "L28"
+      "source_location": "L30"
     },
     {
       "id": "ref_dotenv",
@@ -5053,7 +5336,7 @@
       "file_type": "concept",
       "norm_label": "dotenv",
       "source_file": "package.json",
-      "source_location": "L29"
+      "source_location": "L31"
     },
     {
       "id": "ref_express",
@@ -5064,7 +5347,7 @@
       "file_type": "concept",
       "norm_label": "express",
       "source_file": "package.json",
-      "source_location": "L30"
+      "source_location": "L32"
     },
     {
       "id": "ref_tesseract_js",
@@ -5075,7 +5358,7 @@
       "file_type": "concept",
       "norm_label": "tesseract.js",
       "source_file": "package.json",
-      "source_location": "L37"
+      "source_location": "L39"
     },
     {
       "id": "prd",
@@ -5331,69 +5614,291 @@
       "source_location": "L9"
     },
     {
-      "id": "vite_config",
-      "label": "vite.config.ts",
+      "id": "presentation",
+      "label": "presentation.md",
       "_origin": "ast",
       "community": 46,
-      "community_name": "vite.config.ts",
-      "file_type": "code",
-      "norm_label": "vite.config.ts",
-      "source_file": "vite.config.ts",
+      "community_name": "MANAK: AI-Powered Legal Metrology Compliance Checker",
+      "file_type": "document",
+      "node_kind": "page",
+      "norm_label": "presentation.md",
+      "source_file": "presentation.md",
       "source_location": "L1"
     },
     {
-      "id": "ref_vite",
-      "label": "vite",
+      "id": "presentation_1_frontend_user_experience",
+      "label": "1. \ud83d\udcf1 Frontend (User Experience)",
       "_origin": "ast",
       "community": 46,
-      "community_name": "vite.config.ts",
-      "file_type": "concept",
-      "norm_label": "vite",
-      "source_file": "package.json",
-      "source_location": "L49"
+      "community_name": "MANAK: AI-Powered Legal Metrology Compliance Checker",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "1. \ud83d\udcf1 frontend (user experience)",
+      "source_file": "presentation.md",
+      "source_location": "L101"
     },
     {
-      "id": "ref_vitejs_plugin_react",
-      "label": "@vitejs/plugin-react",
+      "id": "presentation_2_the_eyes_multimodal_ai_google_gemini",
+      "label": "2. \ud83d\udc41\ufe0f The \"Eyes\": Multimodal AI (Google Gemini)",
       "_origin": "ast",
       "community": 46,
-      "community_name": "vite.config.ts",
-      "file_type": "concept",
-      "norm_label": "@vitejs/plugin-react",
-      "source_file": "package.json",
+      "community_name": "MANAK: AI-Powered Legal Metrology Compliance Checker",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "2. \ud83d\udc41\ufe0f the \"eyes\": multimodal ai (google gemini)",
+      "source_file": "presentation.md",
+      "source_location": "L106"
+    },
+    {
+      "id": "presentation_3_the_brain_deterministic_legal_rule_engine",
+      "label": "3. \u2696\ufe0f The \"Brain\": Deterministic Legal Rule Engine",
+      "_origin": "ast",
+      "community": 46,
+      "community_name": "MANAK: AI-Powered Legal Metrology Compliance Checker",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "3. \u2696\ufe0f the \"brain\": deterministic legal rule engine",
+      "source_file": "presentation.md",
+      "source_location": "L110"
+    },
+    {
+      "id": "presentation_4_offline_first_architecture",
+      "label": "4. \u26a1 Offline-First Architecture",
+      "_origin": "ast",
+      "community": 46,
+      "community_name": "MANAK: AI-Powered Legal Metrology Compliance Checker",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "4. \u26a1 offline-first architecture",
+      "source_file": "presentation.md",
+      "source_location": "L122"
+    },
+    {
+      "id": "presentation_5_instant_legal_documentation_pdf_generator",
+      "label": "5. \ud83d\udcd1 Instant Legal Documentation (PDF Generator)",
+      "_origin": "ast",
+      "community": 46,
+      "community_name": "MANAK: AI-Powered Legal Metrology Compliance Checker",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "5. \ud83d\udcd1 instant legal documentation (pdf generator)",
+      "source_file": "presentation.md",
+      "source_location": "L128"
+    },
+    {
+      "id": "presentation_a_single_mobile_app_with_two_smart_personas",
+      "label": "A Single Mobile App with Two Smart Personas:",
+      "_origin": "ast",
+      "community": 46,
+      "community_name": "MANAK: AI-Powered Legal Metrology Compliance Checker",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "a single mobile app with two smart personas:",
+      "source_file": "presentation.md",
+      "source_location": "L31"
+    },
+    {
+      "id": "presentation_automated_legal_metrology_compliance_at_your_fingertips",
+      "label": "*Automated Legal Metrology Compliance at Your Fingertips*",
+      "_origin": "ast",
+      "community": 46,
+      "community_name": "MANAK: AI-Powered Legal Metrology Compliance Checker",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "*automated legal metrology compliance at your fingertips*",
+      "source_file": "presentation.md",
+      "source_location": "L9"
+    },
+    {
+      "id": "presentation_manak_ai_powered_legal_metrology_compliance_checker",
+      "label": "MANAK: AI-Powered Legal Metrology Compliance Checker",
+      "_origin": "ast",
+      "community": 46,
+      "community_name": "MANAK: AI-Powered Legal Metrology Compliance Checker",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "manak: ai-powered legal metrology compliance checker",
+      "source_file": "presentation.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "presentation_manak_protecting_consumer_rights_empowering_enforcement",
+      "label": "**MANAK: Protecting Consumer Rights & Empowering Enforcement**",
+      "_origin": "ast",
+      "community": 46,
+      "community_name": "MANAK: AI-Powered Legal Metrology Compliance Checker",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "**manak: protecting consumer rights & empowering enforcement**",
+      "source_file": "presentation.md",
+      "source_location": "L197"
+    },
+    {
+      "id": "presentation_manak_\u092e_\u0928\u0915",
+      "label": "**MANAK (\u092e\u093e\u0928\u0915)**",
+      "_origin": "ast",
+      "community": 46,
+      "community_name": "MANAK: AI-Powered Legal Metrology Compliance Checker",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "**manak (\u092e\u093e\u0928\u0915)**",
+      "source_file": "presentation.md",
+      "source_location": "L8"
+    },
+    {
+      "id": "presentation_presentation_technical_architecture_slide_by_slide_deck",
+      "label": "Presentation & Technical Architecture (Slide-by-Slide Deck)",
+      "_origin": "ast",
+      "community": 46,
+      "community_name": "MANAK: AI-Powered Legal Metrology Compliance Checker",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "presentation & technical architecture (slide-by-slide deck)",
+      "source_file": "presentation.md",
+      "source_location": "L2"
+    },
+    {
+      "id": "presentation_slide_10_future_roadmap_scalability",
+      "label": "Slide 10: Future Roadmap & Scalability",
+      "_origin": "ast",
+      "community": 46,
+      "community_name": "MANAK: AI-Powered Legal Metrology Compliance Checker",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "slide 10: future roadmap & scalability",
+      "source_file": "presentation.md",
+      "source_location": "L186"
+    },
+    {
+      "id": "presentation_slide_11_conclusion_q_a",
+      "label": "Slide 11: Conclusion & Q&A",
+      "_origin": "ast",
+      "community": 46,
+      "community_name": "MANAK: AI-Powered Legal Metrology Compliance Checker",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "slide 11: conclusion & q&a",
+      "source_file": "presentation.md",
+      "source_location": "L195"
+    },
+    {
+      "id": "presentation_slide_1_title_slide",
+      "label": "Slide 1: Title Slide",
+      "_origin": "ast",
+      "community": 46,
+      "community_name": "MANAK: AI-Powered Legal Metrology Compliance Checker",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "slide 1: title slide",
+      "source_file": "presentation.md",
+      "source_location": "L6"
+    },
+    {
+      "id": "presentation_slide_2_the_real_world_problem",
+      "label": "Slide 2: The Real-World Problem",
+      "_origin": "ast",
+      "community": 46,
+      "community_name": "MANAK: AI-Powered Legal Metrology Compliance Checker",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "slide 2: the real-world problem",
+      "source_file": "presentation.md",
+      "source_location": "L19"
+    },
+    {
+      "id": "presentation_slide_3_the_solution_manak",
+      "label": "Slide 3: The Solution \u2014 MANAK",
+      "_origin": "ast",
+      "community": 46,
+      "community_name": "MANAK: AI-Powered Legal Metrology Compliance Checker",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "slide 3: the solution \u2014 manak",
+      "source_file": "presentation.md",
+      "source_location": "L29"
+    },
+    {
+      "id": "presentation_slide_4_high_level_architecture_in_simple_words",
+      "label": "Slide 4: High-Level Architecture (In Simple Words)",
+      "_origin": "ast",
+      "community": 46,
+      "community_name": "MANAK: AI-Powered Legal Metrology Compliance Checker",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "slide 4: high-level architecture (in simple words)",
+      "source_file": "presentation.md",
       "source_location": "L42"
     },
     {
-      "id": "capacitor_config",
-      "label": "capacitor.config.ts",
+      "id": "presentation_slide_5_detailed_technical_architecture_diagram",
+      "label": "Slide 5: Detailed Technical Architecture Diagram",
       "_origin": "ast",
-      "community": 47,
-      "community_name": "capacitor.config.ts",
-      "file_type": "code",
-      "norm_label": "capacitor.config.ts",
-      "source_file": "capacitor.config.ts",
-      "source_location": "L1"
+      "community": 46,
+      "community_name": "MANAK: AI-Powered Legal Metrology Compliance Checker",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "slide 5: detailed technical architecture diagram",
+      "source_file": "presentation.md",
+      "source_location": "L60"
     },
     {
-      "id": "capacitor_config_config",
-      "label": "config",
+      "id": "presentation_slide_6_the_5_core_building_blocks",
+      "label": "Slide 6: The 5 Core Building Blocks",
       "_origin": "ast",
-      "community": 47,
-      "community_name": "capacitor.config.ts",
-      "file_type": "code",
-      "norm_label": "config",
-      "source_file": "capacitor.config.ts",
-      "source_location": "L3"
+      "community": 46,
+      "community_name": "MANAK: AI-Powered Legal Metrology Compliance Checker",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "slide 6: the 5 core building blocks",
+      "source_file": "presentation.md",
+      "source_location": "L99"
     },
     {
-      "id": "ref_capacitor_cli",
-      "label": "@capacitor/cli",
+      "id": "presentation_slide_7_how_the_e_commerce_url_scanner_works",
+      "label": "Slide 7: How the E-Commerce URL Scanner Works",
       "_origin": "ast",
-      "community": 47,
-      "community_name": "capacitor.config.ts",
-      "file_type": "concept",
-      "norm_label": "@capacitor/cli",
-      "source_file": "package.json",
+      "community": 46,
+      "community_name": "MANAK: AI-Powered Legal Metrology Compliance Checker",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "slide 7: how the e-commerce url scanner works",
+      "source_file": "presentation.md",
+      "source_location": "L135"
+    },
+    {
+      "id": "presentation_slide_8_technology_stack_summary",
+      "label": "Slide 8: Technology Stack Summary",
+      "_origin": "ast",
+      "community": 46,
+      "community_name": "MANAK: AI-Powered Legal Metrology Compliance Checker",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "slide 8: technology stack summary",
+      "source_file": "presentation.md",
+      "source_location": "L157"
+    },
+    {
+      "id": "presentation_slide_9_key_innovations_differentiators",
+      "label": "Slide 9: Key Innovations & Differentiators",
+      "_origin": "ast",
+      "community": 46,
+      "community_name": "MANAK: AI-Powered Legal Metrology Compliance Checker",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "slide 9: key innovations & differentiators",
+      "source_file": "presentation.md",
+      "source_location": "L171"
+    },
+    {
+      "id": "presentation_what_is_the_issue_today",
+      "label": "What is the issue today?",
+      "_origin": "ast",
+      "community": 46,
+      "community_name": "MANAK: AI-Powered Legal Metrology Compliance Checker",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "what is the issue today?",
+      "source_file": "presentation.md",
       "source_location": "L21"
     },
     {
@@ -5479,28 +5984,6 @@
       "norm_label": "addendum: channel-gate the online-required / package-only split",
       "source_file": "MANAK_CHANNEL_GATE_ADDENDUM.md",
       "source_location": "L1"
-    },
-    {
-      "id": "src_services_pdfreportgenerator",
-      "label": "pdfReportGenerator.ts",
-      "_origin": "ast",
-      "community": 49,
-      "community_name": "pdfReportGenerator.ts",
-      "file_type": "code",
-      "norm_label": "pdfreportgenerator.ts",
-      "source_file": "src/services/pdfReportGenerator.ts",
-      "source_location": "L1"
-    },
-    {
-      "id": "ref_jspdf",
-      "label": "jspdf",
-      "_origin": "ast",
-      "community": 49,
-      "community_name": "pdfReportGenerator.ts",
-      "file_type": "concept",
-      "norm_label": "jspdf",
-      "source_file": "package.json",
-      "source_location": "L32"
     },
     {
       "id": "agents_skills_graphify_skill",
@@ -5816,39 +6299,6 @@
       "norm_label": "offlinestorage.ts",
       "source_file": "src/services/offlineStorage.ts",
       "source_location": "L1"
-    },
-    {
-      "id": "src_lib_supabase",
-      "label": "supabase.ts",
-      "_origin": "ast",
-      "community": 51,
-      "community_name": "@supabase/supabase-js",
-      "file_type": "code",
-      "norm_label": "supabase.ts",
-      "source_file": "src/lib/supabase.ts",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_lib_supabase_supabase",
-      "label": "supabase",
-      "_origin": "ast",
-      "community": 51,
-      "community_name": "@supabase/supabase-js",
-      "file_type": "code",
-      "norm_label": "supabase",
-      "source_file": "src/lib/supabase.ts",
-      "source_location": "L6"
-    },
-    {
-      "id": "ref_supabase_supabase_js",
-      "label": "@supabase/supabase-js",
-      "_origin": "ast",
-      "community": 51,
-      "community_name": "@supabase/supabase-js",
-      "file_type": "concept",
-      "norm_label": "@supabase/supabase-js",
-      "source_file": "package.json",
-      "source_location": "L24"
     },
     {
       "id": "tsconfig",
@@ -6586,7 +7036,7 @@
       "confidence_score": 1.0,
       "context": "attribute",
       "source_file": "android/app/src/main/java/in/gov/manak/compliance/MainActivity.java",
-      "source_location": "L8",
+      "source_location": "L9",
       "weight": 1.0
     },
     {
@@ -6646,7 +7096,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "server/services/ecommerceAuditService.ts",
-      "source_location": "L338",
+      "source_location": "L324",
       "weight": 1.0
     },
     {
@@ -6658,7 +7108,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "server/services/ecommerceAuditService.ts",
-      "source_location": "L341",
+      "source_location": "L327",
       "weight": 1.0
     },
     {
@@ -6670,7 +7120,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "server/services/ecommerceAuditService.ts",
-      "source_location": "L350",
+      "source_location": "L337",
       "weight": 1.0
     },
     {
@@ -6682,7 +7132,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "server/services/ecommerceAuditService.ts",
-      "source_location": "L82",
+      "source_location": "L83",
       "weight": 1.0
     },
     {
@@ -6802,7 +7252,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/components/common/Header.tsx",
-      "source_location": "L13",
+      "source_location": "L22",
       "weight": 1.0
     },
     {
@@ -6838,7 +7288,19 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/components/screens/AnalysisResultsScreen.tsx",
-      "source_location": "L35",
+      "source_location": "L42",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_screens_analysisresultsscreen_analysisresultsscreen",
+      "target": "src_services_ecommerceruleengine_evaluateecommercelisting",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/components/screens/AnalysisResultsScreen.tsx",
+      "source_location": "L57",
       "weight": 1.0
     },
     {
@@ -6850,7 +7312,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/components/screens/AnalysisResultsScreen.tsx",
-      "source_location": "L47",
+      "source_location": "L63",
       "weight": 1.0
     },
     {
@@ -6862,7 +7324,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/components/screens/CameraScanScreen.tsx",
-      "source_location": "L52",
+      "source_location": "L50",
       "weight": 1.0
     },
     {
@@ -6915,14 +7377,14 @@
     },
     {
       "source": "src_components_screens_consumercheckproductscreen_consumercheckproductscreen",
-      "target": "src_services_api_checkurlapi",
+      "target": "src_context_appcontext_useapp",
       "relation": "calls",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/components/screens/ConsumerCheckProductScreen.tsx",
-      "source_location": "L41",
+      "source_location": "L11",
       "weight": 1.0
     },
     {
@@ -6934,19 +7396,19 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/components/screens/ConsumerCheckProductScreen.tsx",
-      "source_location": "L72",
+      "source_location": "L35",
       "weight": 1.0
     },
     {
       "source": "src_components_screens_consumercheckproductscreen_consumercheckproductscreen",
-      "target": "src_context_appcontext_useapp",
+      "target": "src_services_api_checkurlapi",
       "relation": "calls",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/components/screens/ConsumerCheckProductScreen.tsx",
-      "source_location": "L9",
+      "source_location": "L76",
       "weight": 1.0
     },
     {
@@ -6958,7 +7420,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/components/screens/ConsumerDashboardScreen.tsx",
-      "source_location": "L8",
+      "source_location": "L24",
       "weight": 1.0
     },
     {
@@ -7078,7 +7540,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/components/screens/InspectionHistoryScreen.tsx",
-      "source_location": "L9",
+      "source_location": "L12",
       "weight": 1.0
     },
     {
@@ -7090,7 +7552,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/components/screens/InspectionReportScreen.tsx",
-      "source_location": "L16",
+      "source_location": "L17",
       "weight": 1.0
     },
     {
@@ -7174,7 +7636,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/components/screens/OfficerProfileScreen.tsx",
-      "source_location": "L15",
+      "source_location": "L16",
       "weight": 1.0
     },
     {
@@ -7390,7 +7852,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/services/api.ts",
-      "source_location": "L303",
+      "source_location": "L317",
       "weight": 1.0
     },
     {
@@ -7402,7 +7864,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/services/api.ts",
-      "source_location": "L312",
+      "source_location": "L326",
       "weight": 1.0
     },
     {
@@ -7414,7 +7876,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/services/api.ts",
-      "source_location": "L327",
+      "source_location": "L341",
       "weight": 1.0
     },
     {
@@ -7426,7 +7888,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/services/api.ts",
-      "source_location": "L328",
+      "source_location": "L342",
       "weight": 1.0
     },
     {
@@ -7438,7 +7900,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/services/api.ts",
-      "source_location": "L186",
+      "source_location": "L185",
       "weight": 1.0
     },
     {
@@ -7450,7 +7912,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/services/api.ts",
-      "source_location": "L198",
+      "source_location": "L212",
       "weight": 1.0
     },
     {
@@ -7462,7 +7924,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/services/api.ts",
-      "source_location": "L203",
+      "source_location": "L217",
       "weight": 1.0
     },
     {
@@ -7474,7 +7936,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/services/api.ts",
-      "source_location": "L100",
+      "source_location": "L107",
       "weight": 1.0
     },
     {
@@ -7534,7 +7996,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/services/api.ts",
-      "source_location": "L231",
+      "source_location": "L245",
       "weight": 1.0
     },
     {
@@ -7546,7 +8008,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/services/api.ts",
-      "source_location": "L240",
+      "source_location": "L254",
       "weight": 1.0
     },
     {
@@ -7558,7 +8020,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/services/api.ts",
-      "source_location": "L215",
+      "source_location": "L229",
       "weight": 1.0
     },
     {
@@ -7570,7 +8032,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/services/api.ts",
-      "source_location": "L224",
+      "source_location": "L238",
       "weight": 1.0
     },
     {
@@ -7594,7 +8056,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/services/api.ts",
-      "source_location": "L157",
+      "source_location": "L156",
       "weight": 1.0
     },
     {
@@ -7606,7 +8068,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/services/api.ts",
-      "source_location": "L166",
+      "source_location": "L165",
       "weight": 1.0
     },
     {
@@ -7618,7 +8080,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/services/api.ts",
-      "source_location": "L171",
+      "source_location": "L170",
       "weight": 1.0
     },
     {
@@ -7630,7 +8092,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/services/api.ts",
-      "source_location": "L246",
+      "source_location": "L260",
       "weight": 1.0
     },
     {
@@ -7642,7 +8104,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/services/api.ts",
-      "source_location": "L271",
+      "source_location": "L285",
       "weight": 1.0
     },
     {
@@ -7654,7 +8116,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/services/api.ts",
-      "source_location": "L279",
+      "source_location": "L293",
       "weight": 1.0
     },
     {
@@ -7666,7 +8128,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/services/api.ts",
-      "source_location": "L288",
+      "source_location": "L302",
       "weight": 1.0
     },
     {
@@ -7695,6 +8157,18 @@
     },
     {
       "source": "src_services_clienturlcheck_checkurlclientside",
+      "target": "src_services_clienturlcheck_getrelevantproductimage",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/services/clientUrlCheck.ts",
+      "source_location": "L202",
+      "weight": 1.0
+    },
+    {
+      "source": "src_services_clienturlcheck_checkurlclientside",
       "target": "src_services_ruleengine_evaluateextractionagainstrules",
       "relation": "calls",
       "_origin": "ast",
@@ -7702,7 +8176,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/services/clientUrlCheck.ts",
-      "source_location": "L113",
+      "source_location": "L298",
       "weight": 1.0
     },
     {
@@ -7714,19 +8188,19 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/services/clientUrlCheck.ts",
-      "source_location": "L12",
+      "source_location": "L38",
       "weight": 1.0
     },
     {
-      "source": "src_services_clienturlcheck_checkurlclientside",
-      "target": "src_services_labelparser_parselabeltext",
+      "source": "src_services_ecommerceruleengine_evaluateecommercelisting",
+      "target": "src_services_ecommerceruleengine_normalizeunit",
       "relation": "calls",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "context": "call",
-      "source_file": "src/services/clientUrlCheck.ts",
-      "source_location": "L158",
+      "source_file": "src/services/ecommerceRuleEngine.ts",
+      "source_location": "L99",
       "weight": 1.0
     },
     {
@@ -7983,6 +8457,18 @@
     },
     {
       "source": "src_services_pdfreportgenerator_generateinspectionpdf",
+      "target": "src_services_pdfreportgenerator_sanitizetext",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/services/pdfReportGenerator.ts",
+      "source_location": "L102",
+      "weight": 1.0
+    },
+    {
+      "source": "src_services_pdfreportgenerator_generateinspectionpdf",
       "target": "src_services_pdfreportgenerator_safenum",
       "relation": "calls",
       "_origin": "ast",
@@ -7990,7 +8476,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/services/pdfReportGenerator.ts",
-      "source_location": "L121",
+      "source_location": "L124",
       "weight": 1.0
     },
     {
@@ -8002,7 +8488,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/services/pdfReportGenerator.ts",
-      "source_location": "L140",
+      "source_location": "L143",
       "weight": 1.0
     },
     {
@@ -8014,19 +8500,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/services/pdfReportGenerator.ts",
-      "source_location": "L142",
-      "weight": 1.0
-    },
-    {
-      "source": "src_services_pdfreportgenerator_generateinspectionpdf",
-      "target": "src_services_pdfreportgenerator_sanitizetext",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "src/services/pdfReportGenerator.ts",
-      "source_location": "L99",
+      "source_location": "L145",
       "weight": 1.0
     },
     {
@@ -8038,7 +8512,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/services/pdfReportGenerator.ts",
-      "source_location": "L55",
+      "source_location": "L58",
       "weight": 1.0
     },
     {
@@ -8050,7 +8524,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/services/pdfReportGenerator.ts",
-      "source_location": "L41",
+      "source_location": "L44",
       "weight": 1.0
     },
     {
@@ -8062,7 +8536,19 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/services/pdfReportGenerator.ts",
-      "source_location": "L13",
+      "source_location": "L16",
+      "weight": 1.0
+    },
+    {
+      "source": "src_services_ruleengine_evaluateextractionagainstrules",
+      "target": "src_services_ecommerceruleengine_evaluateecommercelisting",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/services/ruleEngine.ts",
+      "source_location": "L18",
       "weight": 1.0
     },
     {
@@ -8186,6 +8672,18 @@
       "weight": 1.0
     },
     {
+      "source": "src_services_ecommerceruleengine_ecommerceauditreport",
+      "target": "src_types_index_ruleevaluation",
+      "relation": "references",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "field",
+      "source_file": "src/services/ecommerceRuleEngine.ts",
+      "source_location": "L43",
+      "weight": 1.0
+    },
+    {
       "source": "src_context_appcontext_appcontexttype",
       "target": "src_types_index_extractionresult",
       "relation": "references",
@@ -8231,7 +8729,7 @@
       "context": "import",
       "deferred": true,
       "source_file": "server/services/ecommerceAuditService.ts",
-      "source_location": "L186",
+      "source_location": "L172",
       "weight": 1.0
     },
     {
@@ -8291,7 +8789,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "android/app/src/main/java/in/gov/manak/compliance/MainActivity.java",
-      "source_location": "L5",
+      "source_location": "L6",
       "weight": 1.0
     },
     {
@@ -8356,7 +8854,7 @@
     },
     {
       "source": "package",
-      "target": "ref_google_genai",
+      "target": "ref_capacitor_filesystem",
       "relation": "imports",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -8368,7 +8866,7 @@
     },
     {
       "source": "package",
-      "target": "ref_supabase_supabase_js",
+      "target": "ref_capacitor_share",
       "relation": "imports",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -8380,7 +8878,7 @@
     },
     {
       "source": "package",
-      "target": "ref_types_cors",
+      "target": "ref_google_genai",
       "relation": "imports",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -8392,7 +8890,7 @@
     },
     {
       "source": "package",
-      "target": "ref_types_express",
+      "target": "ref_supabase_supabase_js",
       "relation": "imports",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -8404,7 +8902,7 @@
     },
     {
       "source": "package",
-      "target": "ref_clsx",
+      "target": "ref_types_cors",
       "relation": "imports",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -8416,7 +8914,7 @@
     },
     {
       "source": "package",
-      "target": "ref_cors",
+      "target": "ref_types_express",
       "relation": "imports",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -8428,7 +8926,7 @@
     },
     {
       "source": "package",
-      "target": "ref_dotenv",
+      "target": "ref_clsx",
       "relation": "imports",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -8440,7 +8938,7 @@
     },
     {
       "source": "package",
-      "target": "ref_express",
+      "target": "ref_cors",
       "relation": "imports",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -8452,7 +8950,7 @@
     },
     {
       "source": "package",
-      "target": "ref_html2canvas",
+      "target": "ref_dotenv",
       "relation": "imports",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -8464,7 +8962,7 @@
     },
     {
       "source": "package",
-      "target": "ref_jspdf",
+      "target": "ref_express",
       "relation": "imports",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -8476,7 +8974,7 @@
     },
     {
       "source": "package",
-      "target": "ref_lucide_react",
+      "target": "ref_html2canvas",
       "relation": "imports",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -8488,7 +8986,7 @@
     },
     {
       "source": "package",
-      "target": "ref_react",
+      "target": "ref_jspdf",
       "relation": "imports",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -8500,7 +8998,7 @@
     },
     {
       "source": "package",
-      "target": "ref_react_dom",
+      "target": "ref_lucide_react",
       "relation": "imports",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -8512,7 +9010,7 @@
     },
     {
       "source": "package",
-      "target": "ref_tailwind_merge",
+      "target": "ref_react",
       "relation": "imports",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -8524,7 +9022,7 @@
     },
     {
       "source": "package",
-      "target": "ref_tesseract_js",
+      "target": "ref_react_dom",
       "relation": "imports",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -8536,31 +9034,31 @@
     },
     {
       "source": "package",
+      "target": "ref_tailwind_merge",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "package.json",
+      "source_location": "L38",
+      "weight": 1.0
+    },
+    {
+      "source": "package",
+      "target": "ref_tesseract_js",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "package.json",
+      "source_location": "L39",
+      "weight": 1.0
+    },
+    {
+      "source": "package",
       "target": "ref_types_react",
-      "relation": "imports",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "package.json",
-      "source_location": "L40",
-      "weight": 1.0
-    },
-    {
-      "source": "package",
-      "target": "ref_types_react_dom",
-      "relation": "imports",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "package.json",
-      "source_location": "L41",
-      "weight": 1.0
-    },
-    {
-      "source": "package",
-      "target": "ref_vitejs_plugin_react",
       "relation": "imports",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -8572,7 +9070,7 @@
     },
     {
       "source": "package",
-      "target": "ref_autoprefixer",
+      "target": "ref_types_react_dom",
       "relation": "imports",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -8584,7 +9082,7 @@
     },
     {
       "source": "package",
-      "target": "ref_concurrently",
+      "target": "ref_vitejs_plugin_react",
       "relation": "imports",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -8596,7 +9094,7 @@
     },
     {
       "source": "package",
-      "target": "ref_postcss",
+      "target": "ref_autoprefixer",
       "relation": "imports",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -8608,7 +9106,7 @@
     },
     {
       "source": "package",
-      "target": "ref_tailwindcss",
+      "target": "ref_concurrently",
       "relation": "imports",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -8620,7 +9118,7 @@
     },
     {
       "source": "package",
-      "target": "ref_tsx",
+      "target": "ref_postcss",
       "relation": "imports",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -8632,7 +9130,7 @@
     },
     {
       "source": "package",
-      "target": "ref_typescript",
+      "target": "ref_tailwindcss",
       "relation": "imports",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -8644,7 +9142,7 @@
     },
     {
       "source": "package",
-      "target": "ref_vite",
+      "target": "ref_tsx",
       "relation": "imports",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -8652,6 +9150,30 @@
       "context": "import",
       "source_file": "package.json",
       "source_location": "L49",
+      "weight": 1.0
+    },
+    {
+      "source": "package",
+      "target": "ref_typescript",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "package.json",
+      "source_location": "L50",
+      "weight": 1.0
+    },
+    {
+      "source": "package",
+      "target": "ref_vite",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "package.json",
+      "source_location": "L51",
       "weight": 1.0
     },
     {
@@ -9147,18 +9669,6 @@
       "weight": 1.0
     },
     {
-      "source": "src_components_common_header",
-      "target": "src_components_common_serversettingsmodal_serversettingsmodal",
-      "relation": "imports",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "src/components/common/Header.tsx",
-      "source_location": "L4",
-      "weight": 1.0
-    },
-    {
       "source": "src_components_common_serversettingsmodal",
       "target": "src_services_api_getapibaseurl",
       "relation": "imports",
@@ -9216,6 +9726,30 @@
       "context": "import",
       "source_file": "src/components/screens/AnalysisResultsScreen.tsx",
       "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_screens_analysisresultsscreen",
+      "target": "src_services_ecommerceruleengine_ecommerceruleresult",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/components/screens/AnalysisResultsScreen.tsx",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_screens_analysisresultsscreen",
+      "target": "src_services_ecommerceruleengine_evaluateecommercelisting",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/components/screens/AnalysisResultsScreen.tsx",
+      "source_location": "L5",
       "weight": 1.0
     },
     {
@@ -9371,7 +9905,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/screens/ConsumerCheckProductScreen.tsx",
-      "source_location": "L5",
+      "source_location": "L7",
       "weight": 1.0
     },
     {
@@ -9383,7 +9917,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/screens/ConsumerCheckProductScreen.tsx",
-      "source_location": "L5",
+      "source_location": "L7",
       "weight": 1.0
     },
     {
@@ -9395,7 +9929,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/screens/ConsumerCheckProductScreen.tsx",
-      "source_location": "L6",
+      "source_location": "L8",
       "weight": 1.0
     },
     {
@@ -9936,6 +10470,18 @@
       "context": "import",
       "source_file": "src/components/screens/OfficerProfileScreen.tsx",
       "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_screens_officerprofilescreen",
+      "target": "src_components_common_serversettingsmodal_serversettingsmodal",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/components/screens/OfficerProfileScreen.tsx",
+      "source_location": "L9",
       "weight": 1.0
     },
     {
@@ -10587,15 +11133,51 @@
       "weight": 1.0
     },
     {
-      "source": "src_services_clienturlcheck",
-      "target": "src_services_labelparser_parselabeltext",
+      "source": "src_services_ecommerceruleengine",
+      "target": "src_types_index_evaluationchannel",
       "relation": "imports",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "context": "import",
-      "source_file": "src/services/clientUrlCheck.ts",
-      "source_location": "L4",
+      "source_file": "src/services/ecommerceRuleEngine.ts",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "src_services_ecommerceruleengine",
+      "target": "src_types_index_extractionresult",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/services/ecommerceRuleEngine.ts",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "src_services_ecommerceruleengine",
+      "target": "src_types_index_product",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/services/ecommerceRuleEngine.ts",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "src_services_ecommerceruleengine",
+      "target": "src_types_index_ruleevaluation",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/services/ecommerceRuleEngine.ts",
+      "source_location": "L1",
       "weight": 1.0
     },
     {
@@ -10715,7 +11297,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/services/pdfReportGenerator.ts",
-      "source_location": "L2",
+      "source_location": "L5",
       "weight": 1.0
     },
     {
@@ -10733,6 +11315,18 @@
     {
       "source": "src_services_ruleengine",
       "target": "src_types_index_extractionresult",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/services/ruleEngine.ts",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "src_services_ruleengine",
+      "target": "src_types_index_product",
       "relation": "imports",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -10776,6 +11370,30 @@
       "context": "import",
       "source_file": "src/services/ruleEngine.ts",
       "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "src_services_ruleengine",
+      "target": "src_services_ecommerceruleengine_ecommerceauditreport",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/services/ruleEngine.ts",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "src_services_ruleengine",
+      "target": "src_services_ecommerceruleengine_evaluateecommercelisting",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/services/ruleEngine.ts",
+      "source_location": "L3",
       "weight": 1.0
     },
     {
@@ -11595,18 +12213,6 @@
       "weight": 1.0
     },
     {
-      "source": "src_components_common_header",
-      "target": "src_components_common_serversettingsmodal",
-      "relation": "imports_from",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "src/components/common/Header.tsx",
-      "source_location": "L4",
-      "weight": 1.0
-    },
-    {
       "source": "src_components_common_serversettingsmodal",
       "target": "ref_react",
       "relation": "imports_from",
@@ -11704,7 +12310,7 @@
     },
     {
       "source": "src_components_screens_analysisresultsscreen",
-      "target": "ref_lucide_react",
+      "target": "src_services_ecommerceruleengine",
       "relation": "imports_from",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -11712,6 +12318,18 @@
       "context": "import",
       "source_file": "src/components/screens/AnalysisResultsScreen.tsx",
       "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_screens_analysisresultsscreen",
+      "target": "ref_lucide_react",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/components/screens/AnalysisResultsScreen.tsx",
+      "source_location": "L6",
       "weight": 1.0
     },
     {
@@ -11980,7 +12598,7 @@
     },
     {
       "source": "src_components_screens_consumercheckproductscreen",
-      "target": "src_services_api",
+      "target": "ref_capacitor_camera",
       "relation": "imports_from",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -11992,7 +12610,7 @@
     },
     {
       "source": "src_components_screens_consumercheckproductscreen",
-      "target": "src_utils_imageutils",
+      "target": "ref_capacitor_core",
       "relation": "imports_from",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -12000,6 +12618,30 @@
       "context": "import",
       "source_file": "src/components/screens/ConsumerCheckProductScreen.tsx",
       "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_screens_consumercheckproductscreen",
+      "target": "src_services_api",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/components/screens/ConsumerCheckProductScreen.tsx",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_screens_consumercheckproductscreen",
+      "target": "src_utils_imageutils",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/components/screens/ConsumerCheckProductScreen.tsx",
+      "source_location": "L8",
       "weight": 1.0
     },
     {
@@ -12843,6 +13485,18 @@
       "weight": 1.0
     },
     {
+      "source": "src_components_screens_officerprofilescreen",
+      "target": "src_components_common_serversettingsmodal",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/components/screens/OfficerProfileScreen.tsx",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
       "source": "src_components_screens_roleselectionscreen",
       "target": "ref_react",
       "relation": "imports_from",
@@ -13203,15 +13857,15 @@
       "weight": 1.0
     },
     {
-      "source": "src_services_clienturlcheck",
-      "target": "src_services_labelparser",
+      "source": "src_services_ecommerceruleengine",
+      "target": "src_types_index",
       "relation": "imports_from",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "context": "import",
-      "source_file": "src/services/clientUrlCheck.ts",
-      "source_location": "L4",
+      "source_file": "src/services/ecommerceRuleEngine.ts",
+      "source_location": "L1",
       "weight": 1.0
     },
     {
@@ -13312,7 +13966,7 @@
     },
     {
       "source": "src_services_pdfreportgenerator",
-      "target": "src_types_index",
+      "target": "ref_capacitor_core",
       "relation": "imports_from",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -13320,6 +13974,42 @@
       "context": "import",
       "source_file": "src/services/pdfReportGenerator.ts",
       "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "src_services_pdfreportgenerator",
+      "target": "ref_capacitor_filesystem",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/services/pdfReportGenerator.ts",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "src_services_pdfreportgenerator",
+      "target": "ref_capacitor_share",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/services/pdfReportGenerator.ts",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "src_services_pdfreportgenerator",
+      "target": "src_types_index",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/services/pdfReportGenerator.ts",
+      "source_location": "L5",
       "weight": 1.0
     },
     {
@@ -13344,6 +14034,18 @@
       "context": "import",
       "source_file": "src/services/ruleEngine.ts",
       "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "src_services_ruleengine",
+      "target": "src_services_ecommerceruleengine",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/services/ruleEngine.ts",
+      "source_location": "L3",
       "weight": 1.0
     },
     {
@@ -13403,7 +14105,7 @@
       "confidence_score": 1.0,
       "context": "parameter_type",
       "source_file": "android/app/src/main/java/in/gov/manak/compliance/MainActivity.java",
-      "source_location": "L8",
+      "source_location": "L9",
       "weight": 1.0
     },
     {
@@ -14404,7 +15106,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "android/app/src/main/java/in/gov/manak/compliance/MainActivity.java",
-      "source_location": "L7",
+      "source_location": "L8",
       "weight": 1.0
     },
     {
@@ -14739,17 +15441,6 @@
     },
     {
       "source": "package",
-      "target": "package_devdependencies",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "package.json",
-      "source_location": "L39",
-      "weight": 1.0
-    },
-    {
-      "source": "package",
       "target": "package_version",
       "relation": "contains",
       "_origin": "ast",
@@ -14757,6 +15448,17 @@
       "confidence_score": 1.0,
       "source_file": "package.json",
       "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "package",
+      "target": "package_devdependencies",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "package.json",
+      "source_location": "L41",
       "weight": 1.0
     },
     {
@@ -14827,7 +15529,7 @@
     },
     {
       "source": "package_dependencies",
-      "target": "package_dependencies_google_genai",
+      "target": "package_dependencies_capacitor_filesystem",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -14838,7 +15540,7 @@
     },
     {
       "source": "package_dependencies",
-      "target": "package_dependencies_supabase_supabase_js",
+      "target": "package_dependencies_capacitor_share",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -14849,7 +15551,7 @@
     },
     {
       "source": "package_dependencies",
-      "target": "package_dependencies_types_cors",
+      "target": "package_dependencies_google_genai",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -14860,7 +15562,7 @@
     },
     {
       "source": "package_dependencies",
-      "target": "package_dependencies_types_express",
+      "target": "package_dependencies_supabase_supabase_js",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -14871,7 +15573,7 @@
     },
     {
       "source": "package_dependencies",
-      "target": "package_dependencies_clsx",
+      "target": "package_dependencies_types_cors",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -14882,7 +15584,7 @@
     },
     {
       "source": "package_dependencies",
-      "target": "package_dependencies_cors",
+      "target": "package_dependencies_types_express",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -14893,7 +15595,7 @@
     },
     {
       "source": "package_dependencies",
-      "target": "package_dependencies_dotenv",
+      "target": "package_dependencies_clsx",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -14904,7 +15606,7 @@
     },
     {
       "source": "package_dependencies",
-      "target": "package_dependencies_express",
+      "target": "package_dependencies_cors",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -14915,7 +15617,7 @@
     },
     {
       "source": "package_dependencies",
-      "target": "package_dependencies_html2canvas",
+      "target": "package_dependencies_dotenv",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -14926,7 +15628,7 @@
     },
     {
       "source": "package_dependencies",
-      "target": "package_dependencies_jspdf",
+      "target": "package_dependencies_express",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -14937,7 +15639,7 @@
     },
     {
       "source": "package_dependencies",
-      "target": "package_dependencies_lucide_react",
+      "target": "package_dependencies_html2canvas",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -14948,7 +15650,7 @@
     },
     {
       "source": "package_dependencies",
-      "target": "package_dependencies_react",
+      "target": "package_dependencies_jspdf",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -14959,7 +15661,7 @@
     },
     {
       "source": "package_dependencies",
-      "target": "package_dependencies_react_dom",
+      "target": "package_dependencies_lucide_react",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -14970,7 +15672,7 @@
     },
     {
       "source": "package_dependencies",
-      "target": "package_dependencies_tailwind_merge",
+      "target": "package_dependencies_react",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -14981,13 +15683,35 @@
     },
     {
       "source": "package_dependencies",
-      "target": "package_dependencies_tesseract_js",
+      "target": "package_dependencies_react_dom",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "package.json",
       "source_location": "L37",
+      "weight": 1.0
+    },
+    {
+      "source": "package_dependencies",
+      "target": "package_dependencies_tailwind_merge",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "package.json",
+      "source_location": "L38",
+      "weight": 1.0
+    },
+    {
+      "source": "package_dependencies",
+      "target": "package_dependencies_tesseract_js",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "package.json",
+      "source_location": "L39",
       "weight": 1.0
     },
     {
@@ -14998,7 +15722,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "package.json",
-      "source_location": "L40",
+      "source_location": "L42",
       "weight": 1.0
     },
     {
@@ -15009,7 +15733,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "package.json",
-      "source_location": "L41",
+      "source_location": "L43",
       "weight": 1.0
     },
     {
@@ -15020,7 +15744,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "package.json",
-      "source_location": "L42",
+      "source_location": "L44",
       "weight": 1.0
     },
     {
@@ -15031,7 +15755,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "package.json",
-      "source_location": "L43",
+      "source_location": "L45",
       "weight": 1.0
     },
     {
@@ -15042,7 +15766,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "package.json",
-      "source_location": "L44",
+      "source_location": "L46",
       "weight": 1.0
     },
     {
@@ -15053,7 +15777,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "package.json",
-      "source_location": "L45",
+      "source_location": "L47",
       "weight": 1.0
     },
     {
@@ -15064,7 +15788,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "package.json",
-      "source_location": "L46",
+      "source_location": "L48",
       "weight": 1.0
     },
     {
@@ -15075,7 +15799,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "package.json",
-      "source_location": "L47",
+      "source_location": "L49",
       "weight": 1.0
     },
     {
@@ -15086,7 +15810,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "package.json",
-      "source_location": "L48",
+      "source_location": "L50",
       "weight": 1.0
     },
     {
@@ -15097,7 +15821,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "package.json",
-      "source_location": "L49",
+      "source_location": "L51",
       "weight": 1.0
     },
     {
@@ -15318,6 +16042,259 @@
       "confidence_score": 1.0,
       "source_file": "prd.md",
       "source_location": "L76",
+      "weight": 1.0
+    },
+    {
+      "source": "presentation",
+      "target": "presentation_manak_ai_powered_legal_metrology_compliance_checker",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "presentation.md",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "presentation_manak_ai_powered_legal_metrology_compliance_checker",
+      "target": "presentation_slide_7_how_the_e_commerce_url_scanner_works",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "presentation.md",
+      "source_location": "L135",
+      "weight": 1.0
+    },
+    {
+      "source": "presentation_manak_ai_powered_legal_metrology_compliance_checker",
+      "target": "presentation_slide_8_technology_stack_summary",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "presentation.md",
+      "source_location": "L157",
+      "weight": 1.0
+    },
+    {
+      "source": "presentation_manak_ai_powered_legal_metrology_compliance_checker",
+      "target": "presentation_slide_9_key_innovations_differentiators",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "presentation.md",
+      "source_location": "L171",
+      "weight": 1.0
+    },
+    {
+      "source": "presentation_manak_ai_powered_legal_metrology_compliance_checker",
+      "target": "presentation_slide_10_future_roadmap_scalability",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "presentation.md",
+      "source_location": "L186",
+      "weight": 1.0
+    },
+    {
+      "source": "presentation_manak_ai_powered_legal_metrology_compliance_checker",
+      "target": "presentation_slide_2_the_real_world_problem",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "presentation.md",
+      "source_location": "L19",
+      "weight": 1.0
+    },
+    {
+      "source": "presentation_manak_ai_powered_legal_metrology_compliance_checker",
+      "target": "presentation_slide_11_conclusion_q_a",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "presentation.md",
+      "source_location": "L195",
+      "weight": 1.0
+    },
+    {
+      "source": "presentation_manak_ai_powered_legal_metrology_compliance_checker",
+      "target": "presentation_presentation_technical_architecture_slide_by_slide_deck",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "presentation.md",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "presentation_manak_ai_powered_legal_metrology_compliance_checker",
+      "target": "presentation_slide_3_the_solution_manak",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "presentation.md",
+      "source_location": "L29",
+      "weight": 1.0
+    },
+    {
+      "source": "presentation_manak_ai_powered_legal_metrology_compliance_checker",
+      "target": "presentation_slide_4_high_level_architecture_in_simple_words",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "presentation.md",
+      "source_location": "L42",
+      "weight": 1.0
+    },
+    {
+      "source": "presentation_manak_ai_powered_legal_metrology_compliance_checker",
+      "target": "presentation_slide_1_title_slide",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "presentation.md",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "presentation_manak_ai_powered_legal_metrology_compliance_checker",
+      "target": "presentation_slide_5_detailed_technical_architecture_diagram",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "presentation.md",
+      "source_location": "L60",
+      "weight": 1.0
+    },
+    {
+      "source": "presentation_manak_ai_powered_legal_metrology_compliance_checker",
+      "target": "presentation_slide_6_the_5_core_building_blocks",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "presentation.md",
+      "source_location": "L99",
+      "weight": 1.0
+    },
+    {
+      "source": "presentation_manak_\u092e_\u0928\u0915",
+      "target": "presentation_automated_legal_metrology_compliance_at_your_fingertips",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "presentation.md",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "presentation_slide_11_conclusion_q_a",
+      "target": "presentation_manak_protecting_consumer_rights_empowering_enforcement",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "presentation.md",
+      "source_location": "L197",
+      "weight": 1.0
+    },
+    {
+      "source": "presentation_slide_1_title_slide",
+      "target": "presentation_manak_\u092e_\u0928\u0915",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "presentation.md",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "presentation_slide_2_the_real_world_problem",
+      "target": "presentation_what_is_the_issue_today",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "presentation.md",
+      "source_location": "L21",
+      "weight": 1.0
+    },
+    {
+      "source": "presentation_slide_3_the_solution_manak",
+      "target": "presentation_a_single_mobile_app_with_two_smart_personas",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "presentation.md",
+      "source_location": "L31",
+      "weight": 1.0
+    },
+    {
+      "source": "presentation_slide_6_the_5_core_building_blocks",
+      "target": "presentation_1_frontend_user_experience",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "presentation.md",
+      "source_location": "L101",
+      "weight": 1.0
+    },
+    {
+      "source": "presentation_slide_6_the_5_core_building_blocks",
+      "target": "presentation_2_the_eyes_multimodal_ai_google_gemini",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "presentation.md",
+      "source_location": "L106",
+      "weight": 1.0
+    },
+    {
+      "source": "presentation_slide_6_the_5_core_building_blocks",
+      "target": "presentation_3_the_brain_deterministic_legal_rule_engine",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "presentation.md",
+      "source_location": "L110",
+      "weight": 1.0
+    },
+    {
+      "source": "presentation_slide_6_the_5_core_building_blocks",
+      "target": "presentation_4_offline_first_architecture",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "presentation.md",
+      "source_location": "L122",
+      "weight": 1.0
+    },
+    {
+      "source": "presentation_slide_6_the_5_core_building_blocks",
+      "target": "presentation_5_instant_legal_documentation_pdf_generator",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "presentation.md",
+      "source_location": "L128",
       "weight": 1.0
     },
     {
@@ -16098,7 +17075,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "server/services/ecommerceAuditService.ts",
-      "source_location": "L176",
+      "source_location": "L159",
       "weight": 1.0
     },
     {
@@ -16109,7 +17086,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "server/services/ecommerceAuditService.ts",
-      "source_location": "L28",
+      "source_location": "L27",
       "weight": 1.0
     },
     {
@@ -16120,7 +17097,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "server/services/ecommerceAuditService.ts",
-      "source_location": "L337",
+      "source_location": "L323",
       "weight": 1.0
     },
     {
@@ -16142,7 +17119,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "server/services/ecommerceAuditService.ts",
-      "source_location": "L61",
+      "source_location": "L60",
       "weight": 1.0
     },
     {
@@ -16153,7 +17130,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "server/services/ecommerceAuditService.ts",
-      "source_location": "L76",
+      "source_location": "L77",
       "weight": 1.0
     },
     {
@@ -16362,7 +17339,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/components/common/Header.tsx",
-      "source_location": "L6",
+      "source_location": "L5",
       "weight": 1.0
     },
     {
@@ -16395,7 +17372,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/components/screens/AnalysisResultsScreen.tsx",
-      "source_location": "L25",
+      "source_location": "L32",
       "weight": 1.0
     },
     {
@@ -16472,7 +17449,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/components/screens/ConsumerCheckProductScreen.tsx",
-      "source_location": "L8",
+      "source_location": "L10",
       "weight": 1.0
     },
     {
@@ -16483,7 +17460,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/components/screens/ConsumerDashboardScreen.tsx",
-      "source_location": "L7",
+      "source_location": "L23",
       "weight": 1.0
     },
     {
@@ -16560,7 +17537,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/components/screens/InspectionHistoryScreen.tsx",
-      "source_location": "L8",
+      "source_location": "L11",
       "weight": 1.0
     },
     {
@@ -16648,7 +17625,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/components/screens/OfficerProfileScreen.tsx",
-      "source_location": "L10",
+      "source_location": "L11",
       "weight": 1.0
     },
     {
@@ -16813,7 +17790,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/services/api.ts",
-      "source_location": "L150",
+      "source_location": "L149",
       "weight": 1.0
     },
     {
@@ -16824,7 +17801,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/services/api.ts",
-      "source_location": "L179",
+      "source_location": "L178",
       "weight": 1.0
     },
     {
@@ -16835,23 +17812,12 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/services/api.ts",
-      "source_location": "L213",
+      "source_location": "L227",
       "weight": 1.0
     },
     {
       "source": "src_services_api",
       "target": "src_services_api_fetchconsumerreportsapi",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/services/api.ts",
-      "source_location": "L229",
-      "weight": 1.0
-    },
-    {
-      "source": "src_services_api",
-      "target": "src_services_api_submitconsumerreportapi",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -16873,13 +17839,24 @@
     },
     {
       "source": "src_services_api",
+      "target": "src_services_api_submitconsumerreportapi",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/services/api.ts",
+      "source_location": "L257",
+      "weight": 1.0
+    },
+    {
+      "source": "src_services_api",
       "target": "src_services_api_syncqueueapi",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/services/api.ts",
-      "source_location": "L277",
+      "source_location": "L291",
       "weight": 1.0
     },
     {
@@ -16890,7 +17867,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/services/api.ts",
-      "source_location": "L301",
+      "source_location": "L315",
       "weight": 1.0
     },
     {
@@ -16901,7 +17878,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/services/api.ts",
-      "source_location": "L318",
+      "source_location": "L332",
       "weight": 1.0
     },
     {
@@ -16912,7 +17889,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/services/api.ts",
-      "source_location": "L371",
+      "source_location": "L385",
       "weight": 1.0
     },
     {
@@ -16967,7 +17944,95 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/services/clientUrlCheck.ts",
+      "source_location": "L32",
+      "weight": 1.0
+    },
+    {
+      "source": "src_services_clienturlcheck",
+      "target": "src_services_clienturlcheck_getrelevantproductimage",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/services/clientUrlCheck.ts",
       "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "src_services_ecommerceruleengine",
+      "target": "src_services_ecommerceruleengine_ecommerceauditreport",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/services/ecommerceRuleEngine.ts",
+      "source_location": "L23",
+      "weight": 1.0
+    },
+    {
+      "source": "src_services_ecommerceruleengine",
+      "target": "src_services_ecommerceruleengine_ecommercestatus",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/services/ecommerceRuleEngine.ts",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "src_services_ecommerceruleengine",
+      "target": "src_services_ecommerceruleengine_evidencelevel",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/services/ecommerceRuleEngine.ts",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "src_services_ecommerceruleengine",
+      "target": "src_services_ecommerceruleengine_normalizeunit",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/services/ecommerceRuleEngine.ts",
+      "source_location": "L49",
+      "weight": 1.0
+    },
+    {
+      "source": "src_services_ecommerceruleengine",
+      "target": "src_services_ecommerceruleengine_ruleseverity",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/services/ecommerceRuleEngine.ts",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "src_services_ecommerceruleengine",
+      "target": "src_services_ecommerceruleengine_evaluateecommercelisting",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/services/ecommerceRuleEngine.ts",
+      "source_location": "L67",
+      "weight": 1.0
+    },
+    {
+      "source": "src_services_ecommerceruleengine",
+      "target": "src_services_ecommerceruleengine_ecommerceruleresult",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/services/ecommerceRuleEngine.ts",
+      "source_location": "L7",
       "weight": 1.0
     },
     {
@@ -17319,7 +18384,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/services/pdfReportGenerator.ts",
-      "source_location": "L33",
+      "source_location": "L36",
       "weight": 1.0
     },
     {
@@ -17330,18 +18395,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/services/pdfReportGenerator.ts",
-      "source_location": "L38",
-      "weight": 1.0
-    },
-    {
-      "source": "src_services_pdfreportgenerator",
-      "target": "src_services_pdfreportgenerator_sanitizetext",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/services/pdfReportGenerator.ts",
-      "source_location": "L4",
+      "source_location": "L41",
       "weight": 1.0
     },
     {
@@ -17352,7 +18406,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/services/pdfReportGenerator.ts",
-      "source_location": "L52",
+      "source_location": "L55",
       "weight": 1.0
     },
     {
@@ -17363,7 +18417,18 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/services/pdfReportGenerator.ts",
-      "source_location": "L64",
+      "source_location": "L67",
+      "weight": 1.0
+    },
+    {
+      "source": "src_services_pdfreportgenerator",
+      "target": "src_services_pdfreportgenerator_sanitizetext",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/services/pdfReportGenerator.ts",
+      "source_location": "L7",
       "weight": 1.0
     },
     {
@@ -17374,7 +18439,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/services/ruleEngine.ts",
-      "source_location": "L4",
+      "source_location": "L5",
       "weight": 1.0
     },
     {
@@ -17909,7 +18974,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "android/app/src/main/java/in/gov/manak/compliance/MainActivity.java",
-      "source_location": "L7",
+      "source_location": "L8",
       "weight": 1.0
     },
     {
@@ -17931,7 +18996,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "android/app/src/main/java/in/gov/manak/compliance/MainActivity.java",
-      "source_location": "L8",
+      "source_location": "L9",
       "weight": 1.0
     },
     {
@@ -18102,5 +19167,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "0e959402087cb75da3de238293ca86b85bfd6201"
+  "built_at_commit": "7e2e6a74651acdee8b368a231c96a0aabcc72344"
 }

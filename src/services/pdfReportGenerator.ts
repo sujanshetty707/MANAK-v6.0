@@ -64,6 +64,60 @@ const getMrpStr = (extraction?: any): string => {
   return 'Not Declared';
 };
 
+let cachedLogoDataUrl: string | null = null;
+
+const getManakLogoDataUrl = (): Promise<string | null> => {
+  if (cachedLogoDataUrl) return Promise.resolve(cachedLogoDataUrl);
+  return new Promise((resolve) => {
+    try {
+      if (typeof document === 'undefined') return resolve(null);
+
+      const svgString = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="240" height="240">
+        <defs>
+          <linearGradient id="splashShieldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#2A579E" />
+            <stop offset="100%" stop-color="#142C52" />
+          </linearGradient>
+        </defs>
+        <path d="M60 10 L98 26 C98 62 82 92 60 108 C38 92 22 62 22 26 Z" fill="url(#splashShieldGrad)" stroke="#4A7BBF" stroke-width="2.5" />
+        <path d="M60 18 L90 31 C90 60 76 85 60 99 C44 85 30 60 30 31 Z" fill="none" stroke="#E8622C" stroke-width="1.5" stroke-opacity="0.85" />
+        <g transform="translate(42, 38)">
+          <rect x="0" y="0" width="3" height="34" rx="1" fill="#FFFFFF" />
+          <rect x="6" y="0" width="5" height="34" rx="1.2" fill="#FFFFFF" />
+          <rect x="14" y="0" width="2" height="34" rx="0.8" fill="#FFFFFF" fill-opacity="0.75" />
+          <rect x="19" y="0" width="6" height="34" rx="1.2" fill="#FFFFFF" />
+          <rect x="28" y="0" width="3.5" height="34" rx="1" fill="#FFFFFF" />
+          <rect x="34" y="0" width="2" height="34" rx="0.8" fill="#FFFFFF" fill-opacity="0.85" />
+          <line x1="-8" y1="17" x2="44" y2="17" stroke="#E8622C" stroke-width="2.5" stroke-linecap="round" />
+        </g>
+        <circle cx="60" cy="27" r="2.5" fill="#E8622C" />
+      </svg>`;
+
+      const img = new Image();
+      img.crossOrigin = 'anonymous';
+      img.onload = () => {
+        try {
+          const canvas = document.createElement('canvas');
+          canvas.width = 240;
+          canvas.height = 240;
+          const ctx = canvas.getContext('2d');
+          if (!ctx) return resolve(null);
+          ctx.drawImage(img, 0, 0, 240, 240);
+          const dataUrl = canvas.toDataURL('image/png');
+          cachedLogoDataUrl = dataUrl;
+          resolve(dataUrl);
+        } catch {
+          resolve(null);
+        }
+      };
+      img.onerror = () => resolve(null);
+      img.src = 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(svgString);
+    } catch {
+      resolve(null);
+    }
+  });
+};
+
 export async function generateInspectionPDF(record: InspectionRecord): Promise<void> {
   try {
     const doc = new jsPDF({
@@ -73,41 +127,91 @@ export async function generateInspectionPDF(record: InspectionRecord): Promise<v
     });
 
     const pageWidth = doc.internal.pageSize.getWidth();
-    let y = 15;
 
-    // Header Banner
-    doc.setFillColor(27, 58, 107); // #1B3A6B Deep Navy
-    doc.rect(0, 0, pageWidth, 28, 'F');
+    // 1. Subtle Background Security Watermark
+    doc.setTextColor(245, 248, 252);
+    doc.setFontSize(28);
+    doc.setFont('helvetica', 'bold');
+    doc.text('MANAK STATUTORY COMPLIANCE', pageWidth / 2, 155, { align: 'center', angle: 32 });
+
+    // 2. Top Saffron/Orange Accent Strip
+    doc.setFillColor(232, 98, 44); // MANAK Orange
+    doc.rect(0, 0, pageWidth, 2.5, 'F');
+
+    // 3. Deep Navy Header Banner
+    doc.setFillColor(14, 30, 54); // #0E1E36 Deep Navy
+    doc.rect(0, 2.5, pageWidth, 30, 'F');
+
+    // Bottom border for banner
+    doc.setFillColor(74, 123, 191);
+    doc.rect(0, 32.5, pageWidth, 0.6, 'F');
+
+    // 4. MANAK Shield Logo & Name on Header Left
+    const logoDataUrl = await getManakLogoDataUrl();
+    if (logoDataUrl) {
+      doc.addImage(logoDataUrl, 'PNG', 12, 6, 21, 21);
+    }
 
     doc.setTextColor(255, 255, 255);
-    doc.setFontSize(15);
+    doc.setFontSize(19);
     doc.setFont('helvetica', 'bold');
-    doc.text('GOVERNMENT OF INDIA', pageWidth / 2, 10, { align: 'center' });
+    doc.text('MANAK', 36, 14.5);
 
-    doc.setFontSize(11);
+    doc.setFontSize(7.2);
+    doc.setTextColor(232, 98, 44); // MANAK Orange
+    doc.setFont('helvetica', 'bold');
+    doc.text('NATIONAL LEGAL METROLOGY PORTAL', 36, 19.5);
+
+    doc.setFontSize(6.5);
     doc.setFont('helvetica', 'normal');
-    doc.text('Ministry of Consumer Affairs, Food & Public Distribution', pageWidth / 2, 16, { align: 'center' });
-    doc.text('DEPARTMENT OF LEGAL METROLOGY - STATUTORY INSPECTION REPORT', pageWidth / 2, 22, { align: 'center' });
+    doc.setTextColor(180, 202, 228);
+    doc.text('Statutory Packaging Compliance System', 36, 23.5);
 
-    y = 35;
+    // Subtle Vertical Divider
+    doc.setDrawColor(65, 95, 135);
+    doc.setLineWidth(0.3);
+    doc.line(98, 6, 98, 29);
+
+    // 5. Government of India & Statutory Title on Header Right
+    doc.setTextColor(255, 255, 255);
+    doc.setFontSize(10.5);
+    doc.setFont('helvetica', 'bold');
+    doc.text('GOVERNMENT OF INDIA', 102, 11);
+
+    doc.setFontSize(7.5);
+    doc.setFont('helvetica', 'normal');
+    doc.setTextColor(226, 232, 240);
+    doc.text('Ministry of Consumer Affairs, Food & Public Distribution', 102, 15.5);
+    doc.text('DEPARTMENT OF LEGAL METROLOGY', 102, 19.5);
+
+    doc.setFontSize(7.2);
+    doc.setFont('helvetica', 'bold');
+    doc.setTextColor(251, 191, 36); // Amber Gold
+    doc.text('STATUTORY INSPECTION & COMPLIANCE REPORT', 102, 24.5);
+
+    let y = 37;
     doc.setTextColor(26, 26, 26);
 
-    // Sub-header Info Box
+    // Sub-header Info Box with Orange Accent Line
     doc.setDrawColor(226, 232, 240);
     doc.setFillColor(248, 250, 252);
     doc.roundedRect(12, y, pageWidth - 24, 24, 2, 2, 'FD');
 
+    // Accent line on top of Info Box
+    doc.setFillColor(232, 98, 44);
+    doc.rect(12, y, pageWidth - 24, 1.2, 'F');
+
     doc.setFontSize(9);
     doc.setFont('helvetica', 'bold');
-    doc.text(`Report ID: ${sanitizeText(record?.report_id, 'MANAK-REP-2026-00491')}`, 16, y + 6);
-    doc.text(`Inspection Date & Time: ${sanitizeText(record?.timestamp, new Date().toLocaleString())}`, 16, y + 12);
-    doc.text(`Status: ${record?.is_compliant ? 'FULLY COMPLIANT' : 'NON-COMPLIANT (VIOLATIONS DETECTED)'}`, 16, y + 18);
+    doc.text(`Report ID: ${sanitizeText(record?.report_id, 'MANAK-REP-2026-00491')}`, 16, y + 6.5);
+    doc.text(`Inspection Date & Time: ${sanitizeText(record?.timestamp, new Date().toLocaleString())}`, 16, y + 12.5);
+    doc.text(`Status: ${record?.is_compliant ? 'FULLY COMPLIANT' : 'NON-COMPLIANT (VIOLATIONS DETECTED)'}`, 16, y + 18.5);
 
-    doc.text(`Inspecting Officer: ${sanitizeText(record?.performed_by?.name, 'Inspector Officer')}`, pageWidth / 2 + 10, y + 6);
-    doc.text(`Badge / ID: ${sanitizeText(record?.performed_by?.badge_id, 'LM-OFF-2026')}`, pageWidth / 2 + 10, y + 12);
-    doc.text(`Zone / Jurisdiction: ${sanitizeText(record?.performed_by?.zone, 'North Zone')}`, pageWidth / 2 + 10, y + 18);
+    doc.text(`Inspecting Officer: ${sanitizeText(record?.performed_by?.name, 'Inspector Officer')}`, pageWidth / 2 + 10, y + 6.5);
+    doc.text(`Badge / ID: ${sanitizeText(record?.performed_by?.badge_id, 'LM-OFF-2026')}`, pageWidth / 2 + 10, y + 12.5);
+    doc.text(`Zone / Jurisdiction: ${sanitizeText(record?.performed_by?.zone, 'North Zone')}`, pageWidth / 2 + 10, y + 18.5);
 
-    y += 30;
+    y += 29;
 
     // Geo Location & Evidence Authenticity (§65B Evidence Act)
     doc.setFontSize(10);
@@ -206,7 +310,7 @@ export async function generateInspectionPDF(record: InspectionRecord): Promise<v
     doc.setFontSize(8.5);
     doc.setFont('helvetica', 'bold');
     doc.setTextColor(42, 157, 92); // Green
-    doc.text('[VERIFIED] DIGITALLY SIGNED & CERTIFIED (eSign / Documenso Verification)', 16, y + 6);
+    doc.text('[VERIFIED] MANAK DIGITAL SIGNATURE & DSC CERTIFICATION (Sec. 65B Indian Evidence Act)', 16, y + 6);
 
     doc.setFont('helvetica', 'normal');
     doc.setFontSize(8);
@@ -218,7 +322,7 @@ export async function generateInspectionPDF(record: InspectionRecord): Promise<v
     // Footer Note
     doc.setFontSize(7);
     doc.setTextColor(150, 150, 150);
-    doc.text('This digital inspection report is issued under the authority of the Legal Metrology Act, 2009 and Packaged Commodities Rules, 2011.', pageWidth / 2, 285, { align: 'center' });
+    doc.text('This statutory digital report is generated and verified via MANAK Portal under the Legal Metrology Act, 2009 & Packaged Commodities Rules, 2011.', pageWidth / 2, 285, { align: 'center' });
 
     // Save the PDF
     const reportId = (record as any)?.report_id || record?.id || 'MANAK-Inspection-Report';
