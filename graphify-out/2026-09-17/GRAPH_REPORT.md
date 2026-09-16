@@ -1,16 +1,16 @@
 # Graph Report - MANAK  (2026-09-17)
 
 ## Corpus Check
-- 102 files · ~91,584 words
+- 102 files · ~91,993 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 590 nodes · 1056 edges · 49 communities (35 shown, 6 thin omitted)
+- 591 nodes · 1058 edges · 49 communities (35 shown, 6 thin omitted)
 - Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `7e2e6a74`
+- Built from commit: `87d54c35`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -92,15 +92,15 @@ Nodes (12): Consumer Flow, Deterministic Rule Engine, E-Commerce DOM Adapters, O
 
 ### Community 1 - "AppContext.tsx"
 Cohesion: 0.11
-Nodes (41): @capacitor/camera, @capacitor/core, lucide-react, react, App(), BottomNav(), DeviceFrame(), Header() (+33 more)
+Nodes (42): @capacitor/camera, @capacitor/core, lucide-react, react, App(), BottomNav(), DeviceFrame(), Header() (+34 more)
 
 ### Community 2 - "devDependencies"
 Cohesion: 0.18
 Nodes (11): devDependencies, autoprefixer, concurrently, postcss, tailwindcss, tsx, @types/react, @types/react-dom (+3 more)
 
 ### Community 3 - "package.json"
-Cohesion: 0.06
-Nodes (34): config, name, private, type, version, autoprefixer, @capacitor/android, @capacitor/cli (+26 more)
+Cohesion: 0.07
+Nodes (33): config, name, private, type, version, autoprefixer, @capacitor/android, @capacitor/cli (+25 more)
 
 ### Community 4 - "README.md"
 Cohesion: 0.05
@@ -180,7 +180,7 @@ Nodes (5): ExampleInstrumentedTest, ExampleUnitTest, androidx.test.ext.junit.run
 
 ### Community 31 - "api.ts"
 Cohesion: 0.08
-Nodes (52): Props, ServerSettingsModal(), AppContextType, MOCK_CONSUMER_REPORTS, MOCK_HISTORY, REPEAT_VIOLATOR_HEATMAP, SAMPLE_PRODUCTS, COMPLIANCE_RULES (+44 more)
+Nodes (51): Props, ServerSettingsModal(), AppContextType, MOCK_CONSUMER_REPORTS, MOCK_HISTORY, REPEAT_VIOLATOR_HEATMAP, SAMPLE_PRODUCTS, COMPLIANCE_RULES (+43 more)
 
 ### Community 32 - "gradlew"
 Cohesion: 0.83
@@ -204,7 +204,7 @@ Nodes (8): 1. Summary of Required Credentials, 2. Step-by-Step Instructions to O
 
 ### Community 43 - "labelParser.ts"
 Cohesion: 0.08
-Nodes (39): cors, dotenv, express, tesseract.js, ensureUUID(), app, db, saveInspectionToSupabase() (+31 more)
+Nodes (41): cors, dotenv, express, @supabase/supabase-js, tesseract.js, ensureUUID(), app, db (+33 more)
 
 ### Community 44 - "Product Requirements Document (PRD)"
 Cohesion: 0.18
@@ -243,8 +243,8 @@ _Questions this graph is uniquely positioned to answer:_
 - **What connects `config`, `name`, `private` to the rest of the system?**
   _282 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `AppContext.tsx` be split into smaller, more focused modules?**
-  _Cohesion score 0.11227364185110664 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.11032863849765258 - nodes in this community are weakly interconnected._
 - **Should `package.json` be split into smaller, more focused modules?**
-  _Cohesion score 0.06282051282051282 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.06827880512091039 - nodes in this community are weakly interconnected._
 - **Should `README.md` be split into smaller, more focused modules?**
   _Cohesion score 0.05263157894736842 - nodes in this community are weakly interconnected._

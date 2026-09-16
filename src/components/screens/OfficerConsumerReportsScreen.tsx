@@ -1,13 +1,14 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useApp } from '../../context/AppContext';
 import { Header } from '../common/Header';
 import { BottomNav } from '../common/BottomNav';
 import { ConsumerReport } from '../../types';
 import {
   AlertTriangle, CheckCircle2, Clock, ChevronDown, ChevronUp,
-  UserCheck, X, Inbox
+  UserCheck, X, Inbox, Lock
 } from 'lucide-react';
 import { MOCK_CONSUMER_REPORTS } from '../../data/mockData';
+import { decryptData } from '../../services/cryptoService';
 
 const STATUS_META: Record<ConsumerReport['status'], { label: string; bg: string; text: string }> = {
   submitted:        { label: 'New',          bg: 'bg-blue-50 border-blue-200',       text: 'text-blue-700'    },
@@ -15,6 +16,14 @@ const STATUS_META: Record<ConsumerReport['status'], { label: string; bg: string;
   under_review:     { label: 'Under Review', bg: 'bg-amber-50 border-amber-200',     text: 'text-amber-700'   },
   action_taken:     { label: 'Action Taken', bg: 'bg-emerald-50 border-emerald-200', text: 'text-emerald-700' },
   dismissed:        { label: 'Dismissed',    bg: 'bg-slate-100 border-slate-200',    text: 'text-slate-500'   },
+};
+
+const ConsumerStatementText: React.FC<{ note: string }> = ({ note }) => {
+  const [text, setText] = useState(note);
+  useEffect(() => {
+    decryptData(note).then(setText);
+  }, [note]);
+  return <p className="leading-relaxed italic text-slate-800">"{text}"</p>;
 };
 
 export const OfficerConsumerReportsScreen: React.FC = () => {
@@ -181,13 +190,19 @@ export const OfficerConsumerReportsScreen: React.FC = () => {
                       </div>
                     </div>
 
-                    {/* Consumer note */}
+                    {/* Consumer note (E2EE Encrypted) */}
                     {report.consumer_note && (
-                      <div className="p-2.5 rounded-xl bg-blue-50 border border-blue-100 text-[11px] text-slate-700">
-                        <span className="text-[10px] font-bold text-manak-navy uppercase mono block mb-0.5">
-                          Consumer Statement:
-                        </span>
-                        <p className="leading-relaxed italic">"{report.consumer_note}"</p>
+                      <div className="p-2.5 rounded-xl bg-blue-50/80 border border-blue-200 text-[11px] text-slate-700 space-y-1">
+                        <div className="flex items-center justify-between">
+                          <span className="text-[10px] font-bold text-manak-navy uppercase mono flex items-center gap-1">
+                            <Lock className="w-3 h-3 text-emerald-600" />
+                            Consumer Statement (E2EE Verified):
+                          </span>
+                          <span className="text-[9px] bg-emerald-100 text-emerald-800 font-bold px-1.5 py-0.2 rounded">
+                            Encrypted
+                          </span>
+                        </div>
+                        <ConsumerStatementText note={report.consumer_note} />
                       </div>
                     )}
 

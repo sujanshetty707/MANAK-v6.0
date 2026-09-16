@@ -679,6 +679,18 @@
       "source_location": "L433"
     },
     {
+      "id": "src_services_api_extractlabelapi",
+      "label": "extractLabelApi()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "AppContext.tsx",
+      "file_type": "code",
+      "norm_label": "extractlabelapi()",
+      "source_file": "src/services/api.ts",
+      "source_location": "L53"
+    },
+    {
       "id": "src_services_locationservice_getcurrentgeolocation",
       "label": "getCurrentGeoLocation()",
       "_callable": true,
@@ -724,7 +736,19 @@
       "file_type": "code",
       "norm_label": "generateinspectionpdf()",
       "source_file": "src/services/pdfReportGenerator.ts",
-      "source_location": "L67"
+      "source_location": "L121"
+    },
+    {
+      "id": "src_services_pdfreportgenerator_getmanaklogodataurl",
+      "label": "getManakLogoDataUrl()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "package.json",
+      "file_type": "code",
+      "norm_label": "getmanaklogodataurl()",
+      "source_file": "src/services/pdfReportGenerator.ts",
+      "source_location": "L69"
     },
     {
       "id": "src_services_pdfreportgenerator_getmrpstr",
@@ -885,18 +909,6 @@
       "norm_label": "evaluatecomplianceapi()",
       "source_file": "src/services/api.ts",
       "source_location": "L75"
-    },
-    {
-      "id": "src_services_api_extractlabelapi",
-      "label": "extractLabelApi()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 31,
-      "community_name": "api.ts",
-      "file_type": "code",
-      "norm_label": "extractlabelapi()",
-      "source_file": "src/services/api.ts",
-      "source_location": "L53"
     },
     {
       "id": "src_services_api_fetchconsumerreportsapi",
@@ -3312,28 +3324,6 @@
       "source_location": "L4"
     },
     {
-      "id": "src_lib_supabase",
-      "label": "supabase.ts",
-      "_origin": "ast",
-      "community": 3,
-      "community_name": "package.json",
-      "file_type": "code",
-      "norm_label": "supabase.ts",
-      "source_file": "src/lib/supabase.ts",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_lib_supabase_supabase",
-      "label": "supabase",
-      "_origin": "ast",
-      "community": 3,
-      "community_name": "package.json",
-      "file_type": "code",
-      "norm_label": "supabase",
-      "source_file": "src/lib/supabase.ts",
-      "source_location": "L6"
-    },
-    {
       "id": "src_services_pdfreportgenerator",
       "label": "pdfReportGenerator.ts",
       "_origin": "ast",
@@ -3486,17 +3476,6 @@
       "norm_label": "react-dom",
       "source_file": "package.json",
       "source_location": "L37"
-    },
-    {
-      "id": "ref_supabase_supabase_js",
-      "label": "@supabase/supabase-js",
-      "_origin": "ast",
-      "community": 3,
-      "community_name": "package.json",
-      "file_type": "concept",
-      "norm_label": "@supabase/supabase-js",
-      "source_file": "package.json",
-      "source_location": "L26"
     },
     {
       "id": "ref_tailwind_merge",
@@ -5306,6 +5285,28 @@
       "source_location": "L9"
     },
     {
+      "id": "src_lib_supabase",
+      "label": "supabase.ts",
+      "_origin": "ast",
+      "community": 43,
+      "community_name": "labelParser.ts",
+      "file_type": "code",
+      "norm_label": "supabase.ts",
+      "source_file": "src/lib/supabase.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_lib_supabase_supabase",
+      "label": "supabase",
+      "_origin": "ast",
+      "community": 43,
+      "community_name": "labelParser.ts",
+      "file_type": "code",
+      "norm_label": "supabase",
+      "source_file": "src/lib/supabase.ts",
+      "source_location": "L6"
+    },
+    {
       "id": "src_services_labelparser",
       "label": "labelParser.ts",
       "_origin": "ast",
@@ -5348,6 +5349,17 @@
       "norm_label": "express",
       "source_file": "package.json",
       "source_location": "L32"
+    },
+    {
+      "id": "ref_supabase_supabase_js",
+      "label": "@supabase/supabase-js",
+      "_origin": "ast",
+      "community": 43,
+      "community_name": "labelParser.ts",
+      "file_type": "concept",
+      "norm_label": "@supabase/supabase-js",
+      "source_file": "package.json",
+      "source_location": "L26"
     },
     {
       "id": "ref_tesseract_js",
@@ -8457,6 +8469,18 @@
     },
     {
       "source": "src_services_pdfreportgenerator_generateinspectionpdf",
+      "target": "src_services_pdfreportgenerator_getmanaklogodataurl",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/services/pdfReportGenerator.ts",
+      "source_location": "L150",
+      "weight": 1.0
+    },
+    {
+      "source": "src_services_pdfreportgenerator_generateinspectionpdf",
       "target": "src_services_pdfreportgenerator_sanitizetext",
       "relation": "calls",
       "_origin": "ast",
@@ -8464,7 +8488,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/services/pdfReportGenerator.ts",
-      "source_location": "L102",
+      "source_location": "L206",
       "weight": 1.0
     },
     {
@@ -8476,7 +8500,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/services/pdfReportGenerator.ts",
-      "source_location": "L124",
+      "source_location": "L228",
       "weight": 1.0
     },
     {
@@ -8488,7 +8512,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/services/pdfReportGenerator.ts",
-      "source_location": "L143",
+      "source_location": "L247",
       "weight": 1.0
     },
     {
@@ -8500,7 +8524,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/services/pdfReportGenerator.ts",
-      "source_location": "L145",
+      "source_location": "L249",
       "weight": 1.0
     },
     {
@@ -18378,6 +18402,17 @@
     },
     {
       "source": "src_services_pdfreportgenerator",
+      "target": "src_services_pdfreportgenerator_generateinspectionpdf",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/services/pdfReportGenerator.ts",
+      "source_location": "L121",
+      "weight": 1.0
+    },
+    {
+      "source": "src_services_pdfreportgenerator",
       "target": "src_services_pdfreportgenerator_safenum",
       "relation": "contains",
       "_origin": "ast",
@@ -18411,13 +18446,13 @@
     },
     {
       "source": "src_services_pdfreportgenerator",
-      "target": "src_services_pdfreportgenerator_generateinspectionpdf",
+      "target": "src_services_pdfreportgenerator_getmanaklogodataurl",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/services/pdfReportGenerator.ts",
-      "source_location": "L67",
+      "source_location": "L69",
       "weight": 1.0
     },
     {
@@ -19167,5 +19202,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "7e2e6a74651acdee8b368a231c96a0aabcc72344"
+  "built_at_commit": "87d54c354c3694712b094b6f0cd348a54cbaefb9"
 }

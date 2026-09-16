@@ -20,19 +20,30 @@ export function getApiBaseUrl(): string {
   return 'http://localhost:5000';
 }
 
+import { encryptData, sha256 } from './cryptoService';
+
 // ─── Auth ────────────────────────────────────────────────────────────────────
 
 export async function loginApi(role: 'officer' | 'consumer', idOrPhone: string, passOrOtp: string) {
   try {
+    const encryptedSecret = await encryptData(passOrOtp);
+    const passHash = await sha256(passOrOtp);
+    const timestamp = Date.now();
+
     const res = await fetch(`${getApiBaseUrl()}/api/auth/login`, {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      headers: {
+        'Content-Type': 'application/json',
+        'X-MANAK-Timestamp': timestamp.toString(),
+        'X-MANAK-Auth-Hash': passHash
+      },
       body: JSON.stringify({
         role,
         id: role === 'officer' ? idOrPhone : undefined,
         phone: role === 'consumer' ? idOrPhone : undefined,
-        pass: role === 'officer' ? passOrOtp : undefined,
-        otp: role === 'consumer' ? passOrOtp : undefined
+        pass: role === 'officer' ? encryptedSecret : undefined,
+        otp: role === 'consumer' ? passOrOtp : undefined,
+        pass_hash: passHash
       }),
       signal: AbortSignal.timeout(5000)
     });
@@ -256,11 +267,14 @@ export async function fetchConsumerReportsApi(): Promise<ConsumerReport[]> {
 
 export async function submitConsumerReportApi(report: Partial<ConsumerReport>): Promise<ConsumerReport> {
   let createdReport: ConsumerReport;
+  const rawNote = report.consumer_note || 'Reported via MANAK Consumer App';
+  const encryptedNote = await encryptData(rawNote);
+
   try {
     const res = await fetch(`${getApiBaseUrl()}/api/consumer-report`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(report),
+      body: JSON.stringify({ ...report, consumer_note: encryptedNote }),
       signal: AbortSignal.timeout(8000)
     });
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
@@ -275,7 +289,7 @@ export async function submitConsumerReportApi(report: Partial<ConsumerReport>): 
       brand: report.brand || 'Unknown',
       product_image: report.product_image || '',
       violations_summary: report.violations_summary || ['Suspected labeling discrepancy'],
-      consumer_note: report.consumer_note || 'Reported via MANAK Consumer App',
+      consumer_note: encryptedNote,
       submitted_at: new Date().toISOString().replace('T', ' ').substring(0, 19),
       status: 'submitted',
       assigned_officer: 'Legal Metrology Division'
