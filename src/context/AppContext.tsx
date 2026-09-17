@@ -14,6 +14,7 @@ import { evaluateExtractionAgainstRules } from '../services/ruleEngine';
 import { fetchHistoryApi, fetchConsumerReportsApi, loginApi, submitConsumerReportApi } from '../services/api';
 import { saveInspectionDirectToSupabase } from '../services/supabaseService';
 import { requestAllPermissionsDirectly, getCurrentGeoLocation } from '../services/locationService';
+import { subscribeToFirebaseAuth, signOutFirebaseConsumer } from '../services/firebaseAuthService';
 
 interface AppContextType {
   userRole: UserRole;
@@ -141,9 +142,24 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
     window.addEventListener('manak:queue-updated', handleQueueUpdated);
     window.addEventListener('manak:queue-synced', handleQueueSynced);
 
+    // Auto-restore persistent Firebase Authentication session
+    const unsubscribeFirebase = subscribeToFirebaseAuth(user => {
+      if (user && user.phoneNumber) {
+        const cleanPhone = user.phoneNumber.replace(/^\+91/, '');
+        setConsumerProfile(prev => ({
+          ...prev,
+          name: prev.name || 'Citizen User',
+          phone: cleanPhone
+        }));
+        setUserRole('consumer');
+        setActiveScreen('consumer_dashboard');
+      }
+    });
+
     return () => {
       window.removeEventListener('manak:queue-updated', handleQueueUpdated);
       window.removeEventListener('manak:queue-synced', handleQueueSynced);
+      unsubscribeFirebase();
     };
   }, []);
 
@@ -205,6 +221,7 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
   };
 
   const logout = () => {
+    signOutFirebaseConsumer().catch(() => {});
     setUserRole(null);
     navigateTo('role_select');
   };
