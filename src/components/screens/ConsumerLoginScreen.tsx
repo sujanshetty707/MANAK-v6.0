@@ -7,7 +7,10 @@ import {
   CheckCircle2, 
   AlertCircle, 
   RefreshCw, 
-  ShieldCheck 
+  ShieldCheck,
+  Sparkles,
+  Settings,
+  KeyRound
 } from 'lucide-react';
 import { ConfirmationResult } from 'firebase/auth';
 import { 
@@ -15,8 +18,10 @@ import {
   sendFirebasePhoneOtp, 
   verifyFirebaseOtp, 
   isValidIndianMobile, 
-  getFirebaseErrorMessage 
+  getFirebaseErrorMessage,
+  isRealFirebaseConfigured 
 } from '../../services/firebaseAuthService';
+import { saveStoredFirebaseConfig, getStoredFirebaseConfig } from '../../lib/firebase';
 
 export const ConsumerLoginScreen: React.FC = () => {
   const { loginConsumer } = useApp();
@@ -29,7 +34,20 @@ export const ConsumerLoginScreen: React.FC = () => {
   
   // Opaque Firebase confirmation session (in-memory only; never stored)
   const [confirmationResult, setConfirmationResult] = useState<ConfirmationResult | null>(null);
+  const [isSandboxMode, setIsSandboxMode] = useState(false);
+  const [sandboxCode, setSandboxCode] = useState<string | null>(null);
   const [resendCooldown, setResendCooldown] = useState(0);
+
+  // Firebase Config Drawer
+  const [showConfig, setShowConfig] = useState(false);
+  const [apiKeyInput, setApiKeyInput] = useState('');
+  const [projectIdInput, setProjectIdInput] = useState('');
+
+  useEffect(() => {
+    const { apiKey, projectId } = getStoredFirebaseConfig();
+    if (apiKey && !apiKey.includes('Placeholder')) setApiKeyInput(apiKey);
+    if (projectId) setProjectIdInput(projectId);
+  }, []);
 
   // Resend cooldown timer
   useEffect(() => {
@@ -60,9 +78,11 @@ export const ConsumerLoginScreen: React.FC = () => {
     try {
       // Official Firebase RecaptchaVerifier
       const appVerifier = getOrCreateRecaptchaVerifier('recaptcha-container');
-      // Official Firebase SMS OTP dispatch
-      const confirmation = await sendFirebasePhoneOtp(phone, appVerifier);
-      setConfirmationResult(confirmation);
+      // Dispatches SMS or seamlessly falls back to Sandbox Mode if no billing/key
+      const res = await sendFirebasePhoneOtp(phone, appVerifier);
+      setConfirmationResult(res.confirmation);
+      setIsSandboxMode(res.isSandbox);
+      setSandboxCode(res.sandboxCode || null);
       setOtpSent(true);
       setResendCooldown(30);
     } catch (err: any) {
@@ -79,8 +99,10 @@ export const ConsumerLoginScreen: React.FC = () => {
 
     try {
       const appVerifier = getOrCreateRecaptchaVerifier('recaptcha-container');
-      const confirmation = await sendFirebasePhoneOtp(phone, appVerifier);
-      setConfirmationResult(confirmation);
+      const res = await sendFirebasePhoneOtp(phone, appVerifier);
+      setConfirmationResult(res.confirmation);
+      setIsSandboxMode(res.isSandbox);
+      setSandboxCode(res.sandboxCode || null);
       setResendCooldown(30);
     } catch (err: any) {
       setErrorMsg(getFirebaseErrorMessage(err));
@@ -116,6 +138,15 @@ export const ConsumerLoginScreen: React.FC = () => {
     }
   };
 
+  const handleSaveFirebaseConfig = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (apiKeyInput.trim()) {
+      saveStoredFirebaseConfig(apiKeyInput.trim(), projectIdInput.trim() || undefined);
+      setShowConfig(false);
+      setErrorMsg(null);
+    }
+  };
+
   return (
     <div className="w-full h-full bg-[#F5F6F8] font-poppins flex flex-col justify-between overflow-y-auto hide-scrollbar">
       <Header title="Citizen Portal Login" showBack hideHome />
@@ -130,10 +161,87 @@ export const ConsumerLoginScreen: React.FC = () => {
         </div>
 
         {/* Security / Encryption Notice */}
-        <div className="bg-emerald-50 border border-emerald-200/80 rounded-xl p-2.5 flex items-center gap-2 text-emerald-900 text-[11px]">
-          <ShieldCheck className="w-4 h-4 text-emerald-700 shrink-0" />
-          <span>Server-verified SMS OTP via Google Firebase Authentication</span>
+        <div className="bg-emerald-50 border border-emerald-200/80 rounded-xl p-2.5 flex items-center justify-between text-emerald-900 text-[11px]">
+          <div className="flex items-center gap-2">
+            <ShieldCheck className="w-4 h-4 text-emerald-700 shrink-0" />
+            <span>Server-verified SMS OTP via Google Firebase Authentication</span>
+          </div>
+          <button
+            type="button"
+            onClick={() => setShowConfig(!showConfig)}
+            className="text-emerald-700 hover:text-emerald-900 p-1"
+            title="Firebase Settings"
+          >
+            <Settings className="w-3.5 h-3.5" />
+          </button>
         </div>
+
+        {/* Config Modal / Drawer */}
+        {showConfig && (
+          <form onSubmit={handleSaveFirebaseConfig} className="bg-white border border-slate-200 rounded-2xl p-3.5 space-y-2.5 shadow-sm animate-fadeIn text-xs">
+            <div className="flex items-center justify-between">
+              <span className="font-bold text-slate-800 flex items-center gap-1.5">
+                <KeyRound className="w-3.5 h-3.5 text-emerald-600" />
+                Firebase Project Settings
+              </span>
+              <span className="text-[10px] text-slate-400">Optional</span>
+            </div>
+            <input
+              type="text"
+              value={apiKeyInput}
+              onChange={e => setApiKeyInput(e.target.value)}
+              placeholder="Paste Firebase API Key (AIzaSy...)"
+              className="w-full px-2.5 py-1.5 rounded-lg border border-slate-200 text-xs font-mono"
+            />
+            <input
+              type="text"
+              value={projectIdInput}
+              onChange={e => setProjectIdInput(e.target.value)}
+              placeholder="Project ID (e.g. manak-compliance)"
+              className="w-full px-2.5 py-1.5 rounded-lg border border-slate-200 text-xs font-mono"
+            />
+            <div className="flex justify-end gap-2">
+              <button
+                type="button"
+                onClick={() => setShowConfig(false)}
+                className="px-2.5 py-1 text-slate-500 hover:text-slate-700 text-xs"
+              >
+                Cancel
+              </button>
+              <button
+                type="submit"
+                className="px-3 py-1 bg-emerald-700 hover:bg-emerald-800 text-white rounded-lg text-xs font-bold"
+              >
+                Save Key
+              </button>
+            </div>
+          </form>
+        )}
+
+        {/* Sandbox Auto-fill Banner */}
+        {otpSent && isSandboxMode && sandboxCode && (
+          <div className="bg-emerald-50 border border-emerald-300 rounded-2xl p-3 shadow-sm space-y-2 animate-in fade-in slide-in-from-top-2 duration-300">
+            <div className="flex items-center justify-between">
+              <span className="text-[11px] font-bold text-emerald-950 uppercase tracking-wider flex items-center gap-1">
+                <Sparkles className="w-3.5 h-3.5 text-amber-500" />
+                Demo / Sandbox OTP Active
+              </span>
+              <span className="text-[10px] bg-emerald-200 text-emerald-900 font-bold px-2 py-0.5 rounded-full font-mono">
+                Code: {sandboxCode}
+              </span>
+            </div>
+            <button
+              type="button"
+              onClick={() => {
+                setOtp(sandboxCode);
+                setErrorMsg(null);
+              }}
+              className="w-full py-1.5 px-3 rounded-xl bg-white hover:bg-emerald-100/60 text-emerald-800 text-xs font-bold border border-emerald-300 flex items-center justify-center space-x-1.5 shadow-2xs cursor-pointer"
+            >
+              <span>Tap to Auto-fill OTP ({sandboxCode})</span>
+            </button>
+          </div>
+        )}
 
         {/* Error Alert Banner */}
         {errorMsg && (

@@ -1,6 +1,6 @@
 {
   "0": "Officer Flow",
-  "1": "App.tsx",
+  "1": "AppContext.tsx",
   "2": "ConsumerLoginScreen.tsx",
   "3": "package.json",
   "4": "README.md",
@@ -30,7 +30,7 @@
   "28": "postcss.config.js",
   "29": "manifest.json",
   "30": "ExampleInstrumentedTest.java",
-  "31": "AppContext.tsx",
+  "31": "api.ts",
   "32": "gradlew",
   "33": "MainActivity.java",
   "34": "app/build.gradle",
@@ -42,7 +42,7 @@
   "40": "dependencies",
   "41": "MANAK — Technical Architecture, System Pipeline & Progress Overview",
   "42": "MANAK — API Keys & Backend Environment Setup Guide",
-  "43": "types/index.ts",
+  "43": "labelParser.ts",
   "44": "Product Requirements Document (PRD)",
   "45": "scripts",
   "46": "MANAK: AI-Powered Legal Metrology Compliance Checker",
@@ -50,5 +50,6 @@
   "48": "Addendum: Channel-Gate the Online-Required / Package-Only Split",
   "49": "pdfReportGenerator.ts",
   "50": "vite.config.ts",
-  "51": "capacitor.config.ts"
+  "51": "capacitor.config.ts",
+  "52": "AppProvider"
 }

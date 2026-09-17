@@ -7,13 +7,43 @@ import {
   inMemoryPersistence
 } from 'firebase/auth';
 
+const STORAGE_API_KEY = 'MANAK_FIREBASE_API_KEY';
+const STORAGE_PROJECT_ID = 'MANAK_FIREBASE_PROJECT_ID';
+
+export function getStoredFirebaseConfig() {
+  try {
+    const customApiKey = localStorage.getItem(STORAGE_API_KEY) || '';
+    const customProjectId = localStorage.getItem(STORAGE_PROJECT_ID) || '';
+    return {
+      apiKey: customApiKey || (import.meta as any).env?.VITE_FIREBASE_API_KEY || '',
+      projectId: customProjectId || (import.meta as any).env?.VITE_FIREBASE_PROJECT_ID || 'manak-compliance'
+    };
+  } catch {
+    return {
+      apiKey: (import.meta as any).env?.VITE_FIREBASE_API_KEY || '',
+      projectId: 'manak-compliance'
+    };
+  }
+}
+
+export function saveStoredFirebaseConfig(apiKey: string, projectId?: string) {
+  try {
+    if (apiKey.trim()) localStorage.setItem(STORAGE_API_KEY, apiKey.trim());
+    if (projectId?.trim()) localStorage.setItem(STORAGE_PROJECT_ID, projectId.trim());
+  } catch {
+    // Ignore
+  }
+}
+
+const { apiKey, projectId } = getStoredFirebaseConfig();
+
 const firebaseConfig = {
-  apiKey: (import.meta as any).env?.VITE_FIREBASE_API_KEY || 'AIzaSyDemoPlaceholderKeyForManakAuth2026',
-  authDomain: (import.meta as any).env?.VITE_FIREBASE_AUTH_DOMAIN || 'manak-compliance.firebaseapp.com',
-  projectId: (import.meta as any).env?.VITE_FIREBASE_PROJECT_ID || 'manak-compliance',
-  storageBucket: (import.meta as any).env?.VITE_FIREBASE_STORAGE_BUCKET || 'manak-compliance.appspot.com',
-  messagingSenderId: (import.meta as any).env?.VITE_FIREBASE_MESSAGING_SENDER_ID || '123456789012',
-  appId: (import.meta as any).env?.VITE_FIREBASE_APP_ID || '1:123456789012:web:abcdef1234567890abcdef'
+  apiKey: apiKey || 'AIzaSyDemoPlaceholderKeyForManakAuth2026',
+  authDomain: `${projectId}.firebaseapp.com`,
+  projectId: projectId,
+  storageBucket: `${projectId}.appspot.com`,
+  messagingSenderId: '123456789012',
+  appId: '1:123456789012:web:abcdef1234567890abcdef'
 };
 
 // Initialize Firebase App singleton
@@ -30,5 +60,5 @@ try {
     });
   });
 } catch {
-  // Graceful fallback for non-standard environments
+  // Graceful fallback
 }

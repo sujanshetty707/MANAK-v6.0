@@ -1,8 +1,8 @@
 {
   "package.json": {
-    "mtime": 1789599135.4146047,
-    "seen": 1789599354.789042,
-    "ast_hash": "22d398e740276ff5a474ffcf83bba42d",
+    "mtime": 1789603371.1654084,
+    "seen": 1789603535.3178792,
+    "ast_hash": "b8258fc8cbd0dc650526dbb9857656e8",
     "semantic_hash": ""
   },
   "postcss.config.js": {
@@ -72,9 +72,9 @@
     "semantic_hash": ""
   },
   "src/components/screens/ConsumerLoginScreen.tsx": {
-    "mtime": 1789602705.069403,
-    "seen": 1789602800.843801,
-    "ast_hash": "500c2ce0dc1a21992c9921f449c2f8eb",
+    "mtime": 1789603405.121386,
+    "seen": 1789603535.3260713,
+    "ast_hash": "6f9f25b51c66160c49edb8e1d7b727fa",
     "semantic_hash": ""
   },
   "src/components/screens/ConsumerMyReportsScreen.tsx": {
@@ -138,9 +138,9 @@
     "semantic_hash": ""
   },
   "src/context/AppContext.tsx": {
-    "mtime": 1789587943.843018,
-    "seen": 1789599354.791721,
-    "ast_hash": "3606247d589d0bae2c67526d4b0d3834",
+    "mtime": 1789603384.7271585,
+    "seen": 1789603535.3320677,
+    "ast_hash": "4bbbd29e4850ee62aa23d3a806e3dfbb",
     "semantic_hash": ""
   },
   "src/data/mockData.ts": {
@@ -372,8 +372,8 @@
     "semantic_hash": ""
   },
   "android/app/capacitor.build.gradle": {
-    "mtime": 1789602753.7400348,
-    "seen": 1789602800.8387136,
+    "mtime": 1789603442.3981228,
+    "seen": 1789603535.3155727,
     "ast_hash": "1560661258aa1c0f258461f50c16cff0",
     "semantic_hash": ""
   },
@@ -402,8 +402,8 @@
     "semantic_hash": ""
   },
   "android/capacitor.settings.gradle": {
-    "mtime": 1789602753.73886,
-    "seen": 1789602800.8395107,
+    "mtime": 1789603442.396122,
+    "seen": 1789603535.3167448,
     "ast_hash": "a27b4ec703a3fb1e2a197e1d71be976a",
     "semantic_hash": ""
   },
@@ -771,6 +771,18 @@
     "mtime": 1789600784.27448,
     "seen": 1789600856.7860327,
     "ast_hash": "1729bd7c72e6d8fea0581a944f9ef98c",
+    "semantic_hash": ""
+  },
+  "src/lib/firebase.ts": {
+    "mtime": 1789603336.6827052,
+    "seen": 1789603535.3326514,
+    "ast_hash": "e12072decbc473b2889fa6a5574e7c25",
+    "semantic_hash": ""
+  },
+  "src/services/firebaseAuthService.ts": {
+    "mtime": 1789603350.4324102,
+    "seen": 1789603535.33465,
+    "ast_hash": "211ca10f9f58698954889923bb51fca8",
     "semantic_hash": ""
   }
 }

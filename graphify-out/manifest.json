@@ -72,9 +72,9 @@
     "semantic_hash": ""
   },
   "src/components/screens/ConsumerLoginScreen.tsx": {
-    "mtime": 1789603405.121386,
-    "seen": 1789603535.3260713,
-    "ast_hash": "6f9f25b51c66160c49edb8e1d7b727fa",
+    "mtime": 1789603740.507816,
+    "seen": 1789603869.6472378,
+    "ast_hash": "7b7e5b5557c8bca5a93348a1ed8c9c11",
     "semantic_hash": ""
   },
   "src/components/screens/ConsumerMyReportsScreen.tsx": {
@@ -372,8 +372,8 @@
     "semantic_hash": ""
   },
   "android/app/capacitor.build.gradle": {
-    "mtime": 1789603442.3981228,
-    "seen": 1789603535.3155727,
+    "mtime": 1789603781.561641,
+    "seen": 1789603869.635244,
     "ast_hash": "1560661258aa1c0f258461f50c16cff0",
     "semantic_hash": ""
   },
@@ -402,8 +402,8 @@
     "semantic_hash": ""
   },
   "android/capacitor.settings.gradle": {
-    "mtime": 1789603442.396122,
-    "seen": 1789603535.3167448,
+    "mtime": 1789603781.5596323,
+    "seen": 1789603869.637722,
     "ast_hash": "a27b4ec703a3fb1e2a197e1d71be976a",
     "semantic_hash": ""
   },
@@ -774,15 +774,15 @@
     "semantic_hash": ""
   },
   "src/lib/firebase.ts": {
-    "mtime": 1789603336.6827052,
-    "seen": 1789603535.3326514,
-    "ast_hash": "e12072decbc473b2889fa6a5574e7c25",
+    "mtime": 1789603717.942454,
+    "seen": 1789603869.6545792,
+    "ast_hash": "de17d7d40d6a24cf3527086474a42487",
     "semantic_hash": ""
   },
   "src/services/firebaseAuthService.ts": {
-    "mtime": 1789603350.4324102,
-    "seen": 1789603535.33465,
-    "ast_hash": "211ca10f9f58698954889923bb51fca8",
+    "mtime": 1789603727.3390582,
+    "seen": 1789603869.6575441,
+    "ast_hash": "d9b38c05e80666d114561053ea2de7d2",
     "semantic_hash": ""
   }
 }
