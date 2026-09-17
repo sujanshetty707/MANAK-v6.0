@@ -1,7 +1,7 @@
 import { InspectionRecord, ConsumerReport, Product, ExtractionResult, RuleEvaluation, EvaluationChannel } from '../types';
 import { parseLabelText } from './labelParser';
 import { evaluateExtractionAgainstRules } from './ruleEngine';
-import { extractLabelClientSide } from './clientGeminiVision';
+import { extractLabelClientSide, getGeminiApiKey } from './clientGeminiVision';
 import { checkUrlClientSide } from './clientUrlCheck';
 import {
   saveInspectionDirectToSupabase,
@@ -326,19 +326,102 @@ export async function syncQueueApi(queuedInspections: InspectionRecord[]) {
 
 // ─── Compliance Chat ──────────────────────────────────────────────────────────
 
-export async function askComplianceChatApi(question: string) {
+export async function askComplianceChatApi(
+  question: string,
+  history?: Array<{ sender: 'user' | 'assistant'; text: string }>
+) {
+  const apiKey = getGeminiApiKey();
+
+  if (apiKey && apiKey.trim()) {
+    const models = [
+      'models/gemini-3.5-flash',
+      'models/gemini-3.6-flash',
+      'models/gemini-flash-lite-latest'
+    ];
+
+    const systemInstruction = `You are the official MANAK Legal Metrology AI Assistant, an authoritative AI legal advisor expert in:
+1. The Legal Metrology Act, 2009 (Sections 18, 36, 49, etc.)
+2. Legal Metrology (Packaged Commodities) Rules, 2011 (Rule 6 mandatory declarations, Rule 7 numeral heights & area tables, Rule 9 declarations on retail packages, Rule 32 compounding fees, Sixth Schedule, etc.)
+3. GSR Amendments (including GSR 202(E) on e-commerce declarations, unit sale price, and standard sizes)
+4. Guidelines for online marketplaces (Amazon, Flipkart, Blinkit, Zepto, etc.)
+
+Provide structured, conversational, thorough, and clear answers like ChatGPT and Gemini. Use clear formatting, bullet points, bold highlights, and exact provisions where appropriate. At the very end of your response, add a standalone line starting with "Citation: " specifying the exact statutory rule, section, or notification reference (e.g. "Citation: Rule 6(1)(e), Legal Metrology (Packaged Commodities) Rules, 2011").`;
+
+    const contents: Array<{ role: 'user' | 'model'; parts: Array<{ text: string }> }> = [];
+    const prefix = `${systemInstruction}\n\n`;
+
+    if (history && history.length > 0) {
+      const relevantHistory = history.filter(h => h.text && h.text.trim()).slice(-6);
+      for (let i = 0; i < relevantHistory.length; i++) {
+        const item = relevantHistory[i];
+        const role = item.sender === 'user' ? 'user' : 'model';
+        const text = (i === 0 && role === 'user') ? prefix + item.text : item.text;
+        contents.push({ role, parts: [{ text }] });
+      }
+      contents.push({ role: 'user', parts: [{ text: question }] });
+    } else {
+      contents.push({
+        role: 'user',
+        parts: [{ text: `${prefix}User Question: ${question}` }]
+      });
+    }
+
+    for (const model of models) {
+      try {
+        const url = `https://generativelanguage.googleapis.com/v1beta/${model}:generateContent?key=${apiKey.trim()}`;
+        const res = await fetch(url, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            contents,
+            generationConfig: {
+              temperature: 0.3,
+              maxOutputTokens: 1000
+            }
+          }),
+          signal: AbortSignal.timeout(15000)
+        });
+
+        if (res.ok) {
+          const data = await res.json();
+          const candidateText = data?.candidates?.[0]?.content?.parts?.[0]?.text;
+          if (candidateText && candidateText.trim()) {
+            const fullText = candidateText.trim();
+            const citationMatch = fullText.match(/Citation:\s*([^\n\r]+)$/im);
+            const citation = citationMatch
+              ? citationMatch[1].trim()
+              : 'Legal Metrology (Packaged Commodities) Rules, 2011';
+            const cleanText = fullText.replace(/Citation:\s*([^\n\r]+)$/im, '').trim();
+
+            return {
+              success: true,
+              question,
+              answer: cleanText,
+              citation,
+              model
+            };
+          }
+        }
+      } catch (err) {
+        console.warn(`[MANAK AI Chat] Model ${model} call failed, trying fallback:`, err);
+      }
+    }
+  }
+
+  // Fallback to backend server if configured
   try {
     const res = await fetch(`${getApiBaseUrl()}/api/chat`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ question }),
-      signal: AbortSignal.timeout(10000)
+      signal: AbortSignal.timeout(5000)
     });
-    if (!res.ok) throw new Error(`HTTP ${res.status}`);
-    return await res.json();
+    if (res.ok) return await res.json();
   } catch {
-    return getLocalChatAnswer(question);
+    // Proceed to local fallback
   }
+
+  return getLocalChatAnswer(question);
 }
 
 // ─── Local Fallback Helpers ───────────────────────────────────────────────────

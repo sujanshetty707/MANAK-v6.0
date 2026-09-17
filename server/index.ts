@@ -805,10 +805,48 @@ app.post('/api/report/:id/generate', (req, res) => {
 
 // ─── Compliance Chat ─────────────────────────────────────────────────────────
 
-app.post('/api/chat', (req, res) => {
+app.post('/api/chat', async (req, res) => {
   const body = req.body || {};
-  const q = (body.question || '').toLowerCase();
+  const question = body.question || '';
+  const apiKey = process.env.GEMINI_API_KEY || process.env.VITE_GEMINI_API_KEY;
 
+  if (apiKey && question) {
+    const models = ['models/gemini-3.5-flash', 'models/gemini-3.6-flash', 'models/gemini-flash-lite-latest'];
+    const systemInstruction = 'You are the official MANAK Legal Metrology AI Assistant, an authoritative AI legal advisor expert in the Indian Legal Metrology Act 2009, Packaged Commodities Rules 2011, GSR amendments (such as GSR 202(E)), and Section 36 penalties. Reply in a clear, authoritative, conversational, and thorough style like ChatGPT and Gemini. Provide structured points and practical advice. At the very end of your response, add a standalone line starting with "Citation: " specifying the exact statutory rule or section.';
+
+    for (const model of models) {
+      try {
+        const geminiRes = await fetch(`https://generativelanguage.googleapis.com/v1beta/${model}:generateContent?key=${apiKey}`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            contents: [
+              { role: 'user', parts: [{ text: `${systemInstruction}\n\nUser Question: ${question}` }] }
+            ],
+            generationConfig: {
+              temperature: 0.3,
+              maxOutputTokens: 1000
+            }
+          })
+        });
+
+        if (geminiRes.ok) {
+          const data: any = await geminiRes.json();
+          const text = data?.candidates?.[0]?.content?.parts?.[0]?.text;
+          if (text && text.trim()) {
+            const citationMatch = text.match(/Citation:\s*([^\n\r]+)$/im);
+            const citation = citationMatch ? citationMatch[1].trim() : 'Legal Metrology (Packaged Commodities) Rules, 2011';
+            const answer = text.replace(/Citation:\s*([^\n\r]+)$/im, '').trim();
+            return res.json({ success: true, question, answer, citation, model });
+          }
+        }
+      } catch (e) {
+        console.warn(`[Backend Chat] ${model} failed:`, e);
+      }
+    }
+  }
+
+  const q = question.toLowerCase();
   let answer = 'The Legal Metrology (Packaged Commodities) Rules, 2011 mandate clear declarations of Manufacturer, Net Quantity, MRP (inclusive of all taxes), Date of Manufacture, and Consumer Care details on all principal display panels.';
   let citation = 'Legal Metrology (Packaged Commodities) Rules, 2011';
 
@@ -825,7 +863,7 @@ app.post('/api/chat', (req, res) => {
     citation = 'Rule 6(1)(a)';
   }
 
-  res.json({ success: true, question: body.question, answer, citation });
+  res.json({ success: true, question, answer, citation });
 });
 
 // ─── Start ───────────────────────────────────────────────────────────────────

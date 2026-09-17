@@ -52,5 +52,5 @@
   "50": "vite.config.ts",
   "51": "capacitor.config.ts",
   "52": "AppProvider",
-  "53": "@supabase/supabase-js"
+  "53": "cryptoService.ts"
 }

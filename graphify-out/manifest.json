@@ -54,9 +54,9 @@
     "semantic_hash": ""
   },
   "src/components/screens/ComplianceChatScreen.tsx": {
-    "mtime": 1789588410.686304,
-    "seen": 1789599354.790898,
-    "ast_hash": "40a11867573fa49fa4d64489137de3d5",
+    "mtime": 1789605723.333826,
+    "seen": 1789605878.5429983,
+    "ast_hash": "08761b7715ed77d1009f410bfc88c067",
     "semantic_hash": ""
   },
   "src/components/screens/ConsumerCheckProductScreen.tsx": {
@@ -372,8 +372,8 @@
     "semantic_hash": ""
   },
   "android/app/capacitor.build.gradle": {
-    "mtime": 1789604684.6199548,
-    "seen": 1789604767.8351464,
+    "mtime": 1789605779.2304952,
+    "seen": 1789605878.5350935,
     "ast_hash": "1560661258aa1c0f258461f50c16cff0",
     "semantic_hash": ""
   },
@@ -402,8 +402,8 @@
     "semantic_hash": ""
   },
   "android/capacitor.settings.gradle": {
-    "mtime": 1789604684.6185043,
-    "seen": 1789604767.8367796,
+    "mtime": 1789605779.2274957,
+    "seen": 1789605878.5363593,
     "ast_hash": "a27b4ec703a3fb1e2a197e1d71be976a",
     "semantic_hash": ""
   },
@@ -624,15 +624,15 @@
     "semantic_hash": ""
   },
   "server/index.ts": {
-    "mtime": 1789601924.5768263,
-    "seen": 1789602011.8532567,
-    "ast_hash": "4759d4ce5ddb7d6d5f4d26dee4f3d602",
+    "mtime": 1789605739.3159895,
+    "seen": 1789605878.5385072,
+    "ast_hash": "71a86e47627c9e1c8440a2eddce3a38e",
     "semantic_hash": ""
   },
   "src/services/api.ts": {
-    "mtime": 1789600742.4286156,
-    "seen": 1789600856.7856097,
-    "ast_hash": "9dec3cf87c5198d096c53db95fbb6210",
+    "mtime": 1789605705.9328382,
+    "seen": 1789605878.5525053,
+    "ast_hash": "89832fb0547b0244a0008a9b6fba0dc5",
     "semantic_hash": ""
   },
   "server/services/geminiExtraction.ts": {

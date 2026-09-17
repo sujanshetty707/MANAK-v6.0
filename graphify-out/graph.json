@@ -14,7 +14,7 @@
       "file_type": "code",
       "norm_label": "chatmessage",
       "source_file": "src/components/screens/ComplianceChatScreen.tsx",
-      "source_location": "L8"
+      "source_location": "L9"
     },
     {
       "id": "src_services_locationservice_geolocationresult",
@@ -450,18 +450,6 @@
       "norm_label": "checkurlscreen()",
       "source_file": "src/components/screens/CheckUrlScreen.tsx",
       "source_location": "L21"
-    },
-    {
-      "id": "src_components_screens_compliancechatscreen_compliancechatscreen",
-      "label": "ComplianceChatScreen()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "AppContext.tsx",
-      "file_type": "code",
-      "norm_label": "compliancechatscreen()",
-      "source_file": "src/components/screens/ComplianceChatScreen.tsx",
-      "source_location": "L16"
     },
     {
       "id": "src_components_screens_consumercheckproductscreen_consumercheckproductscreen",
@@ -900,16 +888,16 @@
       "source_location": "L11"
     },
     {
-      "id": "src_components_screens_officerconsumerreportsscreen_consumerstatementtext",
-      "label": "ConsumerStatementText()",
+      "id": "src_components_screens_compliancechatscreen_compliancechatscreen",
+      "label": "ComplianceChatScreen()",
       "_callable": true,
       "_origin": "ast",
       "community": 31,
       "community_name": "api.ts",
       "file_type": "code",
-      "norm_label": "consumerstatementtext()",
-      "source_file": "src/components/screens/OfficerConsumerReportsScreen.tsx",
-      "source_location": "L21"
+      "norm_label": "compliancechatscreen()",
+      "source_file": "src/components/screens/ComplianceChatScreen.tsx",
+      "source_location": "L17"
     },
     {
       "id": "src_services_api_askcompliancechatapi",
@@ -933,7 +921,7 @@
       "file_type": "code",
       "norm_label": "buildlocalscanrecord()",
       "source_file": "src/services/api.ts",
-      "source_location": "L346"
+      "source_location": "L429"
     },
     {
       "id": "src_services_api_checkurlapi",
@@ -1017,19 +1005,7 @@
       "file_type": "code",
       "norm_label": "getlocalchatanswer()",
       "source_file": "src/services/api.ts",
-      "source_location": "L399"
-    },
-    {
-      "id": "src_services_api_loginapi",
-      "label": "loginApi()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 31,
-      "community_name": "api.ts",
-      "file_type": "code",
-      "norm_label": "loginapi()",
-      "source_file": "src/services/api.ts",
-      "source_location": "L27"
+      "source_location": "L482"
     },
     {
       "id": "src_services_api_scanproductapi",
@@ -1114,66 +1090,6 @@
       "norm_label": "getrelevantproductimage()",
       "source_file": "src/services/clientUrlCheck.ts",
       "source_location": "L6"
-    },
-    {
-      "id": "src_services_cryptoservice_decryptdata",
-      "label": "decryptData()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 31,
-      "community_name": "api.ts",
-      "file_type": "code",
-      "norm_label": "decryptdata()",
-      "source_file": "src/services/cryptoService.ts",
-      "source_location": "L67"
-    },
-    {
-      "id": "src_services_cryptoservice_derivekey",
-      "label": "deriveKey()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 31,
-      "community_name": "api.ts",
-      "file_type": "code",
-      "norm_label": "derivekey()",
-      "source_file": "src/services/cryptoService.ts",
-      "source_location": "L12"
-    },
-    {
-      "id": "src_services_cryptoservice_encryptdata",
-      "label": "encryptData()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 31,
-      "community_name": "api.ts",
-      "file_type": "code",
-      "norm_label": "encryptdata()",
-      "source_file": "src/services/cryptoService.ts",
-      "source_location": "L40"
-    },
-    {
-      "id": "src_services_cryptoservice_maskphone",
-      "label": "maskPhone()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 31,
-      "community_name": "api.ts",
-      "file_type": "code",
-      "norm_label": "maskphone()",
-      "source_file": "src/services/cryptoService.ts",
-      "source_location": "L114"
-    },
-    {
-      "id": "src_services_cryptoservice_sha256",
-      "label": "sha256()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 31,
-      "community_name": "api.ts",
-      "file_type": "code",
-      "norm_label": "sha256()",
-      "source_file": "src/services/cryptoService.ts",
-      "source_location": "L93"
     },
     {
       "id": "src_services_ecommerceruleengine_evaluateecommercelisting",
@@ -1886,6 +1802,90 @@
       "norm_label": "syncofflinequeuetoserver()",
       "source_file": "src/services/offlineStorage.ts",
       "source_location": "L72"
+    },
+    {
+      "id": "src_components_screens_officerconsumerreportsscreen_consumerstatementtext",
+      "label": "ConsumerStatementText()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 53,
+      "community_name": "cryptoService.ts",
+      "file_type": "code",
+      "norm_label": "consumerstatementtext()",
+      "source_file": "src/components/screens/OfficerConsumerReportsScreen.tsx",
+      "source_location": "L21"
+    },
+    {
+      "id": "src_services_api_loginapi",
+      "label": "loginApi()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 53,
+      "community_name": "cryptoService.ts",
+      "file_type": "code",
+      "norm_label": "loginapi()",
+      "source_file": "src/services/api.ts",
+      "source_location": "L27"
+    },
+    {
+      "id": "src_services_cryptoservice_decryptdata",
+      "label": "decryptData()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 53,
+      "community_name": "cryptoService.ts",
+      "file_type": "code",
+      "norm_label": "decryptdata()",
+      "source_file": "src/services/cryptoService.ts",
+      "source_location": "L67"
+    },
+    {
+      "id": "src_services_cryptoservice_derivekey",
+      "label": "deriveKey()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 53,
+      "community_name": "cryptoService.ts",
+      "file_type": "code",
+      "norm_label": "derivekey()",
+      "source_file": "src/services/cryptoService.ts",
+      "source_location": "L12"
+    },
+    {
+      "id": "src_services_cryptoservice_encryptdata",
+      "label": "encryptData()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 53,
+      "community_name": "cryptoService.ts",
+      "file_type": "code",
+      "norm_label": "encryptdata()",
+      "source_file": "src/services/cryptoService.ts",
+      "source_location": "L40"
+    },
+    {
+      "id": "src_services_cryptoservice_maskphone",
+      "label": "maskPhone()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 53,
+      "community_name": "cryptoService.ts",
+      "file_type": "code",
+      "norm_label": "maskphone()",
+      "source_file": "src/services/cryptoService.ts",
+      "source_location": "L114"
+    },
+    {
+      "id": "src_services_cryptoservice_sha256",
+      "label": "sha256()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 53,
+      "community_name": "cryptoService.ts",
+      "file_type": "code",
+      "norm_label": "sha256()",
+      "source_file": "src/services/cryptoService.ts",
+      "source_location": "L93"
     },
     {
       "id": "src_app",
@@ -3829,6 +3829,28 @@
       "source_location": "L97"
     },
     {
+      "id": "src_lib_supabase",
+      "label": "supabase.ts",
+      "_origin": "ast",
+      "community": 31,
+      "community_name": "api.ts",
+      "file_type": "code",
+      "norm_label": "supabase.ts",
+      "source_file": "src/lib/supabase.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_lib_supabase_supabase",
+      "label": "supabase",
+      "_origin": "ast",
+      "community": 31,
+      "community_name": "api.ts",
+      "file_type": "code",
+      "norm_label": "supabase",
+      "source_file": "src/lib/supabase.ts",
+      "source_location": "L6"
+    },
+    {
       "id": "src_services_api",
       "label": "api.ts",
       "_origin": "ast",
@@ -3859,17 +3881,6 @@
       "file_type": "code",
       "norm_label": "clienturlcheck.ts",
       "source_file": "src/services/clientUrlCheck.ts",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_services_cryptoservice",
-      "label": "cryptoService.ts",
-      "_origin": "ast",
-      "community": 31,
-      "community_name": "api.ts",
-      "file_type": "code",
-      "norm_label": "cryptoservice.ts",
-      "source_file": "src/services/cryptoService.ts",
       "source_location": "L1"
     },
     {
@@ -3937,6 +3948,17 @@
       "norm_label": "types/index.ts",
       "source_file": "src/types/index.ts",
       "source_location": "L1"
+    },
+    {
+      "id": "ref_supabase_supabase_js",
+      "label": "@supabase/supabase-js",
+      "_origin": "ast",
+      "community": 31,
+      "community_name": "api.ts",
+      "file_type": "concept",
+      "norm_label": "@supabase/supabase-js",
+      "source_file": "package.json",
+      "source_location": "L26"
     },
     {
       "id": "android_gradlew",
@@ -6631,37 +6653,15 @@
       "source_location": "L1"
     },
     {
-      "id": "src_lib_supabase",
-      "label": "supabase.ts",
+      "id": "src_services_cryptoservice",
+      "label": "cryptoService.ts",
       "_origin": "ast",
       "community": 53,
-      "community_name": "@supabase/supabase-js",
+      "community_name": "cryptoService.ts",
       "file_type": "code",
-      "norm_label": "supabase.ts",
-      "source_file": "src/lib/supabase.ts",
+      "norm_label": "cryptoservice.ts",
+      "source_file": "src/services/cryptoService.ts",
       "source_location": "L1"
-    },
-    {
-      "id": "src_lib_supabase_supabase",
-      "label": "supabase",
-      "_origin": "ast",
-      "community": 53,
-      "community_name": "@supabase/supabase-js",
-      "file_type": "code",
-      "norm_label": "supabase",
-      "source_file": "src/lib/supabase.ts",
-      "source_location": "L6"
-    },
-    {
-      "id": "ref_supabase_supabase_js",
-      "label": "@supabase/supabase-js",
-      "_origin": "ast",
-      "community": 53,
-      "community_name": "@supabase/supabase-js",
-      "file_type": "concept",
-      "norm_label": "@supabase/supabase-js",
-      "source_file": "package.json",
-      "source_location": "L26"
     },
     {
       "id": "tsconfig",
@@ -7728,6 +7728,18 @@
     },
     {
       "source": "src_components_screens_compliancechatscreen_compliancechatscreen",
+      "target": "src_services_clientgeminivision_getgeminiapikey",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/components/screens/ComplianceChatScreen.tsx",
+      "source_location": "L35",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_screens_compliancechatscreen_compliancechatscreen",
       "target": "src_services_api_askcompliancechatapi",
       "relation": "calls",
       "_origin": "ast",
@@ -7735,7 +7747,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/components/screens/ComplianceChatScreen.tsx",
-      "source_location": "L45",
+      "source_location": "L69",
       "weight": 1.0
     },
     {
@@ -8316,6 +8328,18 @@
     },
     {
       "source": "src_services_api_askcompliancechatapi",
+      "target": "src_services_clientgeminivision_getgeminiapikey",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/services/api.ts",
+      "source_location": "L333",
+      "weight": 1.0
+    },
+    {
+      "source": "src_services_api_askcompliancechatapi",
       "target": "src_services_api_getapibaseurl",
       "relation": "calls",
       "_origin": "ast",
@@ -8323,7 +8347,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/services/api.ts",
-      "source_location": "L331",
+      "source_location": "L413",
       "weight": 1.0
     },
     {
@@ -8335,7 +8359,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/services/api.ts",
-      "source_location": "L340",
+      "source_location": "L424",
       "weight": 1.0
     },
     {
@@ -8347,7 +8371,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/services/api.ts",
-      "source_location": "L355",
+      "source_location": "L438",
       "weight": 1.0
     },
     {
@@ -8359,7 +8383,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/services/api.ts",
-      "source_location": "L356",
+      "source_location": "L439",
       "weight": 1.0
     },
     {
@@ -10488,6 +10512,18 @@
       "weight": 1.0
     },
     {
+      "source": "src_components_screens_compliancechatscreen",
+      "target": "src_services_clientgeminivision_getgeminiapikey",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/components/screens/ComplianceChatScreen.tsx",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
       "source": "src_components_screens_consumercheckproductscreen",
       "target": "src_context_appcontext_useapp",
       "relation": "imports",
@@ -11702,6 +11738,18 @@
     {
       "source": "src_services_api",
       "target": "src_services_clientgeminivision_extractlabelclientside",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/services/api.ts",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "src_services_api",
+      "target": "src_services_clientgeminivision_getgeminiapikey",
       "relation": "imports",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -13305,6 +13353,18 @@
       "context": "import",
       "source_file": "src/components/screens/ComplianceChatScreen.tsx",
       "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_screens_compliancechatscreen",
+      "target": "src_services_clientgeminivision",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/components/screens/ComplianceChatScreen.tsx",
+      "source_location": "L7",
       "weight": 1.0
     },
     {
@@ -18267,7 +18327,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/components/screens/ComplianceChatScreen.tsx",
-      "source_location": "L16",
+      "source_location": "L17",
       "weight": 1.0
     },
     {
@@ -18278,7 +18338,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/components/screens/ComplianceChatScreen.tsx",
-      "source_location": "L8",
+      "source_location": "L9",
       "weight": 1.0
     },
     {
@@ -18795,7 +18855,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/services/api.ts",
-      "source_location": "L346",
+      "source_location": "L429",
       "weight": 1.0
     },
     {
@@ -18806,7 +18866,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/services/api.ts",
-      "source_location": "L399",
+      "source_location": "L482",
       "weight": 1.0
     },
     {
@@ -20271,5 +20331,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "53bac8b0f6abc8f2d32780cf4085553d3f193913"
+  "built_at_commit": "cd6f2340222a222da757d91ca8dc99682b12825c"
 }
