@@ -1,16 +1,16 @@
 # Graph Report - MANAK  (2026-09-17)
 
 ## Corpus Check
-- 105 files · ~94,603 words
+- 105 files · ~94,518 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 621 nodes · 1122 edges · 54 communities (37 shown, 9 thin omitted)
+- 621 nodes · 1120 edges · 54 communities (37 shown, 9 thin omitted)
 - Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `81af976d`
+- Built from commit: `53bac8b0`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
