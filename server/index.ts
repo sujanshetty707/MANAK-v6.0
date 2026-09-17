@@ -67,7 +67,7 @@ async function saveInspectionToSupabase(record: any): Promise<boolean> {
       geo_lat: record.geo?.lat || null,
       geo_lng: record.geo?.lng || null,
       address: record.geo?.address || null,
-      evidence_image: record.evidence_image?.length && record.evidence_image.length < 1000 ? record.evidence_image : null,
+      evidence_image: record.evidence_image || record.product?.image_url || null,
       evidence_hash: record.evidence_hash || null,
       extraction_result: record.extraction || {},
       compliance_result: {

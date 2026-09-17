@@ -103,8 +103,23 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
     try {
       const apiInspections = await fetchHistoryApi();
       if (apiInspections && apiInspections.length > 0) {
-        setInspections(apiInspections);
-        saveStoredInspections(apiInspections);
+        const localStored = getStoredInspections();
+        const merged = apiInspections.map(apiRec => {
+          const match = localStored.find(l => l.id === apiRec.id || (l.report_id && l.report_id === apiRec.report_id));
+          if (match && (!apiRec.product?.image_url && !apiRec.evidence_image)) {
+            return {
+              ...apiRec,
+              evidence_image: match.evidence_image || match.product?.image_url || '',
+              product: {
+                ...apiRec.product,
+                image_url: match.product?.image_url || match.evidence_image || apiRec.product?.image_url
+              }
+            };
+          }
+          return apiRec;
+        });
+        setInspections(merged);
+        saveStoredInspections(merged);
       } else {
         setInspections(getStoredInspections());
       }
@@ -273,17 +288,18 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
   const finalizeInspection = (signDoc: boolean = true): InspectionRecord => {
     const id = currentInspectionId || `insp-${Date.now().toString().slice(-6)}`;
     setCurrentInspectionId(id);
-    const primaryImg = currentProduct?.images?.[0] || currentProduct?.image_url || '';
+    const primaryImg = currentProduct?.images?.[0] || currentProduct?.image_url || pendingScanPayload?.image_base64 || '';
     const newRecord: InspectionRecord = {
       id,
-      product: currentProduct || {
-        id: `prod-${Date.now().toString().slice(-6)}`,
-        source_type: 'store',
-        title: 'Inspected Packaged Product',
-        brand: 'Generic Manufacturer',
-        category: 'Retail Commodity',
-        image_url: primaryImg,
-        images: currentProduct?.images
+      product: {
+        ...(currentProduct || {}),
+        id: currentProduct?.id || `prod-${Date.now().toString().slice(-6)}`,
+        source_type: currentProduct?.source_type || 'store',
+        title: currentProduct?.title || 'Inspected Packaged Product',
+        brand: currentProduct?.brand || 'Generic Manufacturer',
+        category: currentProduct?.category || 'Retail Commodity',
+        image_url: primaryImg || currentProduct?.image_url || '',
+        images: currentProduct?.images || (primaryImg ? [primaryImg] : [])
       },
       performed_by: {
         id: 'usr-officer-01',

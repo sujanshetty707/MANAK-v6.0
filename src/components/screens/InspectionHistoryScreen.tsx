@@ -7,6 +7,7 @@ import {
   Search, CheckCircle2, AlertTriangle, ChevronRight, MapPin,
   ShieldAlert, Camera, ClipboardX, SlidersHorizontal, ArrowRight
 } from 'lucide-react';
+import { getRecordImage, DEFAULT_COMMODITY_IMAGE } from '../../utils/imageUtils';
 
 export const InspectionHistoryScreen: React.FC = () => {
   const { inspections, navigateTo, setAnalysisData } = useApp();
@@ -175,20 +176,17 @@ export const InspectionHistoryScreen: React.FC = () => {
                   <div className="flex items-start space-x-3.5">
                     {/* Product Image */}
                     <div className="w-14 h-14 rounded-xl border border-slate-200/80 overflow-hidden bg-slate-50 flex-shrink-0 flex items-center justify-center">
-                      {record.product.image_url ? (
-                        <img
-                          src={record.product.image_url}
-                          alt={record.product.title}
-                          className="w-full h-full object-cover"
-                          onError={(e) => {
-                            (e.target as HTMLElement).style.display = 'none';
-                          }}
-                        />
-                      ) : (
-                        <span className="text-sm font-bold text-slate-400">
-                          {record.product.title.charAt(0) || 'P'}
-                        </span>
-                      )}
+                      <img
+                        src={getRecordImage(record)}
+                        alt={record.product.title}
+                        className="w-full h-full object-cover"
+                        onError={(e) => {
+                          const target = e.target as HTMLImageElement;
+                          if (!target.src.includes('photo-1546069901-ba9599a7e63c')) {
+                            target.src = DEFAULT_COMMODITY_IMAGE;
+                          }
+                        }}
+                      />
                     </div>
 
                     {/* Product Title (No manufacturer) & Violation Status Badge */}

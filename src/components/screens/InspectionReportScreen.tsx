@@ -3,6 +3,7 @@ import { useApp } from '../../context/AppContext';
 import { Header } from '../common/Header';
 import { generateInspectionPDF } from '../../services/pdfReportGenerator';
 import { Download, ShieldCheck, MapPin, Hash, CheckCircle2, AlertTriangle, ArrowLeft, Share2, Check } from 'lucide-react';
+import { getRecordImage, DEFAULT_COMMODITY_IMAGE } from '../../utils/imageUtils';
 
 export const InspectionReportScreen: React.FC = () => {
   const { navigateTo, inspections, currentInspectionId, officerProfile } = useApp();
@@ -94,9 +95,15 @@ export const InspectionReportScreen: React.FC = () => {
 
           <div className="flex items-center space-x-3 p-2.5 rounded-xl bg-slate-50 border border-slate-100">
             <img
-              src={currentRecord.product.image_url}
+              src={getRecordImage(currentRecord)}
               alt={currentRecord.product.title}
               className="w-12 h-12 rounded-lg object-cover border border-slate-200 flex-shrink-0"
+              onError={(e) => {
+                const target = e.target as HTMLImageElement;
+                if (!target.src.includes('photo-1546069901-ba9599a7e63c')) {
+                  target.src = DEFAULT_COMMODITY_IMAGE;
+                }
+              }}
             />
             <div className="truncate">
               <h4 className="text-xs font-bold text-slate-900 truncate">{currentRecord.product.title}</h4>

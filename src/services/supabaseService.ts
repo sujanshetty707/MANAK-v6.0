@@ -38,7 +38,7 @@ export async function saveInspectionDirectToSupabase(record: InspectionRecord): 
         title: record.product.title || 'Packaged Product',
         brand: record.product.brand || null,
         category: record.product.category || 'Retail Commodity',
-        image_url: record.product.image_url?.length && record.product.image_url.length < 1000 ? record.product.image_url : null
+        image_url: record.product.image_url || record.evidence_image || null
       });
       if (prodErr) console.warn('[Supabase Direct] Product upsert warning:', prodErr.message);
     }
@@ -52,7 +52,7 @@ export async function saveInspectionDirectToSupabase(record: InspectionRecord): 
       geo_lat: record.geo?.lat || null,
       geo_lng: record.geo?.lng || null,
       address: record.geo?.address || null,
-      evidence_image: record.evidence_image?.length && record.evidence_image.length < 1000 ? record.evidence_image : null,
+      evidence_image: record.evidence_image || record.product?.image_url || null,
       evidence_hash: record.evidence_hash || null,
       extraction_result: record.extraction || {},
       compliance_result: {

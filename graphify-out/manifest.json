@@ -102,15 +102,15 @@
     "semantic_hash": ""
   },
   "src/components/screens/InspectionHistoryScreen.tsx": {
-    "mtime": 1789599105.2761629,
-    "seen": 1789599354.7915175,
-    "ast_hash": "85b7f2d658c14a46d6e21d899316176c",
+    "mtime": 1789606701.7985153,
+    "seen": 1789606903.1888356,
+    "ast_hash": "ebd153af1f919edabdd606db6f57522d",
     "semantic_hash": ""
   },
   "src/components/screens/InspectionReportScreen.tsx": {
-    "mtime": 1789599191.5718963,
-    "seen": 1789599354.791519,
-    "ast_hash": "55b443676ff7bc666f0d62bc0c128683",
+    "mtime": 1789606727.3627133,
+    "seen": 1789606903.1888397,
+    "ast_hash": "cd6181ec500df73b839233c17ad04520",
     "semantic_hash": ""
   },
   "src/components/screens/OfficerDashboardScreen.tsx": {
@@ -138,9 +138,9 @@
     "semantic_hash": ""
   },
   "src/context/AppContext.tsx": {
-    "mtime": 1789603384.7271585,
-    "seen": 1789603535.3320677,
-    "ast_hash": "4bbbd29e4850ee62aa23d3a806e3dfbb",
+    "mtime": 1789606776.875947,
+    "seen": 1789606903.191706,
+    "ast_hash": "5b0bb87ba42427bafe183155328a807f",
     "semantic_hash": ""
   },
   "src/data/mockData.ts": {
@@ -372,8 +372,8 @@
     "semantic_hash": ""
   },
   "android/app/capacitor.build.gradle": {
-    "mtime": 1789605779.2304952,
-    "seen": 1789605878.5350935,
+    "mtime": 1789606821.9012597,
+    "seen": 1789606903.1776881,
     "ast_hash": "1560661258aa1c0f258461f50c16cff0",
     "semantic_hash": ""
   },
@@ -402,8 +402,8 @@
     "semantic_hash": ""
   },
   "android/capacitor.settings.gradle": {
-    "mtime": 1789605779.2274957,
-    "seen": 1789605878.5363593,
+    "mtime": 1789606821.9002635,
+    "seen": 1789606903.179004,
     "ast_hash": "a27b4ec703a3fb1e2a197e1d71be976a",
     "semantic_hash": ""
   },
@@ -624,9 +624,9 @@
     "semantic_hash": ""
   },
   "server/index.ts": {
-    "mtime": 1789605739.3159895,
-    "seen": 1789605878.5385072,
-    "ast_hash": "71a86e47627c9e1c8440a2eddce3a38e",
+    "mtime": 1789606748.4464025,
+    "seen": 1789606903.1813822,
+    "ast_hash": "0c0cad3c3c4d49192a7dbd3805c8d199",
     "semantic_hash": ""
   },
   "src/services/api.ts": {
@@ -684,9 +684,9 @@
     "semantic_hash": ""
   },
   "src/utils/imageUtils.ts": {
-    "mtime": 1789395700.4491358,
-    "seen": 1789397529.9000943,
-    "ast_hash": "c2500e7fd058fe5c6b8a0cb246bf1583",
+    "mtime": 1789606676.756272,
+    "seen": 1789606903.196622,
+    "ast_hash": "1d79196013adb340e60f7c9088302542",
     "semantic_hash": ""
   },
   "architecture.md": {
@@ -732,9 +732,9 @@
     "semantic_hash": ""
   },
   "src/services/supabaseService.ts": {
-    "mtime": 1789587943.841287,
-    "seen": 1789599354.7931316,
-    "ast_hash": "58787962d4da072fbda05ea8c369e22b",
+    "mtime": 1789606738.3017561,
+    "seen": 1789606903.1963744,
+    "ast_hash": "8fd00506891f00da020db4f3c7a4105d",
     "semantic_hash": ""
   },
   "src/services/locationService.ts": {

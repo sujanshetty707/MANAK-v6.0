@@ -30,7 +30,7 @@
   "28": "postcss.config.js",
   "29": "manifest.json",
   "30": "ExampleInstrumentedTest.java",
-  "31": "api.ts",
+  "31": "types/index.ts",
   "32": "gradlew",
   "33": "MainActivity.java",
   "34": "app/build.gradle",
@@ -51,6 +51,5 @@
   "49": "pdfReportGenerator.ts",
   "50": "vite.config.ts",
   "51": "capacitor.config.ts",
-  "52": "AppProvider",
-  "53": "cryptoService.ts"
+  "52": "api.ts"
 }

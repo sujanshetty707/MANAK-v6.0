@@ -1,16 +1,16 @@
 # Graph Report - MANAK  (2026-09-17)
 
 ## Corpus Check
-- 105 files · ~94,518 words
+- 105 files · ~95,738 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 621 nodes · 1120 edges · 54 communities (37 shown, 9 thin omitted)
+- 621 nodes · 1125 edges · 54 communities (38 shown, 8 thin omitted)
 - Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `53bac8b0`
+- Built from commit: `cd6f2340`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -60,7 +60,7 @@
 - vite.config.ts
 - capacitor.config.ts
 - AppProvider
-- @supabase/supabase-js
+- cryptoService.ts
 
 ## God Nodes (most connected - your core abstractions)
 1. `useApp()` - 50 edges
@@ -89,15 +89,15 @@
 ## Import Cycles
 - None detected.
 
-## Communities (54 total, 9 thin omitted)
+## Communities (54 total, 8 thin omitted)
 
 ### Community 0 - "Officer Flow"
 Cohesion: 0.24
 Nodes (12): Consumer Flow, Deterministic Rule Engine, E-Commerce DOM Adapters, OCR & Extraction Pipeline, Inspection & Violation Repository, Packaged Commodities Rules 2011, MANAK Compliance System, Officer Flow (+4 more)
 
 ### Community 1 - "AppContext.tsx"
-Cohesion: 0.11
-Nodes (40): @capacitor/camera, @capacitor/core, lucide-react, react, App(), BottomNav(), DeviceFrame(), Header() (+32 more)
+Cohesion: 0.12
+Nodes (39): @capacitor/camera, @capacitor/core, lucide-react, react, App(), BottomNav(), DeviceFrame(), Header() (+31 more)
 
 ### Community 2 - "firebaseAuthService.ts"
 Cohesion: 0.21
@@ -184,8 +184,8 @@ Cohesion: 0.33
 Nodes (5): ExampleInstrumentedTest, ExampleUnitTest, androidx.test.ext.junit.runners.AndroidJUnit4, org.junit.runner.RunWith, org.junit.Test
 
 ### Community 31 - "api.ts"
-Cohesion: 0.07
-Nodes (57): Props, ServerSettingsModal(), ConsumerStatementText(), AppContextType, MOCK_CONSUMER_REPORTS, MOCK_HISTORY, REPEAT_VIOLATOR_HEATMAP, SAMPLE_PRODUCTS (+49 more)
+Cohesion: 0.08
+Nodes (54): @supabase/supabase-js, Props, ServerSettingsModal(), ComplianceChatScreen(), AppContextType, MOCK_CONSUMER_REPORTS, MOCK_HISTORY, REPEAT_VIOLATOR_HEATMAP (+46 more)
 
 ### Community 32 - "gradlew"
 Cohesion: 0.83
@@ -239,10 +239,14 @@ Nodes (9): @capacitor/filesystem, @capacitor/share, jspdf, generateInspectionPDF
 Cohesion: 0.29
 Nodes (13): AppProvider(), signOutFirebaseConsumer(), subscribeToFirebaseAuth(), addToOfflineQueue(), clearOfflineQueue(), getOfflineQueue(), getStoredConsumerReports(), getStoredInspections() (+5 more)
 
+### Community 53 - "cryptoService.ts"
+Cohesion: 0.39
+Nodes (6): ConsumerStatementText(), loginApi(), decryptData(), deriveKey(), encryptData(), sha256()
+
 ## Knowledge Gaps
 - **289 isolated node(s):** `config`, `name`, `private`, `version`, `type` (+284 more)
   These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 327 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
-- **9 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **8 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
@@ -256,7 +260,7 @@ _Questions this graph is uniquely positioned to answer:_
 - **What connects `config`, `name`, `private` to the rest of the system?**
   _289 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `AppContext.tsx` be split into smaller, more focused modules?**
-  _Cohesion score 0.11466325660699062 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.11720807726075505 - nodes in this community are weakly interconnected._
 - **Should `package.json` be split into smaller, more focused modules?**
   _Cohesion score 0.09090909090909091 - nodes in this community are weakly interconnected._
 - **Should `README.md` be split into smaller, more focused modules?**
