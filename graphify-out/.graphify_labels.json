@@ -1,7 +1,7 @@
 {
   "0": "Officer Flow",
   "1": "AppContext.tsx",
-  "2": "ConsumerLoginScreen.tsx",
+  "2": "firebaseAuthService.ts",
   "3": "package.json",
   "4": "README.md",
   "5": "What You Must Do When Invoked",
@@ -51,5 +51,6 @@
   "49": "pdfReportGenerator.ts",
   "50": "vite.config.ts",
   "51": "capacitor.config.ts",
-  "52": "AppProvider"
+  "52": "AppProvider",
+  "53": "@supabase/supabase-js"
 }

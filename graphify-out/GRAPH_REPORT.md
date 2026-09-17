@@ -1,23 +1,23 @@
 # Graph Report - MANAK  (2026-09-17)
 
 ## Corpus Check
-- 105 files · ~94,794 words
+- 105 files · ~94,603 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 620 nodes · 1124 edges · 53 communities (37 shown, 8 thin omitted)
+- 621 nodes · 1122 edges · 54 communities (37 shown, 9 thin omitted)
 - Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `6ff585a6`
+- Built from commit: `81af976d`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
 ## Community Hubs (Navigation)
 - Officer Flow
 - AppContext.tsx
-- ConsumerLoginScreen.tsx
+- firebaseAuthService.ts
 - package.json
 - README.md
 - What You Must Do When Invoked
@@ -60,6 +60,7 @@
 - vite.config.ts
 - capacitor.config.ts
 - AppProvider
+- @supabase/supabase-js
 
 ## God Nodes (most connected - your core abstractions)
 1. `useApp()` - 50 edges
@@ -88,7 +89,7 @@
 ## Import Cycles
 - None detected.
 
-## Communities (53 total, 8 thin omitted)
+## Communities (54 total, 9 thin omitted)
 
 ### Community 0 - "Officer Flow"
 Cohesion: 0.24
@@ -98,9 +99,9 @@ Nodes (12): Consumer Flow, Deterministic Rule Engine, E-Commerce DOM Adapters, O
 Cohesion: 0.11
 Nodes (40): @capacitor/camera, @capacitor/core, lucide-react, react, App(), BottomNav(), DeviceFrame(), Header() (+32 more)
 
-### Community 2 - "ConsumerLoginScreen.tsx"
-Cohesion: 0.25
-Nodes (15): ConsumerLoginScreen(), { apiKey, projectId }, firebaseApp, firebaseAuth, firebaseConfig, getStoredFirebaseConfig(), saveStoredFirebaseConfig(), formatIndianPhoneNumber() (+7 more)
+### Community 2 - "firebaseAuthService.ts"
+Cohesion: 0.21
+Nodes (15): ConsumerLoginScreen(), { apiKey, projectId }, firebaseApp, firebaseAuth, firebaseConfig, getStoredFirebaseConfig(), formatIndianPhoneNumber(), getFirebaseErrorMessage() (+7 more)
 
 ### Community 3 - "package.json"
 Cohesion: 0.09
@@ -207,8 +208,8 @@ Cohesion: 0.22
 Nodes (8): 1. Summary of Required Credentials, 2. Step-by-Step Instructions to Obtain Each Key, 3. Database & Storage Initialization Checklist, 4. Verification, A. Supabase Credentials (`VITE_SUPABASE_URL`, `VITE_SUPABASE_ANON_KEY`, `SUPABASE_SERVICE_ROLE_KEY`), B. Google Gemini API Key (`GEMINI_API_KEY`), C. Digital Signature Token (`DOCUMENSO_API_KEY`), MANAK — API Keys & Backend Environment Setup Guide
 
 ### Community 43 - "labelParser.ts"
-Cohesion: 0.07
-Nodes (42): cors, dotenv, express, @supabase/supabase-js, tesseract.js, ensureUUID(), app, db (+34 more)
+Cohesion: 0.08
+Nodes (40): cors, dotenv, express, tesseract.js, ensureUUID(), app, db, otpRegistry (+32 more)
 
 ### Community 44 - "Product Requirements Document (PRD)"
 Cohesion: 0.18
@@ -240,18 +241,18 @@ Nodes (13): AppProvider(), signOutFirebaseConsumer(), subscribeToFirebaseAuth(),
 
 ## Knowledge Gaps
 - **289 isolated node(s):** `config`, `name`, `private`, `version`, `type` (+284 more)
-  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 326 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
-- **8 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 327 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
+- **9 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `react` connect `AppContext.tsx` to `ConsumerLoginScreen.tsx`, `package.json`, `api.ts`?**
+- **Why does `react` connect `AppContext.tsx` to `firebaseAuthService.ts`, `package.json`, `api.ts`?**
   _High betweenness centrality (0.040) - this node is a cross-community bridge._
 - **Why does `dependencies` connect `dependencies` to `package.json`?**
   _High betweenness centrality (0.034) - this node is a cross-community bridge._
-- **Why does `lucide-react` connect `AppContext.tsx` to `ConsumerLoginScreen.tsx`, `package.json`, `api.ts`?**
-  _High betweenness centrality (0.027) - this node is a cross-community bridge._
+- **Why does `lucide-react` connect `AppContext.tsx` to `firebaseAuthService.ts`, `package.json`, `api.ts`?**
+  _High betweenness centrality (0.026) - this node is a cross-community bridge._
 - **What connects `config`, `name`, `private` to the rest of the system?**
   _289 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `AppContext.tsx` be split into smaller, more focused modules?**

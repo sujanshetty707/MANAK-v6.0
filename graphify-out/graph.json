@@ -36,11 +36,11 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 2,
-      "community_name": "ConsumerLoginScreen.tsx",
+      "community_name": "firebaseAuthService.ts",
       "file_type": "code",
       "norm_label": "sendphoneotpresponse",
       "source_file": "src/services/firebaseAuthService.ts",
-      "source_location": "L84"
+      "source_location": "L107"
     },
     {
       "id": "android_app_src_androidtest_java_com_getcapacitor_myapp_exampleinstrumentedtest_exampleinstrumentedtest",
@@ -721,11 +721,11 @@
       "_callable": true,
       "_origin": "ast",
       "community": 2,
-      "community_name": "ConsumerLoginScreen.tsx",
+      "community_name": "firebaseAuthService.ts",
       "file_type": "code",
       "norm_label": "consumerloginscreen()",
       "source_file": "src/components/screens/ConsumerLoginScreen.tsx",
-      "source_location": "L26"
+      "source_location": "L23"
     },
     {
       "id": "src_lib_firebase_getstoredfirebaseconfig",
@@ -733,7 +733,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 2,
-      "community_name": "ConsumerLoginScreen.tsx",
+      "community_name": "firebaseAuthService.ts",
       "file_type": "code",
       "norm_label": "getstoredfirebaseconfig()",
       "source_file": "src/lib/firebase.ts",
@@ -745,7 +745,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 2,
-      "community_name": "ConsumerLoginScreen.tsx",
+      "community_name": "firebaseAuthService.ts",
       "file_type": "code",
       "norm_label": "savestoredfirebaseconfig()",
       "source_file": "src/lib/firebase.ts",
@@ -757,11 +757,11 @@
       "_callable": true,
       "_origin": "ast",
       "community": 2,
-      "community_name": "ConsumerLoginScreen.tsx",
+      "community_name": "firebaseAuthService.ts",
       "file_type": "code",
       "norm_label": "formatindianphonenumber()",
       "source_file": "src/services/firebaseAuthService.ts",
-      "source_location": "L27"
+      "source_location": "L26"
     },
     {
       "id": "src_services_firebaseauthservice_getfirebaseerrormessage",
@@ -769,11 +769,11 @@
       "_callable": true,
       "_origin": "ast",
       "community": 2,
-      "community_name": "ConsumerLoginScreen.tsx",
+      "community_name": "firebaseAuthService.ts",
       "file_type": "code",
       "norm_label": "getfirebaseerrormessage()",
       "source_file": "src/services/firebaseAuthService.ts",
-      "source_location": "L175"
+      "source_location": "L200"
     },
     {
       "id": "src_services_firebaseauthservice_getorcreaterecaptchaverifier",
@@ -781,11 +781,11 @@
       "_callable": true,
       "_origin": "ast",
       "community": 2,
-      "community_name": "ConsumerLoginScreen.tsx",
+      "community_name": "firebaseAuthService.ts",
       "file_type": "code",
       "norm_label": "getorcreaterecaptchaverifier()",
       "source_file": "src/services/firebaseAuthService.ts",
-      "source_location": "L54"
+      "source_location": "L77"
     },
     {
       "id": "src_services_firebaseauthservice_isrealfirebaseconfigured",
@@ -793,11 +793,11 @@
       "_callable": true,
       "_origin": "ast",
       "community": 2,
-      "community_name": "ConsumerLoginScreen.tsx",
+      "community_name": "firebaseAuthService.ts",
       "file_type": "code",
       "norm_label": "isrealfirebaseconfigured()",
       "source_file": "src/services/firebaseAuthService.ts",
-      "source_location": "L44"
+      "source_location": "L43"
     },
     {
       "id": "src_services_firebaseauthservice_isvalidindianmobile",
@@ -805,23 +805,35 @@
       "_callable": true,
       "_origin": "ast",
       "community": 2,
-      "community_name": "ConsumerLoginScreen.tsx",
+      "community_name": "firebaseAuthService.ts",
       "file_type": "code",
       "norm_label": "isvalidindianmobile()",
       "source_file": "src/services/firebaseAuthService.ts",
-      "source_location": "L36"
+      "source_location": "L35"
     },
     {
-      "id": "src_services_firebaseauthservice_sendfirebasephoneotp",
-      "label": "sendFirebasePhoneOtp()",
+      "id": "src_services_firebaseauthservice_sendphoneotptomessenger",
+      "label": "sendPhoneOtpToMessenger()",
       "_callable": true,
       "_origin": "ast",
       "community": 2,
-      "community_name": "ConsumerLoginScreen.tsx",
+      "community_name": "firebaseAuthService.ts",
       "file_type": "code",
-      "norm_label": "sendfirebasephoneotp()",
+      "norm_label": "sendphoneotptomessenger()",
       "source_file": "src/services/firebaseAuthService.ts",
-      "source_location": "L93"
+      "source_location": "L116"
+    },
+    {
+      "id": "src_services_firebaseauthservice_triggernativesms",
+      "label": "triggerNativeSms()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "firebaseAuthService.ts",
+      "file_type": "code",
+      "norm_label": "triggernativesms()",
+      "source_file": "src/services/firebaseAuthService.ts",
+      "source_location": "L51"
     },
     {
       "id": "src_services_firebaseauthservice_verifyfirebaseotp",
@@ -829,11 +841,11 @@
       "_callable": true,
       "_origin": "ast",
       "community": 2,
-      "community_name": "ConsumerLoginScreen.tsx",
+      "community_name": "firebaseAuthService.ts",
       "file_type": "code",
       "norm_label": "verifyfirebaseotp()",
       "source_file": "src/services/firebaseAuthService.ts",
-      "source_location": "L146"
+      "source_location": "L171"
     },
     {
       "id": "android_app_src_androidtest_java_com_getcapacitor_myapp_exampleinstrumentedtest_exampleinstrumentedtest_useappcontext",
@@ -1741,7 +1753,7 @@
       "file_type": "code",
       "norm_label": "signoutfirebaseconsumer()",
       "source_file": "src/services/firebaseAuthService.ts",
-      "source_location": "L164"
+      "source_location": "L189"
     },
     {
       "id": "src_services_firebaseauthservice_subscribetofirebaseauth",
@@ -1753,7 +1765,7 @@
       "file_type": "code",
       "norm_label": "subscribetofirebaseauth()",
       "source_file": "src/services/firebaseAuthService.ts",
-      "source_location": "L157"
+      "source_location": "L182"
     },
     {
       "id": "src_services_offlinestorage_addtoofflinequeue",
@@ -2966,7 +2978,7 @@
       "label": "ConsumerLoginScreen.tsx",
       "_origin": "ast",
       "community": 2,
-      "community_name": "ConsumerLoginScreen.tsx",
+      "community_name": "firebaseAuthService.ts",
       "file_type": "code",
       "norm_label": "consumerloginscreen.tsx",
       "source_file": "src/components/screens/ConsumerLoginScreen.tsx",
@@ -2977,7 +2989,7 @@
       "label": "firebase.ts",
       "_origin": "ast",
       "community": 2,
-      "community_name": "ConsumerLoginScreen.tsx",
+      "community_name": "firebaseAuthService.ts",
       "file_type": "code",
       "norm_label": "firebase.ts",
       "source_file": "src/lib/firebase.ts",
@@ -2988,7 +3000,7 @@
       "label": "{ apiKey, projectId }",
       "_origin": "ast",
       "community": 2,
-      "community_name": "ConsumerLoginScreen.tsx",
+      "community_name": "firebaseAuthService.ts",
       "file_type": "code",
       "norm_label": "{ apikey, projectid }",
       "source_file": "src/lib/firebase.ts",
@@ -2999,7 +3011,7 @@
       "label": "firebaseApp",
       "_origin": "ast",
       "community": 2,
-      "community_name": "ConsumerLoginScreen.tsx",
+      "community_name": "firebaseAuthService.ts",
       "file_type": "code",
       "norm_label": "firebaseapp",
       "source_file": "src/lib/firebase.ts",
@@ -3010,7 +3022,7 @@
       "label": "firebaseAuth",
       "_origin": "ast",
       "community": 2,
-      "community_name": "ConsumerLoginScreen.tsx",
+      "community_name": "firebaseAuthService.ts",
       "file_type": "code",
       "norm_label": "firebaseauth",
       "source_file": "src/lib/firebase.ts",
@@ -3021,7 +3033,7 @@
       "label": "firebaseConfig",
       "_origin": "ast",
       "community": 2,
-      "community_name": "ConsumerLoginScreen.tsx",
+      "community_name": "firebaseAuthService.ts",
       "file_type": "code",
       "norm_label": "firebaseconfig",
       "source_file": "src/lib/firebase.ts",
@@ -3032,7 +3044,7 @@
       "label": "firebaseAuthService.ts",
       "_origin": "ast",
       "community": 2,
-      "community_name": "ConsumerLoginScreen.tsx",
+      "community_name": "firebaseAuthService.ts",
       "file_type": "code",
       "norm_label": "firebaseauthservice.ts",
       "source_file": "src/services/firebaseAuthService.ts",
@@ -5393,28 +5405,6 @@
       "source_location": "L9"
     },
     {
-      "id": "src_lib_supabase",
-      "label": "supabase.ts",
-      "_origin": "ast",
-      "community": 43,
-      "community_name": "labelParser.ts",
-      "file_type": "code",
-      "norm_label": "supabase.ts",
-      "source_file": "src/lib/supabase.ts",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_lib_supabase_supabase",
-      "label": "supabase",
-      "_origin": "ast",
-      "community": 43,
-      "community_name": "labelParser.ts",
-      "file_type": "code",
-      "norm_label": "supabase",
-      "source_file": "src/lib/supabase.ts",
-      "source_location": "L6"
-    },
-    {
       "id": "src_services_labelparser",
       "label": "labelParser.ts",
       "_origin": "ast",
@@ -5457,17 +5447,6 @@
       "norm_label": "express",
       "source_file": "package.json",
       "source_location": "L32"
-    },
-    {
-      "id": "ref_supabase_supabase_js",
-      "label": "@supabase/supabase-js",
-      "_origin": "ast",
-      "community": 43,
-      "community_name": "labelParser.ts",
-      "file_type": "concept",
-      "norm_label": "@supabase/supabase-js",
-      "source_file": "package.json",
-      "source_location": "L26"
     },
     {
       "id": "ref_tesseract_js",
@@ -6652,6 +6631,39 @@
       "source_location": "L1"
     },
     {
+      "id": "src_lib_supabase",
+      "label": "supabase.ts",
+      "_origin": "ast",
+      "community": 53,
+      "community_name": "@supabase/supabase-js",
+      "file_type": "code",
+      "norm_label": "supabase.ts",
+      "source_file": "src/lib/supabase.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_lib_supabase_supabase",
+      "label": "supabase",
+      "_origin": "ast",
+      "community": 53,
+      "community_name": "@supabase/supabase-js",
+      "file_type": "code",
+      "norm_label": "supabase",
+      "source_file": "src/lib/supabase.ts",
+      "source_location": "L6"
+    },
+    {
+      "id": "ref_supabase_supabase_js",
+      "label": "@supabase/supabase-js",
+      "_origin": "ast",
+      "community": 53,
+      "community_name": "@supabase/supabase-js",
+      "file_type": "concept",
+      "norm_label": "@supabase/supabase-js",
+      "source_file": "package.json",
+      "source_location": "L26"
+    },
+    {
       "id": "tsconfig",
       "label": "tsconfig.json",
       "_origin": "ast",
@@ -7783,19 +7795,19 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/components/screens/ConsumerLoginScreen.tsx",
-      "source_location": "L132",
+      "source_location": "L111",
       "weight": 1.0
     },
     {
       "source": "src_components_screens_consumerloginscreen_consumerloginscreen",
-      "target": "src_lib_firebase_savestoredfirebaseconfig",
+      "target": "src_services_firebaseauthservice_triggernativesms",
       "relation": "calls",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/components/screens/ConsumerLoginScreen.tsx",
-      "source_location": "L144",
+      "source_location": "L152",
       "weight": 1.0
     },
     {
@@ -7807,19 +7819,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/components/screens/ConsumerLoginScreen.tsx",
-      "source_location": "L27",
-      "weight": 1.0
-    },
-    {
-      "source": "src_components_screens_consumerloginscreen_consumerloginscreen",
-      "target": "src_lib_firebase_getstoredfirebaseconfig",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "src/components/screens/ConsumerLoginScreen.tsx",
-      "source_location": "L47",
+      "source_location": "L24",
       "weight": 1.0
     },
     {
@@ -7831,7 +7831,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/components/screens/ConsumerLoginScreen.tsx",
-      "source_location": "L72",
+      "source_location": "L56",
       "weight": 1.0
     },
     {
@@ -7843,19 +7843,19 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/components/screens/ConsumerLoginScreen.tsx",
-      "source_location": "L80",
+      "source_location": "L63",
       "weight": 1.0
     },
     {
       "source": "src_components_screens_consumerloginscreen_consumerloginscreen",
-      "target": "src_services_firebaseauthservice_sendfirebasephoneotp",
+      "target": "src_services_firebaseauthservice_sendphoneotptomessenger",
       "relation": "calls",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/components/screens/ConsumerLoginScreen.tsx",
-      "source_location": "L82",
+      "source_location": "L65",
       "weight": 1.0
     },
     {
@@ -7867,7 +7867,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/components/screens/ConsumerLoginScreen.tsx",
-      "source_location": "L89",
+      "source_location": "L70",
       "weight": 1.0
     },
     {
@@ -8755,23 +8755,11 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/services/firebaseAuthService.ts",
-      "source_location": "L45",
+      "source_location": "L44",
       "weight": 1.0
     },
     {
-      "source": "src_services_firebaseauthservice_sendfirebasephoneotp",
-      "target": "src_services_firebaseauthservice_isrealfirebaseconfigured",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "src/services/firebaseAuthService.ts",
-      "source_location": "L100",
-      "weight": 1.0
-    },
-    {
-      "source": "src_services_firebaseauthservice_sendfirebasephoneotp",
+      "source": "src_services_firebaseauthservice_sendphoneotptomessenger",
       "target": "src_services_firebaseauthservice_formatindianphonenumber",
       "relation": "calls",
       "_origin": "ast",
@@ -8779,7 +8767,31 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/services/firebaseAuthService.ts",
-      "source_location": "L97",
+      "source_location": "L120",
+      "weight": 1.0
+    },
+    {
+      "source": "src_services_firebaseauthservice_sendphoneotptomessenger",
+      "target": "src_services_firebaseauthservice_isrealfirebaseconfigured",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/services/firebaseAuthService.ts",
+      "source_location": "L124",
+      "weight": 1.0
+    },
+    {
+      "source": "src_services_firebaseauthservice_sendphoneotptomessenger",
+      "target": "src_services_firebaseauthservice_triggernativesms",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/services/firebaseAuthService.ts",
+      "source_location": "L142",
       "weight": 1.0
     },
     {
@@ -10580,7 +10592,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/screens/ConsumerLoginScreen.tsx",
-      "source_location": "L16",
+      "source_location": "L14",
       "weight": 1.0
     },
     {
@@ -10592,19 +10604,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/screens/ConsumerLoginScreen.tsx",
-      "source_location": "L16",
-      "weight": 1.0
-    },
-    {
-      "source": "src_components_screens_consumerloginscreen",
-      "target": "src_services_firebaseauthservice_isrealfirebaseconfigured",
-      "relation": "imports",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "src/components/screens/ConsumerLoginScreen.tsx",
-      "source_location": "L16",
+      "source_location": "L14",
       "weight": 1.0
     },
     {
@@ -10616,19 +10616,31 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/screens/ConsumerLoginScreen.tsx",
-      "source_location": "L16",
+      "source_location": "L14",
       "weight": 1.0
     },
     {
       "source": "src_components_screens_consumerloginscreen",
-      "target": "src_services_firebaseauthservice_sendfirebasephoneotp",
+      "target": "src_services_firebaseauthservice_sendphoneotptomessenger",
       "relation": "imports",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/screens/ConsumerLoginScreen.tsx",
-      "source_location": "L16",
+      "source_location": "L14",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_screens_consumerloginscreen",
+      "target": "src_services_firebaseauthservice_triggernativesms",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/components/screens/ConsumerLoginScreen.tsx",
+      "source_location": "L14",
       "weight": 1.0
     },
     {
@@ -10640,7 +10652,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/screens/ConsumerLoginScreen.tsx",
-      "source_location": "L16",
+      "source_location": "L14",
       "weight": 1.0
     },
     {
@@ -10653,30 +10665,6 @@
       "context": "import",
       "source_file": "src/components/screens/ConsumerLoginScreen.tsx",
       "source_location": "L2",
-      "weight": 1.0
-    },
-    {
-      "source": "src_components_screens_consumerloginscreen",
-      "target": "src_lib_firebase_getstoredfirebaseconfig",
-      "relation": "imports",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "src/components/screens/ConsumerLoginScreen.tsx",
-      "source_location": "L24",
-      "weight": 1.0
-    },
-    {
-      "source": "src_components_screens_consumerloginscreen",
-      "target": "src_lib_firebase_savestoredfirebaseconfig",
-      "relation": "imports",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "src/components/screens/ConsumerLoginScreen.tsx",
-      "source_location": "L24",
       "weight": 1.0
     },
     {
@@ -11948,7 +11936,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/services/firebaseAuthService.ts",
-      "source_location": "L22",
+      "source_location": "L21",
       "weight": 1.0
     },
     {
@@ -11960,7 +11948,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/services/firebaseAuthService.ts",
-      "source_location": "L22",
+      "source_location": "L21",
       "weight": 1.0
     },
     {
@@ -13508,7 +13496,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/screens/ConsumerLoginScreen.tsx",
-      "source_location": "L16",
+      "source_location": "L14",
       "weight": 1.0
     },
     {
@@ -13521,18 +13509,6 @@
       "context": "import",
       "source_file": "src/components/screens/ConsumerLoginScreen.tsx",
       "source_location": "L2",
-      "weight": 1.0
-    },
-    {
-      "source": "src_components_screens_consumerloginscreen",
-      "target": "src_lib_firebase",
-      "relation": "imports_from",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "src/components/screens/ConsumerLoginScreen.tsx",
-      "source_location": "L24",
       "weight": 1.0
     },
     {
@@ -14720,7 +14696,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/services/firebaseAuthService.ts",
-      "source_location": "L22",
+      "source_location": "L21",
       "weight": 1.0
     },
     {
@@ -18359,7 +18335,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/components/screens/ConsumerLoginScreen.tsx",
-      "source_location": "L26",
+      "source_location": "L23",
       "weight": 1.0
     },
     {
@@ -19057,13 +19033,35 @@
     },
     {
       "source": "src_services_firebaseauthservice",
+      "target": "src_services_firebaseauthservice_sendphoneotpresponse",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/services/firebaseAuthService.ts",
+      "source_location": "L107",
+      "weight": 1.0
+    },
+    {
+      "source": "src_services_firebaseauthservice",
+      "target": "src_services_firebaseauthservice_sendphoneotptomessenger",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/services/firebaseAuthService.ts",
+      "source_location": "L116",
+      "weight": 1.0
+    },
+    {
+      "source": "src_services_firebaseauthservice",
       "target": "src_services_firebaseauthservice_verifyfirebaseotp",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/services/firebaseAuthService.ts",
-      "source_location": "L146",
+      "source_location": "L171",
       "weight": 1.0
     },
     {
@@ -19074,7 +19072,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/services/firebaseAuthService.ts",
-      "source_location": "L157",
+      "source_location": "L182",
       "weight": 1.0
     },
     {
@@ -19085,7 +19083,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/services/firebaseAuthService.ts",
-      "source_location": "L164",
+      "source_location": "L189",
       "weight": 1.0
     },
     {
@@ -19096,7 +19094,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/services/firebaseAuthService.ts",
-      "source_location": "L175",
+      "source_location": "L200",
       "weight": 1.0
     },
     {
@@ -19107,7 +19105,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/services/firebaseAuthService.ts",
-      "source_location": "L27",
+      "source_location": "L26",
       "weight": 1.0
     },
     {
@@ -19118,7 +19116,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/services/firebaseAuthService.ts",
-      "source_location": "L36",
+      "source_location": "L35",
       "weight": 1.0
     },
     {
@@ -19129,7 +19127,18 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/services/firebaseAuthService.ts",
-      "source_location": "L44",
+      "source_location": "L43",
+      "weight": 1.0
+    },
+    {
+      "source": "src_services_firebaseauthservice",
+      "target": "src_services_firebaseauthservice_triggernativesms",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/services/firebaseAuthService.ts",
+      "source_location": "L51",
       "weight": 1.0
     },
     {
@@ -19140,29 +19149,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/services/firebaseAuthService.ts",
-      "source_location": "L54",
-      "weight": 1.0
-    },
-    {
-      "source": "src_services_firebaseauthservice",
-      "target": "src_services_firebaseauthservice_sendphoneotpresponse",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/services/firebaseAuthService.ts",
-      "source_location": "L84",
-      "weight": 1.0
-    },
-    {
-      "source": "src_services_firebaseauthservice",
-      "target": "src_services_firebaseauthservice_sendfirebasephoneotp",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/services/firebaseAuthService.ts",
-      "source_location": "L93",
+      "source_location": "L77",
       "weight": 1.0
     },
     {
@@ -20308,5 +20295,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "6ff585a687eca65d85f41baf7012eade1884a894"
+  "built_at_commit": "81af976d4b1bd6f1cf78de1f66730d8df6327f3c"
 }
